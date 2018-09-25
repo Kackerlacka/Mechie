@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="6dp" >
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_margin="6dp"
+            android:clickable="true"
+            android:onClick="mechanicalProperties"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false"
+            card_view:cardElevation="5dp"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/steel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/steel"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/header_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="10dp"
+                    android:text="Steel Strengths"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_margin="6dp"
+            android:clickable="true"
+            android:onClick="seCalculator"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false"
+            card_view:cardElevation="5dp"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/fracture"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/fracture"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/header_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="10dp"
+                    android:text="Sₑ Calculator"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_margin="6dp"
+            android:clickable="true"
+            android:onClick="boltSizer"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false"
+            card_view:cardElevation="5dp"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/bolt_sizer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/bolt_sizer"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/header_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="10dp"
+                    android:text="Bolt Sizer"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_margin="6dp"
+            android:clickable="true"
+            android:onClick="saePicker"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false"
+            card_view:cardElevation="5dp"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/bolts"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/bolts"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/header_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="10dp"
+                    android:text="SAE Bolt Picker"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>

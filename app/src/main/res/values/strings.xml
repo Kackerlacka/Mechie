@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">Mechie</string>
+    <string name="choose_subject">&lt;---- Choose a subject in the navigation drawer</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="AISI_prompt">Select an AISI Number</string>
+    <string name="treatments_prompt">Select a treatment</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+
+    <string-array name="AISI_numbers">
+        <item>1030</item>
+        <item>1040</item>
+        <item>1050</item>
+        <item>1060</item>
+        <item>1095</item>
+        <item>1141</item>
+        <item>4130</item>
+        <item>4140</item>
+        <item>4340</item>
+    </string-array>
+
+    <string-array name="materials_metals">
+        <item>Copper</item>
+        <item>Titanium</item>
+    </string-array>
+
+    <string-array name="materials_alloys">
+        <item>1030</item>
+        <item>1040</item>
+        <item>1050</item>
+    </string-array>
+
+    <string-array name="equations">
+        <item>Copper</item>
+        <item>Titanium</item>
+    </string-array>
+
+    <string-array name="sae_specs">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>5</item>
+        <item>5.2</item>
+        <item>7</item>
+        <item>8</item>
+        <item>8.2</item>
+    </string-array>
+
+    <string-array name="size_designation">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>1/4</item>
+        <item>5/16</item>
+        <item>3/8</item>
+        <item>7/16</item>
+        <item>1/2</item>
+        <item>9/16</item>
+        <item>5/8</item>
+        <item>3/4</item>
+        <item>7/8</item>
+        <item>1</item>
+        <item>1 1/4</item>
+        <item>1 1/2</item>
+    </string-array>
+
+    <string-array name="treatments">
+        <item>Water Q&amp;T</item>
+        <item>Q&amp;T</item>
+        <item>Normalized</item>
+        <item>Annealed</item>
+    </string-array>
+
+</resources>

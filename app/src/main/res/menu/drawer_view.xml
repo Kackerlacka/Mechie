@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_concepts"
+            android:title="Concepts" />
+        <item
+            android:id="@+id/nav_equations"
+            android:title="Equations" />
+        <item
+            android:id="@+id/nav_constants"
+            android:title="Constants" />
+        <item
+            android:id="@+id/nav_materials"
+            android:title="Materials" />
+        <item
+            android:id="@+id/nav_tools"
+            android:title="Tools" />
+    </group>
+</menu>
