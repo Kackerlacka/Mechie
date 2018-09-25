@@ -45,6 +45,7 @@ public class MainConstants extends ListFragment {
         equationsList.add(new CustomListViewClass( "Golden Ratio [φ]" , "1.61803398", 2));
         equationsList.add(new CustomListViewClass( "Natural Log Base [e]" , "2.71828182", 3));
         equationsList.add(new CustomListViewClass( "Pi [π]" , "3.14159265", 4));
+        equationsList.add(new CustomListViewClass("Stefan-Boltzman constant [σ]", "5.67 x 10⁻⁸", 5));
 
 
         mAdapter = new CustomListviewAdapter(getActivity(),equationsList);
