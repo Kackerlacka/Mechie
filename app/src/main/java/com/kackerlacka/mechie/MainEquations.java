@@ -118,6 +118,13 @@ public class MainEquations extends ListFragment {
                                 "\\(\\Delta v = \\mathrm{change~in~velocity~in~}\\frac{m}{s}, \\frac{ft}{s}\\)",
                                 "\\(\\Delta t = \\mathrm{change~in~time~in~}s\\)");
                         break;
+                    case 2:
+                        setVariables("Angular Acceleration",
+                                "<center>$$\\alpha = \\frac{\\Delta \\omega}{\\Delta t}$$</center>",
+                                "\\(\\frac{m}{s^2}\\, \\frac{ft}{s^2}\\)",
+                                "\\(\\Delta \\omega = \\mathrm{change~in~angular~velocity~in~}\\frac{rad}{s}\\)",
+                                "\\(\\Delta t = \\mathrm{change~in~time~in~}s\\)");
+                        break;
                     case 15:
                     setVariables("Engineering Strain",
                             "<center>$$\\epsilon = \\frac{\\Delta L}{L_0}$$</center>",
