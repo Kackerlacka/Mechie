@@ -99,8 +99,6 @@ public class MainEquations extends ListFragment {
         equationsList.add(new CustomListViewClass( "Voltage Drop" , "Placeholder", 56));
         equationsList.add(new CustomListViewClass( "Young's Modulus" , "σ/ε", 57));
 
-
-
         mAdapter = new CustomListviewAdapter(getActivity(),equationsList);
         listView.setAdapter(mAdapter);
 
