@@ -38,7 +38,7 @@ public class MainEquations extends ListFragment {
 
         //Populate listview with items
         equationsList.add(new CustomListViewClass( "Acceleration" , "Δv/Δt", 1));
-        equationsList.add(new CustomListViewClass( "Angular Acceleration" , "Placeholder", 2));
+        equationsList.add(new CustomListViewClass( "Angular Acceleration" , "Δω/Δt", 2));
         equationsList.add(new CustomListViewClass( "Angular Velocity" , "Placeholder", 3));
         equationsList.add(new CustomListViewClass( "Belt Velocity" , "(πdₘnₘ)/12", 4));
         equationsList.add(new CustomListViewClass( "Bolt Stress Area" , "π/4(dₙ - 0.9743/n)²", 5));
@@ -121,7 +121,7 @@ public class MainEquations extends ListFragment {
                     case 2:
                         setVariables("Angular Acceleration",
                                 "<center>$$\\alpha = \\frac{\\Delta \\omega}{\\Delta t}$$</center>",
-                                "\\(\\frac{m}{s^2}\\, \\frac{ft}{s^2}\\)",
+                                "\\(\\frac{rad}{s^2}\\)",
                                 "\\(\\Delta \\omega = \\mathrm{change~in~angular~velocity~in~}\\frac{rad}{s}\\)",
                                 "\\(\\Delta t = \\mathrm{change~in~time~in~}s\\)");
                         break;
