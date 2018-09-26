@@ -61,7 +61,7 @@ public class MainEquations extends ListFragment {
         equationsList.add(new CustomListViewClass( "Flow Head Loss" , "Placeholder", 18));
         equationsList.add(new CustomListViewClass( "Fluid Pressure" , "Placeholder", 19));
         equationsList.add(new CustomListViewClass( "Fluid Surface Tension" , "Placeholder", 20));
-        equationsList.add(new CustomListViewClass( "Force" , "Placeholder", 21));
+        equationsList.add(new CustomListViewClass( "Force" , "m⋅a", 21));
         equationsList.add(new CustomListViewClass( "Fracture Toughness" , "Yσ⋅Sqrt(πa)", 22));
         equationsList.add(new CustomListViewClass( "Gauss Law" , "Placeholder", 23));
         equationsList.add(new CustomListViewClass( "Gibb's Free Energy" , "Placeholder", 24));
