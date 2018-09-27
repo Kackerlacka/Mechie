@@ -38,8 +38,11 @@ public class MainEquations extends ListFragment {
 
         //Populate listview with items
         equationsList.add(new CustomListViewClass( "Acceleration" , "Δv/Δt", 1));
-        equationsList.add(new CustomListViewClass( "Angular Acceleration" , "Δω/Δt", 2));
-        equationsList.add(new CustomListViewClass( "Angular Velocity" , "Placeholder", 3));
+        equationsList.add(new CustomListViewClass( "Angular Acceleration" , "aₜ/r", 61));
+        equationsList.add(new CustomListViewClass( "Angular Displacement", "S/r", 58));
+        equationsList.add(new CustomListViewClass( "Angular Velocity" , "v/r", 3));
+        equationsList.add(new CustomListViewClass( "Average Angular Acceleration" , "Δω/Δt", 59));
+        equationsList.add(new CustomListViewClass( "Average Angular Velocity" , "Δθ/Δt", 60));
         equationsList.add(new CustomListViewClass( "Belt Velocity" , "(πdₘnₘ)/12", 4));
         equationsList.add(new CustomListViewClass( "Bolt Stress Area" , "π/4(dₙ - 0.9743/n)²", 5));
         equationsList.add(new CustomListViewClass( "Brake Clamp Load" , "Placeholder", 6));
@@ -58,7 +61,7 @@ public class MainEquations extends ListFragment {
         equationsList.add(new CustomListViewClass( "Flow Head Loss" , "Placeholder", 18));
         equationsList.add(new CustomListViewClass( "Fluid Pressure" , "Placeholder", 19));
         equationsList.add(new CustomListViewClass( "Fluid Surface Tension" , "Placeholder", 20));
-        equationsList.add(new CustomListViewClass( "Force" , "Placeholder", 21));
+        equationsList.add(new CustomListViewClass( "Force" , "m⋅a", 21));
         equationsList.add(new CustomListViewClass( "Fracture Toughness" , "Yσ⋅Sqrt(πa)", 22));
         equationsList.add(new CustomListViewClass( "Gauss Law" , "Placeholder", 23));
         equationsList.add(new CustomListViewClass( "Gibb's Free Energy" , "Placeholder", 24));
@@ -96,8 +99,6 @@ public class MainEquations extends ListFragment {
         equationsList.add(new CustomListViewClass( "Voltage Drop" , "Placeholder", 56));
         equationsList.add(new CustomListViewClass( "Young's Modulus" , "σ/ε", 57));
 
-
-
         mAdapter = new CustomListviewAdapter(getActivity(),equationsList);
         listView.setAdapter(mAdapter);
 
@@ -111,6 +112,27 @@ public class MainEquations extends ListFragment {
                 CustomListViewClass item = mAdapter.getItem(position);
 
                 switch(item.mID) {
+                    case 61:
+                        setVariables("Angular Acceleration",
+                                "<center>$$\\alpha = \\frac{a_t}{r}$$</center>",
+                                "\\(\\frac{rad}{s^2}\\)",
+                                "\\(a_t = \\mathrm{tangential~acceleration~in~}\\frac{m}{s^2}, \\frac{ft}{s^2}\\)",
+                                "\\(r = \\mathrm{radius~of~circular~path~in~}m, ft\\)");
+                        break;
+                    case 58:
+                        setVariables("Angular Displacement",
+                                "<center>$$\\theta = \\frac{S}{r}$$</center>",
+                                "\\(radians, degrees\\)",
+                                "\\(S = \\mathrm{arc~length~in~}m, ft\\)",
+                                "\\(r = \\mathrm{radius~of~circular~path~in~}m, ft\\)");
+                        break;
+                    case 3:
+                        setVariables("Angular Velocity",
+                                "<center>$$\\omega = \\frac{v}{r}$$</center>",
+                                "\\(radians, degrees\\)",
+                                "\\(v = \\mathrm{velocity~in~}\\frac{m}{s}, \\frac{ft}{s}\\)",
+                                "\\(r = \\mathrm{radius~of~circular~path~in~}m, ft\\)");
+                        break;
                     case 1:
                         setVariables("Acceleration",
                                 "<center>$$a = \\frac{\\Delta v}{\\Delta t}$$</center>",
@@ -121,7 +143,7 @@ public class MainEquations extends ListFragment {
                     case 2:
                         setVariables("Angular Acceleration",
                                 "<center>$$\\alpha = \\frac{\\Delta \\omega}{\\Delta t}$$</center>",
-                                "\\(\\frac{rad}{s^2}\\)",
+                                "\\(\\frac{m}{s^2}\\, \\frac{ft}{s^2}\\)",
                                 "\\(\\Delta \\omega = \\mathrm{change~in~angular~velocity~in~}\\frac{rad}{s}\\)",
                                 "\\(\\Delta t = \\mathrm{change~in~time~in~}s\\)");
                         break;
