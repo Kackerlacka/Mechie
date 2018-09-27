@@ -15,12 +15,12 @@
         android:paddingTop="6dp">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_view2"
+            android:id="@+id/card_view_metals"
             android:layout_width="175dp"
             android:layout_height="175dp"
             android:layout_margin="6dp"
             android:clickable="true"
-            android:onClick="materialProperties"
+            android:onClick="metalProperties"
             card_view:cardCornerRadius="3dp"
             card_view:cardPreventCornerOverlap="false"
             card_view:cardUseCompatPadding="false"
@@ -42,12 +42,12 @@
                         android:layout_height="match_parent"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:src="@drawable/metal_resized" />
+                        android:src="@drawable/metal" />
 
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/header_main"
+                    android:id="@+id/header_metals"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -55,6 +55,54 @@
                     android:background="@color/colorAccentBlue"
                     android:padding="10dp"
                     android:text="Metal Properties"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view_fluids"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_margin="6dp"
+            android:clickable="true"
+            android:onClick="fluidProperties"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false"
+            card_view:cardElevation="5dp"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/fluids" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/header_fluids"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="10dp"
+                    android:text="Fluid Properties"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
 

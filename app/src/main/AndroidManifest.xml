@@ -19,11 +19,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ToolsSteelStrengths"
+            android:name=".ToolsHardnessConverter"
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".ToolsSeCalculator"
+            android:name=".ToolsDimensionlessNumbersCalc"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MaterialsPropertiesFluids"
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
         <activity
@@ -31,7 +35,7 @@
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".ToolsSAEPicker"
+            android:name=".ToolsSAEBoltPicker"
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
         <activity

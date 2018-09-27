@@ -15,12 +15,12 @@
         android:paddingTop="6dp" >
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_view2"
+            android:id="@+id/card_view_hardnessconverter"
             android:layout_width="175dp"
             android:layout_height="175dp"
             android:layout_margin="6dp"
             android:clickable="true"
-            android:onClick="mechanicalProperties"
+            android:onClick="hardnessConverter"
             card_view:cardCornerRadius="3dp"
             card_view:cardPreventCornerOverlap="false"
             card_view:cardUseCompatPadding="false"
@@ -43,19 +43,19 @@
                         android:layout_height="match_parent"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:src="@drawable/steel"/>
+                        android:src="@drawable/fracture"/>
 
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/header_main"
+                    android:id="@+id/header_hardnessconverter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_gravity="center"
                     android:background="@color/colorAccentBlue"
                     android:padding="10dp"
-                    android:text="Steel Strengths"
+                    android:text="Hardness Converter"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
 
@@ -64,12 +64,12 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_view2"
+            android:id="@+id/card_view_dimensionlessnumbers"
             android:layout_width="175dp"
             android:layout_height="175dp"
             android:layout_margin="6dp"
             android:clickable="true"
-            android:onClick="seCalculator"
+            android:onClick="dimensionlessNumbers"
             card_view:cardCornerRadius="3dp"
             card_view:cardPreventCornerOverlap="false"
             card_view:cardUseCompatPadding="false"
@@ -92,19 +92,19 @@
                         android:layout_height="match_parent"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:src="@drawable/fracture"/>
+                        android:src="@drawable/dimensionlessnumbers"/>
 
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/header_main"
+                    android:id="@+id/header_dimensionlessnumbers"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_gravity="center"
                     android:background="@color/colorAccentBlue"
                     android:padding="10dp"
-                    android:text="Sₑ Calculator"
+                    android:text="Dimensionless Numbers Calculator"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
 
@@ -121,7 +121,7 @@
         android:layout_gravity="center_horizontal">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_view2"
+            android:id="@+id/card_view_boltsizer"
             android:layout_width="175dp"
             android:layout_height="175dp"
             android:layout_margin="6dp"
@@ -154,7 +154,7 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/header_main"
+                    android:id="@+id/header_boltsizer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -170,7 +170,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_view2"
+            android:id="@+id/card_view_saepicker"
             android:layout_width="175dp"
             android:layout_height="175dp"
             android:layout_margin="6dp"
@@ -203,7 +203,7 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/header_main"
+                    android:id="@+id/header_saeboltpicker"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"

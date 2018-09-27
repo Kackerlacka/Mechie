@@ -17,7 +17,7 @@
             android:layout_height="175dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:onClick="materialProperties"
+            android:onClick="metalProperties"
             android:layout_margin="10dp" >
 
             <LinearLayout

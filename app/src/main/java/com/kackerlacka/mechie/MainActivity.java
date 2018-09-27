@@ -61,14 +61,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Launch Mechanical Properties Calculator on button click
-    public void mechanicalProperties(View view) {
-        Intent intent = new Intent(this, ToolsSteelStrengths.class);
+    public void hardnessConverter(View view) {
+        Intent intent = new Intent(this, ToolsHardnessConverter.class);
         startActivity(intent);
     }
 
     //Launch Se Calculator on button click
-    public void seCalculator(View view) {
-        Intent intent = new Intent(this, ToolsSeCalculator.class);
+    public void dimensionlessNumbers(View view) {
+        Intent intent = new Intent(this, ToolsDimensionlessNumbersCalc.class);
         startActivity(intent);
     }
 
@@ -80,13 +80,19 @@ public class MainActivity extends AppCompatActivity {
 
     //Launch SAE Bolt Picker on button click
     public void saePicker(View view) {
-        Intent intent = new Intent(this, ToolsSAEPicker.class);
+        Intent intent = new Intent(this, ToolsSAEBoltPicker.class);
         startActivity(intent);
     }
 
     //Launch SAE Bolt Picker on button click
-    public void materialProperties(View view) {
+    public void metalProperties(View view) {
         Intent intent = new Intent(this, MaterialsPropertiesMetal.class);
+        startActivity(intent);
+    }
+
+    //Launch SAE Bolt Picker on button click
+    public void fluidProperties(View view) {
+        Intent intent = new Intent(this, MaterialsPropertiesFluids.class);
         startActivity(intent);
     }
 
