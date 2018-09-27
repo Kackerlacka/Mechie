@@ -130,35 +130,35 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         adapter2.notifyDataSetChanged();
                         spinner2Sel("8.93 g/cm³", "Face-centered Cubic", "-","200 MPa",
                                 "75 MPa", "40%", "130 GPa","140 GPa",
-                                "0.343", "46 GPa", "394", "1083",
+                                "0.343", "46 GPa", "394 W/m·K", "1083",
                                 "2595", "17");
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 if(spinner2.getSelectedItemPosition() == 0) {
                                     spinner2Sel("8.93 g/cm³", "Face-centered Cubic", "-","200 MPa",
                                             "75 MPa", "40%", "130 GPa","140 GPa",
-                                            "0.343", "46 GPa", "394", "1083",
+                                            "0.343", "46 GPa", "394 W/m·K", "1083",
                                             "2595", "17");
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 1) {
                                     spinner2Sel("7.764 g/cm³", "Face-centered Cubic",
                                             "100", "210 MPa", "33.3 MPa",
                                             "60%", "110 GPa", "140 GPa",
-                                            "0.343", "46 GPa", "385",
+                                            "0.343", "46 GPa", "385 W/m·K",
                                             "1083.2 - 1083.6", "2562", "16.4");
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 2){
                                     spinner2Sel("8.96 g/cm³", "Face-centered Cubic",
                                             "50", "-", "-",
                                             "-", "110 GPa", "140 GPa",
-                                            "0.35", "46 GPa", "385",
+                                            "0.35", "46 GPa", "385 W/m·K",
                                             "1083.2 - 1083.6", "2562", "16.4");
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 3){
                                     spinner2Sel("8.96 g/cm³", "Face-centered Cubic",
                                             "-", "344 MPa", "333.4 MPa",
                                             "14%", "110 GPa", "140 GPa",
-                                            "0.364", "46 GPa", "385",
+                                            "0.364", "46 GPa", "385 W/m·K",
                                             "1083.2 - 1083.6", "2562", "16.4");
                                 }
                             }
@@ -173,7 +173,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         spinner2Sel("4.50 g/cm³", "Hexagonal close-packed",
                                 "60", "220 MPa", "140 MPa",
                                 "54%", "116 GPa", "-",
-                                "0.34", "43 GPa", "17.0",
+                                "0.34", "43 GPa", "17 W/m·K",
                                 "1650 - 1670", "3287", "8.90");
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -181,7 +181,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                                     spinner2Sel("4.50 g/cm³", "Hexagonal close-packed",
                                             "60", "220 MPa", "140 MPa",
                                             "54%", "116 GPa", "-",
-                                            "0.34", "43 GPa", "17.0",
+                                            "0.34", "43 GPa", "17 W/m·K",
                                             "1650 - 1670", "3287", "8.90");
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 1){
@@ -204,7 +204,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         spinner2Sel("2.7 g/cm³", "Face-centered Cubic",
                                 "107", "310 MPa", "276 MPa",
                                 "12 - 17%", "68.9 GPa", "-",
-                                "0.33", "26 GPa", "167",
+                                "0.33", "26 GPa", "167 W/m·K",
                                 "582-652", "-", "23.6 - 25.2");
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -212,7 +212,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                                     spinner2Sel("2.7 g/cm³", "Face-centered Cubic",
                                             "107", "310 MPa", "276 MPa",
                                             "12 - 17%", "68.9 GPa", "-",
-                                            "0.33", "26 GPa", "167",
+                                            "0.33", "26 GPa", "167 W/m·K",
                                             "582-652", "-", "23.6 - 25.2");
                                 }
                             }
@@ -228,7 +228,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         spinner2Sel("7.87 g/cm³", "Face-centered Cubic",
                                 "150", "540 MPa", "50 MPa",
                                 "-", "200 GPa", "166 GPa",
-                                "0.291", "77.5 GPa", "76.2",
+                                "0.291", "77.5 GPa", "76.2 W/m·K",
                                 "1535", "2861", "12.2 - 24.0");
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -236,7 +236,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                                     spinner2Sel("7.87 g/cm³", "Face-centered Cubic",
                                             "150", "540", "50",
                                             "-", "200 GPa", "166 GPa",
-                                            "0.291", "77.5 GPa", "76.2",
+                                            "0.291", "77.5 GPa", "76.2 W/m·K",
                                             "1535", "2861", "12.2 - 24.0");
                                 }
                             }
