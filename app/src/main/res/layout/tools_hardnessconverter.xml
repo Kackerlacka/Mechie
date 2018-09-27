@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorAccentBlue"
                     android:padding="8dp"
-                    android:text="Select Dimensionless Number"
+                    android:text="Select Hardness Type"
                     android:textColor="@android:color/white"
                     android:textSize="10pt"
                     android:textStyle="bold" />
