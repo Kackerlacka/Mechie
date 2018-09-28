@@ -20,6 +20,8 @@ public class MaterialsPropertiesFluids extends AppCompatActivity {
     private Toolbar toolbar;
     private Spinner spinner1;
     List<String> data1 = new ArrayList<>();
+    List<String> data2 = new ArrayList<>();
+    String[] water;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,19 +45,13 @@ public class MaterialsPropertiesFluids extends AppCompatActivity {
 
     }
 
-    public void addListenerOnSpinnerItemSelection() {
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-    }
-
-    public void spinner2Sel(final String density_, final String boiling_temp) {
+    public void spinnerSelection(String[] data) {
 
         final TextView density = (TextView)findViewById(R.id.density_value);
-        final TextView boilingTemp = (TextView)findViewById(R.id.boilingtemp_value);
+        final TextView crystalStructure = (TextView)findViewById(R.id.boilingtemp_value);
 
-        density.setText(density_);
-        boilingTemp.setText(boiling_temp);
-
+        density.setText(data[0]);
+        crystalStructure.setText(data[1]);
     }
 
     // get the selected dropdown list value
@@ -69,6 +65,7 @@ public class MaterialsPropertiesFluids extends AppCompatActivity {
         spinner1.setAdapter(adapter1);
 
         data1.add("Water");
+        data1.add("Oil");
 
         spinner1.setAdapter(adapter1);
 
@@ -76,20 +73,11 @@ public class MaterialsPropertiesFluids extends AppCompatActivity {
 
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                water = getResources().getStringArray(R.array.water);
+
                 switch(spinner1.getSelectedItemPosition()) {
                     case 0:
-                        spinner2Sel("999.98 kg/m³", "99.97 °C");
-                        break;
-                    case 1:
-                        spinner2Sel("8.93", "Face-centered Cubic");
-                        break;
-
-                    case 2:
-                        spinner2Sel("8.93", "Face-centered Cubic");
-                        break;
-
-                    case 3:
-                        spinner2Sel("8.93", "Face-centered Cubic");
+                        spinnerSelection(water);
                         break;
 
                 }

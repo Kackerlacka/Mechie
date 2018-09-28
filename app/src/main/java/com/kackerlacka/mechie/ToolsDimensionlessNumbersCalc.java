@@ -39,7 +39,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("SAE Bolt Picker");
+        getSupportActionBar().setTitle("Dimensionless Numbers Calculator");
 
         addListenerOnButton();
 

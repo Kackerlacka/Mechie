@@ -22,6 +22,14 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
     private Spinner spinner2;
     List<String> data1 = new ArrayList<>();
     List<String> data2 = new ArrayList<>();
+    String[] copperStandard;
+    String[] copperAnnealed;
+    String[] copperColdWorked;
+    String[] copperColdDrawn;
+    String[] titaniumStandard;
+    String[] titaniumCarbide;
+    String[] aluminum6061;
+    String[] ironStandard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,20 +53,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
 
     }
 
-    public void addListenerOnSpinnerItemSelection() {
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-        spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-    }
-
-    public void spinner2Sel(final String density_, final String crystal_structure,
-                            final String vickers_hardness, final String ultimate_str,
-                            final String yield_str, final String break_elong, final
-                            String youngs_modulus, final String bulk_modulus, final
-                            String poisson_ratio, final String shear_modulus, final
-                            String thermal_conductivity, final String melting_point,
-                            final String boiling_point, final String cte_) {
+    public void spinnerSelection(String[] data) {
 
         final TextView density = (TextView)findViewById(R.id.density_value);
         final TextView crystalStructure = (TextView)findViewById(R.id.crystalstructure_value);
@@ -75,21 +70,20 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
         final TextView boilingPoint = (TextView)findViewById(R.id.boilingpoint_value);
         final TextView CTE = (TextView)findViewById(R.id.thermalexpansion_value);
 
-        density.setText(density_);
-        crystalStructure.setText(crystal_structure);
-        vickersHardness.setText(vickers_hardness);
-        ultimateStrength.setText(ultimate_str);
-        yieldStrength.setText(yield_str);
-        breakElongation.setText(break_elong);
-        youngsModulus.setText(youngs_modulus);
-        bulkModulus.setText(bulk_modulus);
-        poissonRatio.setText(poisson_ratio);
-        shearModulus.setText(shear_modulus);
-        thermalConductivity.setText(thermal_conductivity);
-        meltingPoint.setText(melting_point);
-        boilingPoint.setText(boiling_point);
-        CTE.setText(cte_);
-
+        density.setText(data[0]);
+        crystalStructure.setText(data[1]);
+        vickersHardness.setText(data[2]);
+        ultimateStrength.setText(data[3]);
+        yieldStrength.setText(data[4]);
+        breakElongation.setText(data[5]);
+        youngsModulus.setText(data[6]);
+        bulkModulus.setText(data[7]);
+        poissonRatio.setText(data[8]);
+        shearModulus.setText(data[9]);
+        thermalConductivity.setText(data[10]);
+        meltingPoint.setText(data[11]);
+        boilingPoint.setText(data[12]);
+        CTE.setText(data[13]);
     }
 
     // get the selected dropdown list value
@@ -119,6 +113,15 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
 
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                copperStandard = getResources().getStringArray(R.array.copper_standard);
+                copperAnnealed = getResources().getStringArray(R.array.copper_annealed);
+                copperColdWorked = getResources().getStringArray(R.array.copper_coldworked);
+                copperColdDrawn = getResources().getStringArray(R.array.copper_colddrawn);
+                titaniumStandard = getResources().getStringArray(R.array.titanium_standard);
+                titaniumCarbide = getResources().getStringArray(R.array.titanium_standard);
+                aluminum6061 = getResources().getStringArray(R.array.aluminum);
+                ironStandard = getResources().getStringArray(R.array.iron_standard);
+
                 switch(spinner1.getSelectedItemPosition()) {
                     case 0:
                         spinner2.setSelection(0);
@@ -128,38 +131,20 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         data2.add("Cold-Worked");
                         data2.add("Cold Drawn");
                         adapter2.notifyDataSetChanged();
-                        spinner2Sel("8.93 g/cm³", "Face-centered Cubic", "-","200 MPa",
-                                "75 MPa", "40%", "130 GPa","140 GPa",
-                                "0.343", "46 GPa", "394 W/m·K", "1083",
-                                "2595", "17");
+                        spinnerSelection(copperStandard);
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 if(spinner2.getSelectedItemPosition() == 0) {
-                                    spinner2Sel("8.93 g/cm³", "Face-centered Cubic", "-","200 MPa",
-                                            "75 MPa", "40%", "130 GPa","140 GPa",
-                                            "0.343", "46 GPa", "394 W/m·K", "1083",
-                                            "2595", "17");
+                                    spinnerSelection(copperStandard);
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 1) {
-                                    spinner2Sel("7.764 g/cm³", "Face-centered Cubic",
-                                            "100", "210 MPa", "33.3 MPa",
-                                            "60%", "110 GPa", "140 GPa",
-                                            "0.343", "46 GPa", "385 W/m·K",
-                                            "1083.2 - 1083.6", "2562", "16.4");
+                                    spinnerSelection(copperAnnealed);
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 2){
-                                    spinner2Sel("8.96 g/cm³", "Face-centered Cubic",
-                                            "50", "-", "-",
-                                            "-", "110 GPa", "140 GPa",
-                                            "0.35", "46 GPa", "385 W/m·K",
-                                            "1083.2 - 1083.6", "2562", "16.4");
+                                    spinnerSelection(copperColdWorked);
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 3){
-                                    spinner2Sel("8.96 g/cm³", "Face-centered Cubic",
-                                            "-", "344 MPa", "333.4 MPa",
-                                            "14%", "110 GPa", "140 GPa",
-                                            "0.364", "46 GPa", "385 W/m·K",
-                                            "1083.2 - 1083.6", "2562", "16.4");
+                                    spinnerSelection(copperColdDrawn);
                                 }
                             }
                         });
@@ -170,26 +155,14 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         data2.add("Standard");
                         data2.add("Carbide");
                         adapter2.notifyDataSetChanged();
-                        spinner2Sel("4.50 g/cm³", "Hexagonal close-packed",
-                                "60", "220 MPa", "140 MPa",
-                                "54%", "116 GPa", "-",
-                                "0.34", "43 GPa", "17 W/m·K",
-                                "1650 - 1670", "3287", "8.90");
+                        spinnerSelection(titaniumStandard);
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 if(spinner2.getSelectedItemPosition() == 0) {
-                                    spinner2Sel("4.50 g/cm³", "Hexagonal close-packed",
-                                            "60", "220 MPa", "140 MPa",
-                                            "54%", "116 GPa", "-",
-                                            "0.34", "43 GPa", "17 W/m·K",
-                                            "1650 - 1670", "3287", "8.90");
+                                    spinnerSelection(titaniumStandard);
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 1){
-                                    spinner2Sel("4.94 g/cm³", "Cubic",
-                                            "-", "258 MPa", "-",
-                                            "-", "448 - 451 GPa", "-",
-                                            "0.18 - 0.19", "110 - 193 GPa", "-",
-                                            "3065", "-", "7.70");
+                                    spinnerSelection(titaniumCarbide);
                                 }
                             }
                         });
@@ -201,19 +174,11 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         data2.add("6061-T6 Alloy");
                         adapter2.notifyDataSetChanged();
 
-                        spinner2Sel("2.7 g/cm³", "Face-centered Cubic",
-                                "107", "310 MPa", "276 MPa",
-                                "12 - 17%", "68.9 GPa", "-",
-                                "0.33", "26 GPa", "167 W/m·K",
-                                "582-652", "-", "23.6 - 25.2");
+                        spinnerSelection(aluminum6061);
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 if(spinner2.getSelectedItemPosition() == 0) {
-                                    spinner2Sel("2.7 g/cm³", "Face-centered Cubic",
-                                            "107", "310 MPa", "276 MPa",
-                                            "12 - 17%", "68.9 GPa", "-",
-                                            "0.33", "26 GPa", "167 W/m·K",
-                                            "582-652", "-", "23.6 - 25.2");
+                                    spinnerSelection(aluminum6061);
                                 }
                             }
                         });
@@ -224,20 +189,11 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         data2.clear();
                         data2.add("Standard");
                         adapter2.notifyDataSetChanged();
-
-                        spinner2Sel("7.87 g/cm³", "Face-centered Cubic",
-                                "150", "540 MPa", "50 MPa",
-                                "-", "200 GPa", "166 GPa",
-                                "0.291", "77.5 GPa", "76.2 W/m·K",
-                                "1535", "2861", "12.2 - 24.0");
+                        spinnerSelection(ironStandard);
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 if(spinner2.getSelectedItemPosition() == 0) {
-                                    spinner2Sel("7.87 g/cm³", "Face-centered Cubic",
-                                            "150", "540", "50",
-                                            "-", "200 GPa", "166 GPa",
-                                            "0.291", "77.5 GPa", "76.2 W/m·K",
-                                            "1535", "2861", "12.2 - 24.0");
+                                    spinnerSelection(ironStandard);
                                 }
                             }
                         });

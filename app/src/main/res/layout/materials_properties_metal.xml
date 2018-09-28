@@ -454,7 +454,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
-                        android:text="Melting Point (°C):"
+                        android:text="Melting Point"
                         android:layout_weight="1"/>
 
                     <TextView
@@ -478,7 +478,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
-                        android:text="Boiling Point (°C):"
+                        android:text="Boiling Point"
                         android:layout_weight="1"/>
 
                     <TextView
@@ -502,7 +502,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
-                        android:text="CTE (µm/m-°C):"
+                        android:text="CTE"
                         android:layout_weight="1"/>
 
                     <TextView

@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorAccentBlue"
                     android:padding="8dp"
-                    android:text="Select Hardness Type"
+                    android:text="Select a Hardness Type"
                     android:textColor="@android:color/white"
                     android:textSize="10pt"
                     android:textStyle="bold" />
@@ -53,46 +53,12 @@
                     android:weightSum="2"
                     android:padding="10dp">
 
-                    <RelativeLayout
+                    <Spinner
+                        android:id="@+id/spinner1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingLeft="20dp">
+                        android:layout_below="@id/spinner1_textView" />
 
-                        <TextView
-                            android:id="@+id/spinner1_textView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="SAE Grade"
-                            android:textSize="6pt" />
-
-                        <Spinner
-                            android:id="@+id/spinner1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/spinner1_textView" />
-
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingRight="20dp">
-
-                        <TextView
-                            android:id="@+id/spinner2_textView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Size Range"
-                            android:textSize="6pt" />
-
-                        <Spinner
-                            android:id="@+id/sizeRange_value"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/spinner2_textView" />
-
-                    </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -119,7 +85,7 @@
                     android:padding="8dp"
                     android:textSize="10pt"
                     android:id="@+id/header_physicalproperties"
-                    android:text="Strengths"/>
+                    android:text="Conversion"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -133,10 +99,10 @@
                         android:layout_below="@id/header_main"
                         android:layout_weight="1"
                         android:padding="8dp"
-                        android:text="Min. Proof Strength (kpsi): " />
+                        android:text="Brinell HB" />
 
                     <TextView
-                        android:id="@+id/proofstrength_value"
+                        android:id="@+id/brinell_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/header_main"
@@ -158,10 +124,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="8dp"
-                        android:text="Min. Tensile Strength (kpsi): " />
+                        android:text="Vickers HV" />
 
                     <TextView
-                        android:id="@+id/tensilestrength_value"
+                        android:id="@+id/vickers_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/header_main"
@@ -182,10 +148,82 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="8dp"
-                        android:text="Min. Yield Strength (kpsi):" />
+                        android:text="Rockwell A" />
 
                     <TextView
-                        android:id="@+id/yieldstrength_value"
+                        android:id="@+id/rwa_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/header_main"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:padding="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        android:text="Rockwell B" />
+
+                    <TextView
+                        android:id="@+id/rwb_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/header_main"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:padding="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        android:text="Rockwell C" />
+
+                    <TextView
+                        android:id="@+id/rwc_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/header_main"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:padding="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        android:text="Leeb RB" />
+
+                    <TextView
+                        android:id="@+id/leeb_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/header_main"

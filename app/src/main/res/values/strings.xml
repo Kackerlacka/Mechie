@@ -9,75 +9,145 @@
 
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 
-    <string-array name="AISI_numbers">
-        <item>1030</item>
-        <item>1040</item>
-        <item>1050</item>
-        <item>1060</item>
-        <item>1095</item>
-        <item>1141</item>
-        <item>4130</item>
-        <item>4140</item>
-        <item>4340</item>
+    <string-array name="copper_standard">
+        <item>8.93 g/cm³</item>
+        <item>Face-centered Cubic</item>
+        <item>-</item>
+        <item>200 MPa</item>
+        <item>75 MPa</item>
+        <item>40%</item>
+        <item>130 GPa</item>
+        <item>140 GPa</item>
+        <item>0.343</item>
+        <item>46 GPa</item>
+        <item>394 W/m·K</item>
+        <item>1083 °C</item>
+        <item>2595 °C</item>
+        <item>17 µm/m-°C</item>
     </string-array>
 
-    <string-array name="materials_metals">
-        <item>Copper</item>
-        <item>Titanium</item>
+    <string-array name="copper_annealed">
+        <item>7.764 g/cm³</item>
+        <item>Face-centered Cubic</item>
+        <item>100</item>
+        <item>210 MPa</item>
+        <item>33.3 MPa</item>
+        <item>60%</item>
+        <item>110 GPa</item>
+        <item>140 GPa</item>
+        <item>0.343</item>
+        <item>46 GPa</item>
+        <item>385 W/m·K</item>
+        <item>1083.2 - 1083.6 °C</item>
+        <item>2562 °C</item>
+        <item>16.4 µm/m-°C</item>
     </string-array>
 
-    <string-array name="materials_alloys">
-        <item>1030</item>
-        <item>1040</item>
-        <item>1050</item>
+    <string-array name="copper_coldworked">
+        <item>8.96 g/cm³</item>
+        <item>Face-centered Cubic</item>
+        <item>50</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>110 GPa</item>
+        <item>140 GPa</item>
+        <item>0.35</item>
+        <item>46 GPa</item>
+        <item>385 W/m·K</item>
+        <item>1083.2 - 1083.6 °C</item>
+        <item>2562 °C</item>
+        <item>16.4 µm/m-°C</item>
     </string-array>
 
-    <string-array name="equations">
-        <item>Copper</item>
-        <item>Titanium</item>
+    <string-array name="copper_colddrawn">
+        <item>8.96 g/cm³</item>
+        <item>Face-centered Cubic</item>
+        <item>-</item>
+        <item>344 MPa</item>
+        <item>333.4 MPa</item>
+        <item>14%</item>
+        <item>110 GPa</item>
+        <item>140 GPa</item>
+        <item>0.364</item>
+        <item>46 GPa</item>
+        <item>385 W/m·K</item>
+        <item>1083.2 - 1083.6 °C</item>
+        <item>2562 °C</item>
+        <item>16.4 µm/m-°C</item>
     </string-array>
 
-    <string-array name="sae_specs">
-        <item>1</item>
-        <item>2</item>
-        <item>4</item>
-        <item>5</item>
-        <item>5.2</item>
-        <item>7</item>
-        <item>8</item>
-        <item>8.2</item>
+    <string-array name="titanium_standard">
+        <item>4.50 g/cm³</item>
+        <item>Hexagonal close-packed</item>
+        <item>60</item>
+        <item>220 MPa</item>
+        <item>140 MPa</item>
+        <item>54%</item>
+        <item>116 GPa</item>
+        <item>-</item>
+        <item>0.34</item>
+        <item>43 GPa</item>
+        <item>17 W/m·K</item>
+        <item>1650 - 1670 °C</item>
+        <item>3287 °C</item>
+        <item>8.90 µm/m-°C</item>
     </string-array>
 
-    <string-array name="size_designation">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>8</item>
-        <item>10</item>
-        <item>12</item>
-        <item>1/4</item>
-        <item>5/16</item>
-        <item>3/8</item>
-        <item>7/16</item>
-        <item>1/2</item>
-        <item>9/16</item>
-        <item>5/8</item>
-        <item>3/4</item>
-        <item>7/8</item>
-        <item>1</item>
-        <item>1 1/4</item>
-        <item>1 1/2</item>
+    <string-array name="titanium_carbide">
+        <item>4.94 g/cm³</item>
+        <item>Cubic</item>
+        <item>-</item>
+        <item>258 MPa</item>
+        <item>-</item>
+        <item>-</item>
+        <item>448 - 451 GPa</item>
+        <item>-</item>
+        <item>0.18 - 0.19</item>
+        <item>110 - 193 GPa</item>
+        <item>-</item>
+        <item>3065 °C</item>
+        <item>-</item>
+        <item>7.70 µm/m-°C</item>
     </string-array>
 
-    <string-array name="treatments">
-        <item>Water Q&amp;T</item>
-        <item>Q&amp;T</item>
-        <item>Normalized</item>
-        <item>Annealed</item>
+    <string-array name="aluminum">
+        <item>2.7 g/cm³</item>
+        <item>Face-centered Cubic</item>
+        <item>107</item>
+        <item>310 MPa</item>
+        <item>276 MPa</item>
+        <item>12 - 17%</item>
+        <item>68.9 GPa</item>
+        <item>-</item>
+        <item>0.33</item>
+        <item>26 GPa</item>
+        <item>167 W/m·K</item>
+        <item>582-652 °C</item>
+        <item>-</item>
+        <item>23.6 - 25.2 µm/m-°C</item>
+    </string-array>
+
+    <string-array name="iron_standard">
+        <item>7.87 g/cm³</item>
+        <item>Face-centered Cubic</item>
+        <item>150</item>
+        <item>540 MPa</item>
+        <item>50 MPa</item>
+        <item>-</item>
+        <item>200 GPa</item>
+        <item>166 GPa</item>
+        <item>0.291</item>
+        <item>77.5 GPa</item>
+        <item>76.2 W/m·K</item>
+        <item>1535 °C</item>
+        <item>2861 °C</item>
+        <item>12.2 - 24 µm/m-°C</item>
+    </string-array>
+
+    <string-array name="water">
+        <item>Placeholder</item>
+        <item>Placeholder</item>
     </string-array>
 
 </resources>
