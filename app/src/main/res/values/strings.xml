@@ -145,7 +145,19 @@
         <item>12.2 - 24 µm/m-°C</item>
     </string-array>
 
-    <string-array name="water">
+    <string-array name="placeholder">
+        <item>Placeholder</item>
+        <item>Placeholder</item>
+        <item>Placeholder</item>
+        <item>Placeholder</item>
+        <item>Placeholder</item>
+        <item>Placeholder</item>
+        <item>Placeholder</item>
+        <item>Placeholder</item>
+        <item>Placeholder</item>
+        <item>Placeholder</item>
+        <item>Placeholder</item>
+        <item>Placeholder</item>
         <item>Placeholder</item>
         <item>Placeholder</item>
     </string-array>

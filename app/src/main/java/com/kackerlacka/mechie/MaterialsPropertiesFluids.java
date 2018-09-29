@@ -73,7 +73,7 @@ public class MaterialsPropertiesFluids extends AppCompatActivity {
 
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                water = getResources().getStringArray(R.array.water);
+                water = getResources().getStringArray(R.array.placeholder);
 
                 switch(spinner1.getSelectedItemPosition()) {
                     case 0:

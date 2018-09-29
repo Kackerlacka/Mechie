@@ -34,16 +34,55 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/header_main"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorAccentBlue"
-                    android:padding="8dp"
-                    android:text="Select a Metal"
-                    android:textColor="@android:color/white"
-                    android:textSize="10pt"
-                    android:textStyle="bold" />
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/header_main"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorAccentBlue"
+                        android:padding="8dp"
+                        android:text="Select a Metal"
+                        android:textColor="@android:color/white"
+                        android:textSize="10pt"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+
+
+                    <RadioGroup
+                        android:id="@+id/radiogroup"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:id="@+id/metric"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:buttonTint="@android:color/white"
+                            android:text="Metric"
+                            android:textColor="@android:color/white"
+                            android:layout_weight="0.5"
+                            android:checked="true"/>
+
+                        <RadioButton
+                            android:id="@+id/imperial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@id/metric"
+                            android:buttonTint="@android:color/white"
+                            android:text="Imperial"
+                            android:textColor="@android:color/white"
+                            android:layout_weight="0.5" />
+
+                        </RadioGroup>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -62,7 +101,7 @@
                             android:id="@+id/spinner1_textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Material"
+                            android:text="Metal"
                             android:textSize="6pt" />
 
                         <Spinner
@@ -89,7 +128,7 @@
                             android:id="@+id/spinner2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/spinner2_textView"/>
+                            android:layout_below="@id/spinner2_textView" />
 
                     </RelativeLayout>
                 </LinearLayout>

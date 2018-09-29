@@ -9,6 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,6 +24,9 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
     private Spinner spinner2;
     List<String> data1 = new ArrayList<>();
     List<String> data2 = new ArrayList<>();
+    private int units;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
     String[] copperStandard;
     String[] copperAnnealed;
     String[] copperColdWorked;
@@ -30,6 +35,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
     String[] titaniumCarbide;
     String[] aluminum6061;
     String[] ironStandard;
+    String[] placeholder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +54,22 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Metal Properties");
+
+        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // get selected radio button from radioGroup
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                if(selectedId == 1) {
+                    units = 0;
+                }
+                else if(selectedId == 2) {
+                    units = 1;
+                }
+            }
+        });
 
         addListenerOnButton();
 
@@ -121,6 +143,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                 titaniumCarbide = getResources().getStringArray(R.array.titanium_standard);
                 aluminum6061 = getResources().getStringArray(R.array.aluminum);
                 ironStandard = getResources().getStringArray(R.array.iron_standard);
+                placeholder = getResources().getStringArray(R.array.placeholder);
 
                 switch(spinner1.getSelectedItemPosition()) {
                     case 0:
@@ -135,16 +158,36 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 if(spinner2.getSelectedItemPosition() == 0) {
-                                    spinnerSelection(copperStandard);
+                                    if(units == 0) {
+                                        spinnerSelection(copperStandard);
+                                    }
+                                    else if(units == 1) {
+                                        spinnerSelection(placeholder);
+                                    }
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 1) {
-                                    spinnerSelection(copperAnnealed);
+                                    if(units == 0) {
+                                        spinnerSelection(copperAnnealed);
+                                    }
+                                    else if(units == 1) {
+                                        spinnerSelection(placeholder);
+                                    }
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 2){
-                                    spinnerSelection(copperColdWorked);
+                                    if(units == 0) {
+                                        spinnerSelection(copperColdWorked);
+                                    }
+                                    else if(units == 1) {
+                                        spinnerSelection(placeholder);
+                                    }
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 3){
-                                    spinnerSelection(copperColdDrawn);
+                                    if(units == 0) {
+                                        spinnerSelection(copperColdDrawn);
+                                    }
+                                    else if(units == 1) {
+                                        spinnerSelection(placeholder);
+                                    }
                                 }
                             }
                         });
@@ -204,4 +247,6 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
 
         });
     }
+
+
 }
