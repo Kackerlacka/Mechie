@@ -9,6 +9,29 @@
 
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 
+    <string name="castiglianostheorem_about">Named after the Italian mathematician and physicist,
+        Carlo Alberto Castigliano, Castigliano\'s Method describes a method to determine the
+        deflections of beams. Determining the deflection of beams typically requires repeated
+        integration of singularity functions and/or superposition, Castigliano\'s Method allows
+        determination of deflection by using the strain energies located at the point of application
+        of the forces on the beam. In addition, this method allows calculation of deflection of
+        beams with changing cross-sectional areas.</string>
+    <string name="castiglianostheorem_about_2">Note that the force mentioned in the two theorems
+        below can refer to either a point force or a couple (moment), and the displacement
+        can refer to either translation or angular rotation.</string>
+
+    <string name="castiglianostheorem_first_1">The first partial derivative of the total internal
+        energy (strain energy) in a structure with respect to any particular deflection component
+        at a point is equal to the force applied at that point and in the direction corresponding
+        to that deflection component.</string>
+    <string name="castiglianostheorem_first_2">This theorem applies to both linearly and nonlinearly
+        elastic structures in which the temperature is constants and the supports are not yielding.</string>
+    <string name="castiglianostheorem_second_1">The first partial derivative of the total internal
+        energy in a structure with respect to the force applied at any point is equal to the deflection
+        at the point of application of that force in the direction of its line of action.</string>
+    <string name="castiglianostheorem_second_2">This theorem applies only to linearly elastic structures
+        with constant temperature and non-yielded supports.</string>
+
     <string-array name="copper_standard">
         <item>8.93 g/cm³</item>
         <item>Face-centered Cubic</item>
