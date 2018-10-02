@@ -1,9 +1,9 @@
 package com.kackerlacka.mechie;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -13,12 +13,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ConceptsMaterials extends AppCompatActivity {
+public class ConceptsMathematics extends AppCompatActivity {
 
     private Toolbar toolbar;
     ArrayAdapter mAdapter;
@@ -26,7 +24,7 @@ public class ConceptsMaterials extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.concepts_materials);
+        setContentView(R.layout.concepts_mathematics);
 
         Window window = this.getWindow();
         // clear FLAG_TRANSLUCENT_STATUS flag:
@@ -43,9 +41,9 @@ public class ConceptsMaterials extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Materials");
+        getSupportActionBar().setTitle("Mathematics");
 
-        mAdapter = new ArrayAdapter(ConceptsMaterials.this,
+        mAdapter = new ArrayAdapter(ConceptsMathematics.this,
                 android.R.layout.simple_list_item_1,
                 getResources().getStringArray(R.array.concepts_mechanics));
         mListView.setAdapter(mAdapter);
@@ -55,7 +53,7 @@ public class ConceptsMaterials extends AppCompatActivity {
             public void onItemClick(AdapterView adapterView, View view, int i, long l) {
                 switch(i) {
                     case 0:
-                        Intent intent = new Intent(ConceptsMaterials.this, MechanicsCastiglianosTheorem.class);
+                        Intent intent = new Intent(ConceptsMathematics.this, MechanicsCastiglianosTheorem.class);
                         startActivity(intent);
                         break;
                 }
@@ -90,4 +88,3 @@ public class ConceptsMaterials extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 }
-

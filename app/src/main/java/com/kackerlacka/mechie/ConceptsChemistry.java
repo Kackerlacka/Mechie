@@ -1,19 +1,27 @@
 package com.kackerlacka.mechie;
 
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 
 public class ConceptsChemistry extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private EditText editText;
-    private Button btnSubmit;
+    ArrayAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +36,57 @@ public class ConceptsChemistry extends AppCompatActivity {
         // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        ListView mListView = (ListView) findViewById(R.id.list);
+        TextView mEmptyView = (TextView) findViewById(R.id.emptyView);
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Chemistry Concepts");
+        getSupportActionBar().setTitle("Chemistry");
+
+        mAdapter = new ArrayAdapter(ConceptsChemistry.this,
+                android.R.layout.simple_list_item_1,
+                getResources().getStringArray(R.array.concepts_mechanics));
+        mListView.setAdapter(mAdapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView adapterView, View view, int i, long l) {
+                switch(i) {
+                    case 0:
+                        Intent intent = new Intent(ConceptsChemistry.this, MechanicsCastiglianosTheorem.class);
+                        startActivity(intent);
+                        break;
+                }
+            }
+        });
+
+        mListView.setEmptyView(mEmptyView);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_equations, menu);
+
+        MenuItem mSearch = menu.findItem(R.id.item_search);
+
+        SearchView mSearchView = (SearchView) mSearch.getActionView();
+        mSearchView.setQueryHint("Search");
+
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mAdapter.getFilter().filter(newText);
+                return true;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
     }
 }

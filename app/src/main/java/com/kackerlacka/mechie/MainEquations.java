@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Filter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,7 @@ public class MainEquations extends ListFragment {
     private CustomListviewAdapter mAdapter; //Custom adapter for listview
     private AlertDialog.Builder builder;
     public static final String TAG = MainEquations.class.getSimpleName();
+    private TextView mEmptyView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -100,7 +102,9 @@ public class MainEquations extends ListFragment {
         equationsList.add(new CustomListViewClass( "Young's Modulus" , "σ/ε", 57));
 
         mAdapter = new CustomListviewAdapter(getActivity(),equationsList);
+        mEmptyView = (TextView)view.findViewById(R.id.emptyView);
         listView.setAdapter(mAdapter);
+        listView.setEmptyView(mEmptyView);
 
         //Set onClick functions for listview
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -195,19 +199,6 @@ public class MainEquations extends ListFragment {
         CustomEquationsDialog dialog = new CustomEquationsDialog();
         dialog.setArguments(info);
         dialog.show(fm, TAG);
-    }
-
-    //Alert function for dialog
-    public void alert (String title, String message) {
-        builder = new AlertDialog.Builder(getActivity(), R.style.Theme_AppCompat_Light_Dialog);
-        builder.setTitle(title)
-                .setMessage(message)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // continue with delete
-                    }
-                })
-                .show();
     }
 
     @Override

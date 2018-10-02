@@ -18,6 +18,7 @@ import android.widget.Filter;
 import android.widget.ListView;
 import android.util.Log;
 import android.support.v4.app.DialogFragment;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,7 @@ public class MainConstants extends ListFragment {
     private CustomListviewAdapter mAdapter; //Custom adapter for listview
     private AlertDialog.Builder builder;
     public static final String TAG = MainEquations.class.getSimpleName();
+    private TextView mEmptyView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -74,7 +76,9 @@ public class MainConstants extends ListFragment {
 
 
         mAdapter = new CustomListviewAdapter(getActivity(),equationsList);
+        mEmptyView = (TextView)view.findViewById(R.id.emptyView);
         listView.setAdapter(mAdapter);
+        listView.setEmptyView(mEmptyView);
 
         return view;
 

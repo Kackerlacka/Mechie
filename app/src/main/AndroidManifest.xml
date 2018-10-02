@@ -59,10 +59,20 @@
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".ConceptsThermo"
+            android:name=".MechanicsCastiglianosTheorem">
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MechanicsCastiglianosTheorem"></activity>
+        </activity>
+        <activity
+            android:name=".ConceptsThermalEngineering">
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".ConceptsMathematics">
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>

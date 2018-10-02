@@ -108,6 +108,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //Launch Materials Concepts on button click
+    public void thermalengineeringActivity(View view) {
+        Intent intent = new Intent(this, ConceptsThermalEngineering.class);
+        startActivity(intent);
+    }
+
+    //Launch Materials Concepts on button click
+    public void mathematicsActivity(View view) {
+        Intent intent = new Intent(this, ConceptsMathematics.class);
+        startActivity(intent);
+    }
+
     //Launch Chemistry Concepts on button click
     public void chemistryActivity(View view) {
         Intent intent = new Intent(this, ConceptsChemistry.class);
@@ -117,12 +129,6 @@ public class MainActivity extends AppCompatActivity {
     //Launch Physics Concepts on button click
     public void physicsActivity(View view) {
         Intent intent = new Intent(this, ConceptsPhysics.class);
-        startActivity(intent);
-    }
-
-    //Launch Thermal Engineering Concepts on button click
-    public void thermalActivity(View view) {
-        Intent intent = new Intent(this, ConceptsThermo.class);
         startActivity(intent);
     }
 
