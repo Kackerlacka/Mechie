@@ -13,8 +13,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -47,7 +45,7 @@ public class ConceptsMaterials extends AppCompatActivity {
 
         mAdapter = new ArrayAdapter(ConceptsMaterials.this,
                 android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.concepts_mechanics));
+                getResources().getStringArray(R.array.concepts_materials));
         mListView.setAdapter(mAdapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,7 +53,7 @@ public class ConceptsMaterials extends AppCompatActivity {
             public void onItemClick(AdapterView adapterView, View view, int i, long l) {
                 switch(i) {
                     case 0:
-                        Intent intent = new Intent(ConceptsMaterials.this, MechanicsCastiglianosTheorem.class);
+                        Intent intent = new Intent(ConceptsMaterials.this, MaterialsGalvanicCorrosion.class);
                         startActivity(intent);
                         break;
                 }

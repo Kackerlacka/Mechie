@@ -1,14 +1,14 @@
 <resources>
+    //General strings
     <string name="app_name">Mechie</string>
     <string name="choose_subject">&lt;---- Choose a subject in the navigation drawer</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
-
     <string name="AISI_prompt">Select an AISI Number</string>
     <string name="treatments_prompt">Select a treatment</string>
-
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 
+    //Castigliano's Method
     <string name="castiglianostheorem_about">Named after the Italian mathematician and physicist,
         Carlo Alberto Castigliano, Castigliano\'s Method describes a method to determine the
         deflections of beams. Determining the deflection of beams typically requires repeated
@@ -19,7 +19,6 @@
     <string name="castiglianostheorem_about_2">Note that the force mentioned in the two theorems
         below can refer to either a point force or a couple (moment), and the displacement
         can refer to either translation or angular rotation.</string>
-
     <string name="castiglianostheorem_first_1">The first partial derivative of the total internal
         energy (strain energy) in a structure with respect to any particular deflection component
         at a point is equal to the force applied at that point and in the direction corresponding
@@ -40,10 +39,40 @@
     <string name="castiglianostheorem_example_3">The resulting formula is the standard formula
         applicable only to cantilever beams under end loads.</string>
 
+    //Galvanic Corrosion
+    <string name="galvanic_corrosion_about">Galvanic corrosion (or bimetallic corrosion is an
+        electrochemical process in which a metal corrodes when in electrical contact with another,
+        in the presence of an electrolyte. When two dissimilar metals come in contact with an
+        electrolyte, one metal acts at an anode while the other acts as a cathode. The electropotential
+        difference between the two metals is the force driving the rate at which the anode dissolves
+        into the electrolyte. The electropotential difference can be indicated by the relative
+        positions of the two metals in the <b>Galvanic Series</b>.</string>
+    <string name="galvanic_series_about">The Galvanic Series (or electropotential series) ranks the
+        nobility of metals and semi-metals. Metals experience galvanic corrosion when
+        submerged in an electrolyte while also connected to an external conductor. In terms of
+        the Galvanic Series, it shows that the less noble of the two connected metals is the one
+        to experience corrosion. In effect, the less noble metal has a lower electrode potential,
+        and thus functions as the anode within the electrolyte device.</string>
+    <string name="galvanic_series_example_1">One fantastic example of galvanic corrosion occurred
+        in the Statue of Liberty in the 1980s, when a regular maintenance check revealed that
+        corrosion had taken place between the outer copper skin and the wrought iron support
+        structure. The problem had been anticipated when the statue was built, bu the insulation
+        layer of shellac between the two metals (to prevent corrosion) had failed over time, resulting
+        in rusting of the iron supports. A complete disassembly of the statue replaced the original
+        insultation with polytetrafluoroethylene (PFTE).</string>
+    <string name="galvanic_series_example_2">As an example, if zinc were in contact with silver
+        and submerged in a salt-water solution, the zinc would corrode, as it is further down the
+        list, thus more anodic, and thus will transfer ions to the silver.</string>
+
+    //Concepts Lists
     <string-array name="concepts_mechanics">
         <item>Castigliano\'s Method</item>
     </string-array>
+    <string-array name="concepts_materials">
+        <item>Galvanic Corrosion</item>
+    </string-array>
 
+    //Metal Properties Lists
     <string-array name="copper_standard">
         <item>8.93 g/cm³</item>
         <item>Face-centered Cubic</item>
@@ -60,7 +89,6 @@
         <item>2595 °C</item>
         <item>17 µm/m-°C</item>
     </string-array>
-
     <string-array name="copper_annealed">
         <item>7.764 g/cm³</item>
         <item>Face-centered Cubic</item>
@@ -77,7 +105,6 @@
         <item>2562 °C</item>
         <item>16.4 µm/m-°C</item>
     </string-array>
-
     <string-array name="copper_coldworked">
         <item>8.96 g/cm³</item>
         <item>Face-centered Cubic</item>
@@ -94,7 +121,6 @@
         <item>2562 °C</item>
         <item>16.4 µm/m-°C</item>
     </string-array>
-
     <string-array name="copper_colddrawn">
         <item>8.96 g/cm³</item>
         <item>Face-centered Cubic</item>
@@ -111,7 +137,6 @@
         <item>2562 °C</item>
         <item>16.4 µm/m-°C</item>
     </string-array>
-
     <string-array name="titanium_standard">
         <item>4.50 g/cm³</item>
         <item>Hexagonal close-packed</item>
@@ -128,7 +153,6 @@
         <item>3287 °C</item>
         <item>8.90 µm/m-°C</item>
     </string-array>
-
     <string-array name="titanium_carbide">
         <item>4.94 g/cm³</item>
         <item>Cubic</item>
@@ -145,7 +169,6 @@
         <item>-</item>
         <item>7.70 µm/m-°C</item>
     </string-array>
-
     <string-array name="aluminum">
         <item>2.7 g/cm³</item>
         <item>Face-centered Cubic</item>
@@ -162,7 +185,6 @@
         <item>-</item>
         <item>23.6 - 25.2 µm/m-°C</item>
     </string-array>
-
     <string-array name="iron_standard">
         <item>7.87 g/cm³</item>
         <item>Face-centered Cubic</item>
@@ -179,7 +201,6 @@
         <item>2861 °C</item>
         <item>12.2 - 24 µm/m-°C</item>
     </string-array>
-
     <string-array name="placeholder">
         <item>Placeholder</item>
         <item>Placeholder</item>
