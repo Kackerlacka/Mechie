@@ -47,23 +47,21 @@
                     android:textStyle="bold" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2"
-                    android:padding="10dp">
+                    android:weightSum="2" >
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingLeft="20dp">
+                        android:layout_weight="1.5"
+                        android:padding="10dp">
 
                         <TextView
                             android:id="@+id/spinner1_textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="SAE Grade"
+                            android:text="Type"
                             android:textSize="6pt" />
 
                         <Spinner
@@ -74,25 +72,22 @@
 
                     </RelativeLayout>
                     <RelativeLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="0.5"
                         android:paddingRight="20dp">
 
-                        <TextView
-                            android:id="@+id/spinner2_textView"
+                        <katex.hourglass.in.mathlib.MathView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:gravity="center"
+                            android:id="@+id/formula"
+                            app:setClickable="true"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Size Range"
-                            android:textSize="6pt" />
-
-                        <Spinner
-                            android:id="@+id/sizeRange_value"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/spinner2_textView" />
+                            app:setTextSize="8dp" />
 
                     </RelativeLayout>
+
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -119,7 +114,7 @@
                     android:padding="8dp"
                     android:textSize="10pt"
                     android:id="@+id/header_physicalproperties"
-                    android:text="Strengths"/>
+                    android:text="Inputs"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -128,22 +123,29 @@
                     android:weightSum="2">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/input1"
+                        android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/header_main"
                         android:layout_weight="1"
                         android:padding="8dp"
-                        android:text="Min. Proof Strength (kpsi): " />
+                        android:text="Density (ρ)" />
+
+                    <EditText
+                        android:id="@+id/input_field1"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:padding="8dp"
+                        android:inputType="numberDecimal"/>
 
                     <TextView
-                        android:id="@+id/proofstrength_value"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/unit1"
+                        android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/header_main"
-                        android:layout_toRightOf="@id/density_text"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:padding="8dp" />
+                        android:layout_weight="0.4"
+                        android:padding="8dp"
+                        android:text="kg/m³"/>
 
                 </LinearLayout>
 
@@ -154,20 +156,28 @@
                     android:weightSum="2">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/input2"
+                        android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="8dp"
-                        android:text="Min. Tensile Strength (kpsi): " />
+                        android:text="Velocity (v)" />
+
+                    <EditText
+                        android:id="@+id/input_field2"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:padding="8dp"
+                        android:inputType="numberDecimal"/>
 
                     <TextView
-                        android:id="@+id/tensilestrength_value"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/unit2"
+                        android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/header_main"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:padding="8dp" />
+                        android:layout_weight="0.4"
+                        android:padding="8dp"
+                        android:text="m/s"/>
 
                 </LinearLayout>
 
@@ -178,24 +188,112 @@
                     android:weightSum="2">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/input3"
+                        android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="8dp"
-                        android:text="Min. Yield Strength (kpsi):" />
+                        android:text="Length, Diameter (D)" />
+
+                    <EditText
+                        android:id="@+id/input_field3"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:padding="8dp"
+                        android:inputType="numberDecimal"/>
 
                     <TextView
-                        android:id="@+id/yieldstrength_value"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/unit3"
+                        android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/header_main"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:padding="8dp" />
+                        android:layout_weight="0.4"
+                        android:padding="8dp"
+                        android:text="m"/>
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/input4"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        android:text="Dynamic Viscocity (µ)" />
+
+                    <EditText
+                        android:id="@+id/input_field4"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:padding="8dp"
+                        android:inputType="numberDecimal"/>
+
+                    <TextView
+                        android:id="@+id/unit4"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:padding="8dp"
+                        android:text="Pa·s"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_calculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Calculate"
+                    android:layout_margin="8dp"
+                    android:onClick="calculateButton"/>
 
             </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/card_view"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardElevation="3dp"
+            android:padding="8dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="3dp"
+            app:cardBackgroundColor="@color/colorAccentBlue">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"
+                    android:text="Result" />
+
+                <TextView
+                    android:id="@+id/answer"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="20dp"
+                    android:gravity="end"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
         </android.support.v7.widget.CardView>
 
     </LinearLayout>
