@@ -1,20 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_main">
         <item
             android:id="@+id/nav_concepts"
-            android:title="Concepts" />
+            android:title="Concepts"
+            android:icon="@drawable/icon_concepts"/>
         <item
             android:id="@+id/nav_equations"
-            android:title="Equations" />
+            android:title="Equations"
+            android:icon="@drawable/icon_equations"/>
         <item
             android:id="@+id/nav_constants"
-            android:title="Constants" />
+            android:title="Constants"
+            android:icon="@drawable/icon_constants"/>
         <item
             android:id="@+id/nav_materials"
-            android:title="Materials" />
+            android:title="Materials"
+            android:icon="@drawable/icon_materials"/>
         <item
             android:id="@+id/nav_tools"
-            android:title="Tools" />
+            android:title="Tools"
+            android:icon="@drawable/icon_tools"/>
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_extra">
+        <item
+            android:id="@+id/nav_about"
+            android:title="About"
+            android:icon="@drawable/icon_about">
+        </item>
+        <item
+            android:id="@+id/nav_copyleft"
+            android:title="Copyleft"
+            android:icon="@drawable/icon_copyleft">
+        </item>
+        <item
+            android:id="@+id/nav_sources"
+            android:title="Sources"
+            android:icon="@drawable/icon_sources">
+        </item>
     </group>
 </menu>

@@ -152,8 +152,17 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_tools:
                 fragmentClass = MainTools.class;
                 break;
+            case R.id.nav_about:
+                fragmentClass = MainAbout.class;
+                break;
+            case R.id.nav_copyleft:
+                fragmentClass = MainCopyleft.class;
+                break;
+            case R.id.nav_sources:
+                fragmentClass = MainSources.class;
+                break;
             default:
-                fragmentClass = ConceptsMechanics.class;
+                fragmentClass = MainConcepts.class;
         }
 
         try {

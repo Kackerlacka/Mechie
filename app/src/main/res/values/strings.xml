@@ -8,6 +8,9 @@
     <string name="treatments_prompt">Select a treatment</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 
+    <string name="source_icon_source">Source <a href="https://openclipart.org/detail/278694/gear-wrench-icon"></a></string>
+    <string name="source_icon_policy">Copyright policy <a href="https://openclipart.org/policies"></a></string>
+
     //Castigliano's Method
     <string name="castiglianostheorem_about">Named after the Italian mathematician and physicist,
         Carlo Alberto Castigliano, Castigliano\'s Method describes a method to determine the

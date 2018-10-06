@@ -141,7 +141,7 @@ public class ToolsBoltSizer extends AppCompatActivity {
                     setText("1½", "1.5000", "6", "1.405");
                 }
                 else if(rootArea > 1.294){
-                    editText.setError("Enter number less than 1.294");
+                    editText.setError("Input must be 1.294 or less");
                 }
 
             }

@@ -75,7 +75,7 @@
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:paddingRight="20dp">
+                        android:paddingTop="8dp">
 
                         <katex.hourglass.in.mathlib.MathView
                             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -106,15 +106,54 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/white"
                     android:background="@color/colorAccent"
-                    android:padding="8dp"
-                    android:textSize="10pt"
-                    android:id="@+id/header_physicalproperties"
-                    android:text="Inputs"/>
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorAccent"
+                        android:padding="8dp"
+                        android:text="Inputs"
+                        android:textColor="@android:color/white"
+                        android:textSize="10pt"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+
+
+                    <RadioGroup
+                        android:id="@+id/radiogroup"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:id="@+id/metric"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:buttonTint="@android:color/white"
+                            android:text="Metric"
+                            android:textColor="@android:color/white"
+                            android:layout_weight="0.5"
+                            android:checked="true"/>
+
+                        <RadioButton
+                            android:id="@+id/imperial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@id/metric"
+                            android:buttonTint="@android:color/white"
+                            android:text="Imperial"
+                            android:textColor="@android:color/white"
+                            android:layout_weight="0.5" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -225,7 +264,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="8dp"
-                        android:text="Dynamic Viscocity (µ)" />
+                        android:text="Dynamic Viscosity (µ)" />
 
                     <EditText
                         android:id="@+id/input_field4"
@@ -250,8 +289,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Calculate"
-                    android:layout_margin="8dp"
-                    android:onClick="calculateButton"/>
+                    android:layout_margin="8dp" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
