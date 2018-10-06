@@ -16,9 +16,9 @@
             android:layout_gravity="center_horizontal"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
             android:text="https://openclipart.org/detail/278694/gear-wrench-icon"
             android:autoLink="all"
             android:clickable="true"
@@ -36,9 +36,9 @@
             android:layout_gravity="center_horizontal"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
             android:text="https://wall.alphacoders.com/big.php?i=924813"
             android:autoLink="all"
             android:clickable="true"
@@ -56,9 +56,9 @@
             android:layout_gravity="center_horizontal"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
             android:text="http://lectoriy.mipt.ru/course/TheoreticalPhysics-TheoreticalMechanics-14L"
             android:autoLink="all"
             android:clickable="true"
