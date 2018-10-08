@@ -9,24 +9,24 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MaterialsPropertiesFluids extends AppCompatActivity {
+public class ToolsPiCalculator extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private Spinner spinner1;
+    private Spinner spinner1; Spinner spinner2; Spinner spinner3; Spinner spinner4;
     List<String> data1 = new ArrayList<>();
-    List<String> data2 = new ArrayList<>();
-    String[] water;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.materials_properties_fluids);
+        setContentView(R.layout.tools_picalculator);
 
         Window window = this.getWindow();
         // clear FLAG_TRANSLUCENT_STATUS flag:
@@ -39,51 +39,36 @@ public class MaterialsPropertiesFluids extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Fluid Properties");
+        getSupportActionBar().setTitle("Buckingham Pi Calculator");
 
         addListenerOnButton();
 
-    }
-
-    public void spinnerSelection(String[] data) {
-
-        final TextView density = (TextView)findViewById(R.id.density_value);
-        final TextView crystalStructure = (TextView)findViewById(R.id.boilingtemp_value);
-
-        density.setText(data[0]);
-        crystalStructure.setText(data[1]);
     }
 
     // get the selected dropdown list value
     public void addListenerOnButton() {
 
         spinner1 = (Spinner) findViewById(R.id.spinner1);
+        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        spinner3 = (Spinner) findViewById(R.id.spinner3);
+        spinner4 = (Spinner) findViewById(R.id.spinner4);
 
         final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, data1);
 
         spinner1.setAdapter(adapter1);
+        spinner2.setAdapter(adapter1);
+        spinner3.setAdapter(adapter1);
+        spinner4.setAdapter(adapter1);
 
-        data1.add("Water");
-        data1.add("Oil");
-        data1.add("Ur mudda");
+        data1.add("D");
+        data1.add("v");
+        data1.add("ρ");
+        data1.add("Δp");
+        data1.add("μ");
+        data1.add("l");
+        data1.add("η");
 
-        spinner1.setAdapter(adapter1);
-
-        spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener()  {
-
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                water = getResources().getStringArray(R.array.placeholder);
-
-                switch(spinner1.getSelectedItemPosition()) {
-                    case 0:
-                        spinnerSelection(water);
-                        break;
-
-                }
-            }
-
-        });
+        adapter1.notifyDataSetChanged();
     }
 }

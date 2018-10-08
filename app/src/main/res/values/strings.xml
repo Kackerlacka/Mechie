@@ -87,6 +87,7 @@
     //Concepts Lists
     <string-array name="concepts_mechanics">
         <item>Castigliano\'s Method</item>
+        <item>De Rad</item>
     </string-array>
     <string-array name="concepts_materials">
         <item>Galvanic Corrosion</item>

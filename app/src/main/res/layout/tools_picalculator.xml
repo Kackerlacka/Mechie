@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorAccentBlue"
                     android:padding="8dp"
-                    android:text="Select a Hardness Type"
+                    android:text="Choose Parameters"
                     android:textColor="@android:color/white"
                     android:textSize="10pt"
                     android:textStyle="bold" />
@@ -57,24 +57,25 @@
                         android:id="@+id/spinner1"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/spinner1_textView"
-                        android:layout_weight="1"/>
+                        android:layout_weight="0.5"/>
 
-                    <EditText
-                        android:id="@+id/hardness_input"
+                    <Spinner
+                        android:id="@+id/spinner2"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:hint="Hardness"
-                        android:inputType="numberDecimal"/>
+                        android:layout_weight="0.5"/>
 
-                    <Button
-                        android:id="@+id/btn_convert"
+                    <Spinner
+                        android:id="@+id/spinner3"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:text="Convert"
-                        android:onClick="convert"/>
+                        android:layout_weight="0.5"/>
+
+                    <Spinner
+                        android:id="@+id/spinner4"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"/>
 
                 </LinearLayout>
             </LinearLayout>

@@ -79,27 +79,53 @@ public class ToolsHardnessConverter extends AppCompatActivity {
             public void onClick(View v) {
                 switch (spinner1.getSelectedItemPosition()) {
                     case 0:
+                        resetAll();
                         brinell.setText("-");
-                        hardnessInput.getText().toString();
+                        String input = hardnessInput.getText().toString();
+                        double a = Double.parseDouble(input);
+                        if(a > 722 && a < 739) {
+
+                        }
                         break;
                     case 1:
+                        resetAll();
                         vickers.setText("-");
                         break;
                     case 2:
+                        resetAll();
                         rockwellA.setText("-");
                         break;
                     case 3:
+                        resetAll();
                         rockwellB.setText("-");
                         break;
                     case 4:
+                        resetAll();
                         rockwellC.setText("-");
                         break;
                     case 5:
+                        resetAll();
                         knoop.setText("-");
-
+                        break;
                 }
             }
 
         });
+    }
+
+    public void resetAll() {
+        final TextView brinell = (TextView) findViewById(R.id.brinell_value);
+        final TextView vickers = (TextView) findViewById(R.id.vickers_value);
+        final TextView rockwellA = (TextView) findViewById(R.id.rwa_value);
+        final TextView rockwellB = (TextView) findViewById(R.id.rwb_value);
+        final TextView rockwellC = (TextView) findViewById(R.id.rwc_value);
+        final TextView knoop = (TextView) findViewById(R.id.knoop_value);
+
+        brinell.setText("");
+        vickers.setText("");
+        rockwellA.setText("");
+        rockwellB.setText("");
+        rockwellC.setText("");
+        knoop.setText("");
     }
 }

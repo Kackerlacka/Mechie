@@ -2,6 +2,7 @@ package com.kackerlacka.mechie;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
@@ -81,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
     //Launch SAE Bolt Picker on button click
     public void saePicker(View view) {
         Intent intent = new Intent(this, ToolsSAEBoltPicker.class);
+        startActivity(intent);
+    }
+
+    //Launch Physics Concepts on button click
+    public void piTheorem(View view) {
+        Intent intent = new Intent(this, ToolsPiCalculator.class);
         startActivity(intent);
     }
 
@@ -227,5 +235,28 @@ public class MainActivity extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggles
         drawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout layout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        if (layout.isDrawerOpen(GravityCompat.START)) {
+            layout.closeDrawer(GravityCompat.START);
+        }
+        else if(doubleBackToExitPressedOnce){
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Press BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
 }
