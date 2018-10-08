@@ -2,67 +2,559 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
 
-        <ImageView
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:src="@drawable/gear2"
-            android:layout_gravity="center_horizontal"/>
-
-        <TextView
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="https://openclipart.org/detail/278694/gear-wrench-icon"
-            android:autoLink="all"
-            android:clickable="true"
-            android:linksClickable="true" />
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="20dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:src="@drawable/background"
-            android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="App Icon"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="https://wall.alphacoders.com/big.php?i=924813"
-            android:autoLink="all"
-            android:clickable="true"
-            android:linksClickable="true" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="https://openclipart.org/detail/278694/gear-wrench-icon"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="20dp"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-        <ImageView
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:src="@drawable/bolt_sizer"
-            android:layout_gravity="center_horizontal"/>
-
-        <TextView
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="http://lectoriy.mipt.ru/course/TheoreticalPhysics-TheoreticalMechanics-14L"
-            android:autoLink="all"
-            android:clickable="true"
-            android:linksClickable="true" />
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Navigation Drawer Background"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="https://wall.alphacoders.com/big.php?i=924813"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Mechanics Image"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="http://lectoriy.mipt.ru/course/TheoreticalPhysics-TheoreticalMechanics-14L"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Materials Image"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Chemistry Image"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Physics Image"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Thermal Engineering Image"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Mathematics Image"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Cantilever Beam Example"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Galvanic Corrosion Image"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Galvanic Series"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Metal Properties Image"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Fluid Properties Image"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Hardness Converter Image"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Source"
+                        android:autoLink="all"
+                        android:clickable="true"
+                        android:linksClickable="true"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Bolt Sizer Image"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Source"
+                    android:autoLink="all"
+                    android:clickable="true"
+                    android:linksClickable="true"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorAccentBlue"
+                    android:padding="8dp"
+                    android:textSize="8pt"
+                    android:text="Dimensionless #s Calc Image"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="https://yt3.ggpht.com/a-/AN66SAzaEKvgEFIZIg8JCj1Oz8oaL0zIQmT36BITBw=s900-mo-c-c0xffffffff-rj-k-no"
+                    android:autoLink="all"
+                    android:clickable="true"
+                    android:linksClickable="true"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
 
     </LinearLayout>
 

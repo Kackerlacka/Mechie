@@ -120,7 +120,6 @@
                         android:text="Inputs"
                         android:textColor="@android:color/white"
                         android:textSize="10pt"
-                        android:textStyle="bold"
                         android:layout_weight="1"/>
 
 
@@ -159,7 +158,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:weightSum="2">
+                    android:weightSum="2"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="8dp">
 
                     <TextView
                         android:id="@+id/input1"
@@ -192,7 +193,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:weightSum="2">
+                    android:weightSum="2"
+                    android:paddingLeft="8dp">
 
                     <TextView
                         android:id="@+id/input2"
@@ -224,7 +226,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:weightSum="2">
+                    android:weightSum="2"
+                    android:paddingLeft="8dp">
 
                     <TextView
                         android:id="@+id/input3"
@@ -256,7 +259,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:weightSum="2">
+                    android:weightSum="2"
+                    android:paddingLeft="8dp">
 
                     <TextView
                         android:id="@+id/input4"

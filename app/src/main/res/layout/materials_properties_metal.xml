@@ -155,7 +155,7 @@
                 android:textColor="@android:color/white"
                 android:background="@color/colorAccent"
                 android:padding="8dp"
-                android:textSize="10pt"
+                android:textSize="8pt"
                 android:id="@+id/header_physicalproperties"
                 android:text="Physical Properties"/>
 
@@ -234,7 +234,7 @@
                     android:textColor="@android:color/white"
                     android:background="@color/colorAccent"
                     android:padding="8dp"
-                    android:textSize="10pt"
+                    android:textSize="8pt"
                     android:id="@+id/header_mechanicalproperties"
                     android:text="Mechanical Properties"/>
 
@@ -454,7 +454,7 @@
                     android:textColor="@android:color/white"
                     android:background="@color/colorAccent"
                     android:padding="8dp"
-                    android:textSize="10pt"
+                    android:textSize="8pt"
                     android:id="@+id/header_thermalproperties"
                     android:text="Thermal Properties"/>
 

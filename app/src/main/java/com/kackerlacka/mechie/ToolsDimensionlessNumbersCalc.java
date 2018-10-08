@@ -67,6 +67,28 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                             case 1:
                                 unit1.setText("m/s");
                                 break;
+                            case 2:
+                                unit1.setText("kg/m³");
+                                unit2.setText("kg/m³");
+                                break;
+                            case 3:
+                                unit1.setText("m");
+                                unit2.setText("W/(m²⋅K)");
+                                unit3.setText("W/(m⋅K)");
+                                break;
+                            case 4:
+                                unit1.setText("m⋅s⁻¹");
+                                unit2.setText("m²⋅s⁻¹");
+                                unit3.setText("m");
+                            case 5:
+                                unit1.setText("W/(m²⋅K)");
+                                unit2.setText("m");
+                                unit3.setText("W/(m⋅K)");
+                                break;
+                            case 6:
+                                unit1.setText("m²/s");
+                                unit2.setText("m²/s");
+                                break;
 
                         }
                         unitSel = 0;
@@ -81,6 +103,29 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                                 break;
                             case 1:
                                 unit1.setText("ft/s");
+                                break;
+                            case 2:
+                                unit1.setText("slug/ft³");
+                                unit2.setText("slug/ft³");
+                                break;
+                            case 3:
+                                unit1.setText("ft");
+                                unit2.setText("BTU/(s⋅ft²⋅°F)");
+                                unit3.setText("BTU/(hr⋅ft⋅°F)");
+                                break;
+                            case 4:
+                                unit1.setText("ft⋅s⁻¹");
+                                unit2.setText("ft²⋅s⁻¹");
+                                unit3.setText("ft");
+                                break;
+                            case 5:
+                                unit1.setText("BTU/(s⋅ft²⋅°F)");
+                                unit2.setText("ft");
+                                unit3.setText("BTU/(hr⋅ft⋅°F)");
+                                break;
+                            case 6:
+                                unit1.setText("ft²/s");
+                                unit2.setText("ft²/s");
                                 break;
 
                         }
@@ -98,6 +143,21 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                 }
                 else if(numberSel == 2) {
                     calculateMach();
+                }
+                else if(numberSel == 3) {
+                    calculateAtwood();
+                }
+                else if(numberSel == 4) {
+                    calculateBiot();
+                }
+                else if(numberSel == 5) {
+                    calculateSherwood();
+                }
+                else if(numberSel == 6) {
+                    calculateNusselt();
+                }
+                else if(numberSel == 7) {
+                    calculatePrandtl();
                 }
             }
         });
@@ -169,6 +229,157 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         }
     }
 
+    // Calculate the Atwood Number
+    public void calculateAtwood() {
+        resultCalc = (TextView) findViewById(R.id.answer);
+        String input1_string = input_field1.getText().toString();
+        String input2_string = input_field2.getText().toString();
+        double a = 0; double b = 0;
+
+        if (!input1_string.equals("")) {
+            a = Double.parseDouble(input1_string);
+        }
+        else {
+            input_field1.setError("Enter a density");
+        }
+        if (!input2_string.equals("")) {
+            b = Double.parseDouble(input2_string);
+        }
+        else {
+            input_field2.setError("Enter a density");
+        }
+
+        double result = ((double) a - b)/((double) a + b);
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        resultCalc.setText(formatter.format(result));
+
+    }
+
+    // Calculate the Biot Number
+    public void calculateBiot() {
+        resultCalc = (TextView) findViewById(R.id.answer);
+        String input1_string = input_field1.getText().toString();
+        String input2_string = input_field2.getText().toString();
+        String input3_string = input_field3.getText().toString();
+        double a = 0; double b = 0; double c = 0;
+
+        if (!input1_string.equals("")) {
+            a = Double.parseDouble(input1_string);
+        }
+        else {
+            input_field1.setError("Enter a length");
+        }
+        if (!input2_string.equals("")) {
+            b = Double.parseDouble(input2_string);
+        }
+        else {
+            input_field2.setError("Enter a heat transfer coefficient");
+        }
+        if (!input3_string.equals("")) {
+            b = Double.parseDouble(input3_string);
+        }
+        else {
+            input_field3.setError("Enter a thermal conductivity");
+        }
+
+        double result = ((double) a*b)/((double) c);
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        resultCalc.setText(formatter.format(result));
+
+    }
+
+    // Calculate the Sherwood Number
+    public void calculateSherwood() {
+        resultCalc = (TextView) findViewById(R.id.answer);
+        String input1_string = input_field1.getText().toString();
+        String input2_string = input_field2.getText().toString();
+        String input3_string = input_field3.getText().toString();
+        double a = 0; double b = 0; double c = 0;
+
+        if (!input1_string.equals("")) {
+            a = Double.parseDouble(input1_string);
+        }
+        else {
+            input_field1.setError("Enter a length");
+        }
+        if (!input2_string.equals("")) {
+            b = Double.parseDouble(input2_string);
+        }
+        else {
+            input_field2.setError("Enter a mass diffusivity");
+        }
+        if (!input3_string.equals("")) {
+            b = Double.parseDouble(input3_string);
+        }
+        else {
+            input_field3.setError("Enter a convective mass transfer film coefficient");
+        }
+
+        double result = ((double) a)/((double) b*c);
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        resultCalc.setText(formatter.format(result));
+
+    }
+
+    // Calculate the Sherwood Number
+    public void calculateNusselt() {
+        resultCalc = (TextView) findViewById(R.id.answer);
+        String input1_string = input_field1.getText().toString();
+        String input2_string = input_field2.getText().toString();
+        String input3_string = input_field3.getText().toString();
+        double a = 0; double b = 0; double c = 0;
+
+        if (!input1_string.equals("")) {
+            a = Double.parseDouble(input1_string);
+        }
+        else {
+            input_field1.setError("Enter a convective heat transfer coefficient");
+        }
+        if (!input2_string.equals("")) {
+            b = Double.parseDouble(input2_string);
+        }
+        else {
+            input_field2.setError("Enter a mass characteristic length");
+        }
+        if (!input3_string.equals("")) {
+            b = Double.parseDouble(input3_string);
+        }
+        else {
+            input_field3.setError("Enter a thermal conductivity");
+        }
+
+        double result = ((double) a*b)/((double) c);
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        resultCalc.setText(formatter.format(result));
+
+    }
+
+    // Calculate the Prandtl Number
+    public void calculatePrandtl() {
+        resultCalc = (TextView) findViewById(R.id.answer);
+        String input1_string = input_field1.getText().toString();
+        String input2_string = input_field2.getText().toString();
+        double a = 0; double b = 0;
+
+        if (!input1_string.equals("")) {
+            a = Double.parseDouble(input1_string);
+        }
+        else {
+            input_field1.setError("Enter a kinematic viscosity");
+        }
+        if (!input2_string.equals("")) {
+            b = Double.parseDouble(input2_string);
+        }
+        else {
+            input_field2.setError("Enter a thermal diffusivity");
+        }
+
+        double result = ((double) a)/((double) b);
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        resultCalc.setText(formatter.format(result));
+
+    }
+
     // get the selected dropdown list value
     public void initializeActivity() {
         // Define all edit texts and textviews
@@ -200,11 +411,11 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         data1.add("Sherwood Number (Sh)");
         data1.add("Nusselt Number (Nu)");
         data1.add("Prandtl Number (Pr)");
-        data1.add("Schmidt Number (Sc)");
-        data1.add("Rayleigh Number (Ra)");
-        data1.add("Stanton Number (St)");
-        data1.add("Strouhal Number (St)");
-        data1.add("Stuart Number (N)");
+        //data1.add("Schmidt Number (Sc)");
+        //data1.add("Rayleigh Number (Ra)");
+        //data1.add("Stanton Number (St)");
+        //data1.add("Strouhal Number (St)");
+        //data1.add("Stuart Number (N)");
 
         adapter1.notifyDataSetChanged();
 
@@ -247,6 +458,108 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         }
                         else if(unitSel == 1) {
                             unit1.setText("ft/s");
+                        }
+                        break;
+                    case 2:
+                        numberSel = 3;
+                        resetAll();
+                        dimensionlessFormula.setDisplayText("<center>$$\\frac{\\rho_1 - \\rho_2}{\\rho_1 + \\rho_2}$$</center>");
+                        input_text1.setText("Heavier Density Fluid (ρ1)");
+                        input_text2.setText("Lighter Density Fluid (ρ2)");
+                        unit1.setText("kg/m³");
+                        unit2.setText("kg/m³");
+                        line1Visible(); line2Visible();
+                        if(unitSel == 0) {
+                            unit1.setText("kg/m³");
+                            unit2.setText("kg/m³");
+                        }
+                        else if(unitSel == 1) {
+                            unit1.setText("slug/ft³");
+                            unit2.setText("slug/ft³");
+                        }
+                        break;
+                    case 3:
+                        numberSel = 4;
+                        resetAll();
+                        dimensionlessFormula.setDisplayText("<center>$$\\frac{L_C h}{k}$$<center>");
+                        input_text1.setText("Characterstic Length (Lc)");
+                        input_text2.setText("Heat Transfer (film) Coefficient (h)");
+                        input_text3.setText("Thermal Conductivity (k)");
+                        unit1.setText("m");
+                        unit2.setText("W/(m²⋅K)");
+                        unit3.setText("W/(m⋅K)");
+                        line1Visible(); line2Visible(); line3Visible();
+                        if(unitSel == 0){
+                            unit1.setText("m");
+                            unit2.setText("W/(m²⋅K)");
+                            unit3.setText("W/(m⋅K)");
+                        }
+                        else if(unitSel == 1){
+                            unit1.setText("ft");
+                            unit2.setText("BTU/(s⋅ft²⋅°F)");
+                            unit3.setText("BTU/(hr⋅ft⋅°F)");
+                        }
+                        break;
+                    case 4:
+                        numberSel = 5;
+                        resetAll();
+                        dimensionlessFormula.setDisplayText("<center>$$\\frac{h}{D/L}$$<center>");
+                        input_text1.setText("Convective Mass Transfer Film Coefficient (h)");
+                        input_text2.setText("Mass Diffusivity (D)");
+                        input_text3.setText("Characteristic Length (L)");
+                        unit1.setText("m⋅s⁻¹");
+                        unit2.setText("m²⋅s⁻¹");
+                        unit3.setText("m");
+                        line1Visible(); line2Visible(); line3Visible();
+                        if(unitSel == 0){
+                            unit1.setText("m⋅s⁻¹");
+                            unit2.setText("m²⋅s⁻¹");
+                            unit3.setText("m");
+                        }
+                        else if(unitSel == 1){
+                            unit1.setText("ft⋅s⁻¹");
+                            unit2.setText("ft²⋅s⁻¹");
+                            unit3.setText("ft");
+                        }
+                        break;
+                    case 5:
+                        numberSel = 6;
+                        resetAll();
+                        dimensionlessFormula.setDisplayText("<center>$$\\frac{h L}{k}$$<center>");
+                        input_text1.setText("Convective Heat Transfer Coefficient (h)");
+                        input_text2.setText("Characteristic Length (L)");
+                        input_text3.setText("Thermal Conductivity (k)");
+                        unit1.setText("W/(m²⋅K)");
+                        unit2.setText("m");
+                        unit3.setText("W/(m⋅K)");
+                        line1Visible(); line2Visible(); line3Visible();
+                        if(unitSel == 0){
+                            unit1.setText("W/(m²⋅K)");
+                            unit2.setText("m");
+                            unit3.setText("W/(m⋅K)");
+                        }
+                        else if(unitSel == 1){
+                            unit1.setText("BTU/(s⋅ft²⋅°F)");
+                            unit2.setText("ft");
+                            unit3.setText("BTU/(hr⋅ft⋅°F)");
+                        }
+                        break;
+                    case 6:
+                        numberSel = 7;
+                        resetAll();
+                        dimensionlessFormula.setDisplayText("<center>$$\\frac{\\nu}{\\alpha}$$<center>");
+                        input_text1.setText("Kinematic Viscosity (ν)");
+                        input_text2.setText("Thermal Diffusivity (α)");
+                        unit1.setText("m²/s");
+                        unit2.setText("m²/s");
+                        line1Visible(); line2Visible();
+                        if(unitSel == 0){
+                            unit1.setText("m²/s");
+                            unit2.setText("m²/s");
+                        }
+                        else if(unitSel == 1){
+                            unit1.setText("ft²/s");
+                            unit2.setText("ft²/s");
                         }
                         break;
 

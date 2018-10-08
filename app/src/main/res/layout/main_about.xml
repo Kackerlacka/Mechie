@@ -6,4 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".MainAbout">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/gear2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_mechie"
+            android:textStyle="italic"
+            android:gravity="center_horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_disclaimer"
+            android:textStyle="italic"
+            android:gravity="center_horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_sources"
+            android:textStyle="italic"
+            android:gravity="center_horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_version"
+                android:gravity="center_horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

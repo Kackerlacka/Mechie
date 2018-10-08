@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Launch Bolt Sizer on button click
     public void boltSizer(View view) {
-        Intent intent = new Intent(this, ToolsBoltSizer.class);
+        Intent intent = new Intent(this, ToolsSAEBoltPicker.class);
         startActivity(intent);
     }
 

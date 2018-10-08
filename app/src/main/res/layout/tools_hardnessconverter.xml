@@ -55,9 +55,26 @@
 
                     <Spinner
                         android:id="@+id/spinner1"
-                        android:layout_width="match_parent"
+                        android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/spinner1_textView" />
+                        android:layout_below="@id/spinner1_textView"
+                        android:layout_weight="1"/>
+
+                    <EditText
+                        android:id="@+id/hardness_input"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:hint="Hardness"
+                        android:inputType="number"/>
+
+                    <Button
+                        android:id="@+id/btn_convert"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="Convert"
+                        android:onClick="convert"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -220,10 +237,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="8dp"
-                        android:text="Leeb RB" />
+                        android:text="Knoop" />
 
                     <TextView
-                        android:id="@+id/leeb_value"
+                        android:id="@+id/knoop_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/header_main"

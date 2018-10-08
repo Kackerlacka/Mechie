@@ -1,6 +1,7 @@
 <resources>
     //General strings
     <string name="app_name">Mechie</string>
+    <string name="app_version">Version Alpha 1.0b</string>
     <string name="choose_subject">&lt;---- Choose a subject in the navigation drawer</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
@@ -10,6 +11,22 @@
 
     <string name="source_icon_source">Source <a href="https://openclipart.org/detail/278694/gear-wrench-icon"></a></string>
     <string name="source_icon_policy">Copyright policy <a href="https://openclipart.org/policies"></a></string>
+
+    <string name="about_mechie"><b>MECHIE</b> is a general purpose tool for mechanical engineers with
+        information on concepts throughout multiple disciplines, physical constants, equations,
+        and multiple tools such as a dimensionless number calculator and a hardness converter.</string>
+    <string name="about_disclaimer">All the information, data, equations, constants, calculations, etc
+        presented in this application are to be used at the owner\'s discretion. The programmer is
+        not liable nor responsible for any damages or losses incurred from using this information. It is
+        expressly understood that the user understands the risk of continued use of this information
+        in an \'as-is'\ basis.</string>
+    <string name="about_sources">Many of the concepts, constants, equations, and information on tools was
+        sourced from Wikipedia.com.</string>
+    <string name="copyleft_title">Use of the information presented in this app is subject to the following terms:</string>
+    <string name="copyleft_statement"><b>MECHIE</b> grants the user unlimited, personal use of any
+        information presented in this app, including, but not limited to all images, equations,
+        numbers, calculations, text, and other assets, as all information was collected from
+        various open sources, be it offline or online databases.</string>
 
     //Castigliano's Method
     <string name="castiglianostheorem_about">Named after the Italian mathematician and physicist,

@@ -9,6 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -20,6 +22,7 @@ public class ToolsHardnessConverter extends AppCompatActivity {
     private Toolbar toolbar;
     private Spinner spinner1;
     List<String> data1 = new ArrayList<>();
+    private EditText hardnessInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,49 +61,41 @@ public class ToolsHardnessConverter extends AppCompatActivity {
         data1.add("Rockwell A");
         data1.add("Rockwell B");
         data1.add("Rockwell C");
-        data1.add("Leeb RB");
+        data1.add("Knoop");
 
+        hardnessInput = (EditText) findViewById(R.id.hardness_input);
 
         adapter1.notifyDataSetChanged();
 
-        spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener()  {
+        final Button button = (Button) findViewById(R.id.btn_convert);
+        final TextView brinell = (TextView) findViewById(R.id.brinell_value);
+        final TextView vickers = (TextView) findViewById(R.id.vickers_value);
+        final TextView rockwellA = (TextView) findViewById(R.id.rwa_value);
+        final TextView rockwellB = (TextView) findViewById(R.id.rwb_value);
+        final TextView rockwellC = (TextView) findViewById(R.id.rwc_value);
+        final TextView knoop = (TextView) findViewById(R.id.knoop_value);
 
-            final TextView brinell = (TextView)findViewById(R.id.brinell_value);
-            final TextView vickers = (TextView)findViewById(R.id.vickers_value);
-            final TextView rockwellA = (TextView)findViewById(R.id.rwa_value);
-
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                switch(spinner1.getSelectedItemPosition()) {
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                switch (spinner1.getSelectedItemPosition()) {
                     case 0:
-                        brinell.setText("33");
-                        vickers.setText("60");
-                        rockwellA.setText("36");
+                        brinell.setText("-");
+                        hardnessInput.getText().toString();
                         break;
                     case 1:
-                        brinell.setText("55");
-                        vickers.setText("74");
-                        rockwellA.setText("57");
+                        vickers.setText("-");
                         break;
                     case 2:
-                        brinell.setText("65");
-                        vickers.setText("115");
-                        rockwellA.setText("100");
+                        rockwellA.setText("-");
                         break;
                     case 3:
-                        brinell.setText("85");
-                        vickers.setText("120");
-                        rockwellA.setText("92");
+                        rockwellB.setText("-");
                         break;
                     case 4:
-                        brinell.setText("85");
-                        vickers.setText("120");
-                        rockwellA.setText("92");
+                        rockwellC.setText("-");
                         break;
                     case 5:
-                        brinell.setText("105");
-                        vickers.setText("133");
-                        rockwellA.setText("115");
+                        knoop.setText("-");
 
                 }
             }
