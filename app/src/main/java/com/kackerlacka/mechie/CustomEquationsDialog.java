@@ -3,19 +3,16 @@ package com.kackerlacka.mechie;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.Toolbar;
-import android.webkit.WebSettings;
-import android.widget.TextView;
+
+import java.util.Objects;
 
 import katex.hourglass.in.mathlib.MathView;
 
 public class CustomEquationsDialog extends DialogFragment {
-
-    public static String TAG = "FullScreenDialog";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,10 +51,10 @@ public class CustomEquationsDialog extends DialogFragment {
     public void onStart() {
         super.onStart();
         Dialog dialog = getDialog();
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.MATCH_PARENT;
         if (dialog != null) {
-            int width = ViewGroup.LayoutParams.MATCH_PARENT;
-            int height = ViewGroup.LayoutParams.MATCH_PARENT;
-            dialog.getWindow().setLayout(width, height);
+            Objects.requireNonNull(dialog.getWindow()).setLayout(width, height);
         }
     }
 }

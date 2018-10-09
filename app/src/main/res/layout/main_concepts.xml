@@ -231,7 +231,7 @@
             android:layout_height="175dp"
             android:layout_margin="6dp"
             android:clickable="true"
-            android:onClick="thermalengineeringActivity"
+            android:onClick="thermalEngineeringActivity"
             card_view:cardCornerRadius="3dp"
             card_view:cardPreventCornerOverlap="false"
             card_view:cardUseCompatPadding="false"
@@ -299,7 +299,7 @@
                         android:layout_height="match_parent"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:src="@drawable/mathematics"/>
+                        android:src="@drawable/equations"/>
 
                 </RelativeLayout>
 

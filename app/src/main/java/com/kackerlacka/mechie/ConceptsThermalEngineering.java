@@ -18,45 +18,40 @@ import android.widget.TextView;
 
 public class ConceptsThermalEngineering extends AppCompatActivity {
 
-    private Toolbar toolbar;
-    ArrayAdapter mAdapter;
+    ArrayAdapter<String> mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.concepts_thermalengineering);
 
+        //Set status bar translucent
         Window window = this.getWindow();
-        // clear FLAG_TRANSLUCENT_STATUS flag:
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        ListView mListView = (ListView) findViewById(R.id.list);
-        TextView mEmptyView = (TextView) findViewById(R.id.emptyView);
-
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Initialize toolbar
+        Toolbar mToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        if(getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Thermal Engineering");
 
-        mAdapter = new ArrayAdapter(ConceptsThermalEngineering.this,
+        ListView mListView = findViewById(R.id.list);
+        TextView mEmptyView = findViewById(R.id.emptyView);
+
+
+        mAdapter = new ArrayAdapter<>(ConceptsThermalEngineering.this,
                 android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.concepts_mechanics));
+                getResources().getStringArray(R.array.concepts_thermalEngineering));
         mListView.setAdapter(mAdapter);
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView adapterView, View view, int i, long l) {
-                switch(i) {
-                    case 0:
-                        Intent intent = new Intent(ConceptsThermalEngineering.this, MechanicsCastiglianosTheorem.class);
-                        startActivity(intent);
-                        break;
-                }
+        mListView.setOnItemClickListener((AdapterView<?> adapterView, View view, int i, long l) -> {
+            switch(i) {
+                case 0:
+                    Intent intent = new Intent(ConceptsThermalEngineering.this, MechanicsCastiglianosTheorem.class);
+                    startActivity(intent);
+                    break;
             }
         });
 

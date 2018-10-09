@@ -3,12 +3,12 @@ package com.kackerlacka.mechie;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,10 +19,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
-    private NavigationView nvDrawer;
     private ActionBarDrawerToggle drawerToggle;
     private Toolbar toolbar;
-    private int menuItemId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Navigation drawer setup
-        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawer = findViewById(R.id.drawer_layout);
         drawerToggle = setupDrawerToggle();
-        nvDrawer = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView nvDrawer = findViewById(R.id.nav_view);
         setupDrawerContent(nvDrawer);
         nvDrawer.getMenu().getItem(0).setChecked(true);
         mDrawer.addDrawerListener(drawerToggle);
@@ -40,9 +38,8 @@ public class MainActivity extends AppCompatActivity {
         // Toolbar setup
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ActionBar actionbar = getSupportActionBar();
-        actionbar.setDisplayHomeAsUpEnabled(true);
-        actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
+        if(getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null) getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
 
 
         Fragment fragment2 = null;
@@ -62,79 +59,73 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //Launch Mechanical Properties Calculator on button click
+    //Hardness Converter
     public void hardnessConverter(View view) {
         Intent intent = new Intent(this, ToolsHardnessConverter.class);
         startActivity(intent);
     }
 
-    //Launch Se Calculator on button click
+    //Dimensionless Numbers Calculator
     public void dimensionlessNumbers(View view) {
         Intent intent = new Intent(this, ToolsDimensionlessNumbersCalc.class);
         startActivity(intent);
     }
 
-    //Launch Bolt Sizer on button click
-    public void boltSizer(View view) {
-        Intent intent = new Intent(this, ToolsSAEBoltPicker.class);
-        startActivity(intent);
-    }
-
-    //Launch SAE Bolt Picker on button click
+    //SAE Picker (Bolt Sizer)
     public void saePicker(View view) {
         Intent intent = new Intent(this, ToolsSAEBoltPicker.class);
         startActivity(intent);
     }
 
-    //Launch Physics Concepts on button click
+    //Buckingham Pi Theorem
     public void piTheorem(View view) {
         Intent intent = new Intent(this, ToolsPiCalculator.class);
         startActivity(intent);
     }
 
-    //Launch SAE Bolt Picker on button click
+    //Metal Properties
     public void metalProperties(View view) {
         Intent intent = new Intent(this, MaterialsPropertiesMetal.class);
         startActivity(intent);
     }
 
-    //Launch SAE Bolt Picker on button click
+    //Fluid Properties
     public void fluidProperties(View view) {
         Intent intent = new Intent(this, MaterialsPropertiesFluids.class);
         startActivity(intent);
     }
 
-    //Launch Mechanics Concepts on button click
+    //Mechanics Concepts
     public void mechanicsActivity(View view) {
         Intent intent = new Intent(this, ConceptsMechanics.class);
         startActivity(intent);
     }
 
-    //Launch Materials Concepts on button click
+    //Materials Concepts
     public void materialsActivity(View view) {
         Intent intent = new Intent(this, ConceptsMaterials.class);
         startActivity(intent);
     }
 
-    //Launch Materials Concepts on button click
-    public void thermalengineeringActivity(View view) {
+    //Thermal Engineering Concepts
+    public void thermalEngineeringActivity(View view) {
         Intent intent = new Intent(this, ConceptsThermalEngineering.class);
         startActivity(intent);
     }
 
-    //Launch Materials Concepts on button click
+    //Mathematics Concepts
     public void mathematicsActivity(View view) {
         Intent intent = new Intent(this, ConceptsMathematics.class);
         startActivity(intent);
     }
 
-    //Launch Chemistry Concepts on button click
+    //Chemistry Concepts
     public void chemistryActivity(View view) {
         Intent intent = new Intent(this, ConceptsChemistry.class);
         startActivity(intent);
     }
 
-    //Launch Physics Concepts on button click
+    //Physics Concepts
     public void physicsActivity(View view) {
         Intent intent = new Intent(this, ConceptsPhysics.class);
         startActivity(intent);
@@ -175,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             fragment = (Fragment) fragmentClass.newInstance();
-            menuItemId = menuItem.getItemId();
+            menuItem.getItemId();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -194,13 +185,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        navigationView.setNavigationItemSelectedListener((@NonNull MenuItem menuItem) -> {
                         selectDrawerItem(menuItem);
                         return true;
-                    }
                 });
     }
 
@@ -241,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        DrawerLayout layout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        DrawerLayout layout = findViewById(R.id.drawer_layout);
         if (layout.isDrawerOpen(GravityCompat.START)) {
             layout.closeDrawer(GravityCompat.START);
         }
@@ -252,11 +239,6 @@ public class MainActivity extends AppCompatActivity {
         this.doubleBackToExitPressedOnce = true;
         Toast.makeText(this, "Press BACK again to exit", Toast.LENGTH_SHORT).show();
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 2000);
+        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
     }
 }

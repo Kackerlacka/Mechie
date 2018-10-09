@@ -1,10 +1,8 @@
 package com.kackerlacka.mechie;
 
-import android.app.AlertDialog;
 import android.app.FragmentManager;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ListFragment;
 import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
@@ -19,14 +17,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainEquations extends ListFragment {
 
     private ListView listView; //Main listview
     private CustomListviewAdapter mAdapter; //Custom adapter for listview
-    private AlertDialog.Builder builder;
     public static final String TAG = MainEquations.class.getSimpleName();
-    private TextView mEmptyView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -35,7 +32,7 @@ public class MainEquations extends ListFragment {
         setHasOptionsMenu(true);
 
         //Find listview in xml
-        listView = (ListView) view.findViewById(R.id.listView);
+        listView = view.findViewById(R.id.listView);
         ArrayList<CustomListViewClass> equationsList = new ArrayList<>();
 
         //Populate listview with items
@@ -102,16 +99,13 @@ public class MainEquations extends ListFragment {
         equationsList.add(new CustomListViewClass( "Young's Modulus" , "σ/ε", 57));
 
         mAdapter = new CustomListviewAdapter(getActivity(),equationsList);
-        mEmptyView = (TextView)view.findViewById(R.id.emptyView);
+        TextView mEmptyView = view.findViewById(R.id.emptyView);
         listView.setAdapter(mAdapter);
         listView.setEmptyView(mEmptyView);
 
         //Set onClick functions for listview
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> adapter, View arg1,
-                                    int position, long arg3) {
+        listView.setOnItemClickListener((AdapterView<?> adapter, View arg1,
+        int position, long arg3) -> {
 
                 CustomListViewClass item = mAdapter.getItem(position);
 
@@ -181,11 +175,9 @@ public class MainEquations extends ListFragment {
                     break;
 
                 }
-            }
         });
 
         return view;
-
     }
 
     public void setVariables(String title, String equation, String units, String variable_one, String variable_two) {
@@ -195,14 +187,14 @@ public class MainEquations extends ListFragment {
         info.putString("KEY_UNITS", units);
         info.putString("KEY_VARIABLES_ONE", variable_one);
         info.putString("KEY_VARIABLES_TWO", variable_two);
-        FragmentManager fm = getActivity().getFragmentManager();
+        FragmentManager fm = Objects.requireNonNull(getActivity()).getFragmentManager();
         CustomEquationsDialog dialog = new CustomEquationsDialog();
         dialog.setArguments(info);
         dialog.show(fm, TAG);
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         //Stuff
     }
 

@@ -9,8 +9,6 @@ import android.view.WindowManager;
 
 public class MaterialsGalvanicCorrosion extends AppCompatActivity {
 
-    private Toolbar toolbar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +22,9 @@ public class MaterialsGalvanicCorrosion extends AppCompatActivity {
         // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Galvanic Corrosion");
     }
 }

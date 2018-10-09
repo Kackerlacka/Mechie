@@ -20,13 +20,11 @@ import java.util.List;
 
 public class ToolsSAEBoltPicker extends AppCompatActivity {
 
-    private Toolbar toolbar;
     private Spinner spinner1;
     private Spinner spinner2;
     List<String> data1 = new ArrayList<>();
     List<String> data2 = new ArrayList<>();
     private EditText editText;
-    private Button btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +39,9 @@ public class ToolsSAEBoltPicker extends AppCompatActivity {
         // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Bolt Sizer");
 
         spinnerListener();
@@ -54,8 +52,8 @@ public class ToolsSAEBoltPicker extends AppCompatActivity {
     // get the selected dropdown list value
     public void spinnerListener() {
 
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner2 = (Spinner) findViewById(R.id.sizeRange_value);
+        spinner1 = findViewById(R.id.spinner1);
+        spinner2 = findViewById(R.id.sizeRange_value);
 
         final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, data1);
@@ -200,15 +198,15 @@ public class ToolsSAEBoltPicker extends AppCompatActivity {
     // get the selected dropdown list value
     public void addListenerOnButton() {
 
-        editText = (EditText) findViewById(R.id.editText);
-        btnSubmit = (Button) findViewById(R.id.btnSubmit);
+        editText = findViewById(R.id.editText);
+        Button btnSubmit = findViewById(R.id.btnSubmit);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
 
-            TextView sizeDesignation = (TextView) findViewById(R.id.sizeDesignation_value);
-            TextView majorDiameter = (TextView) findViewById(R.id.majorDiameter_value);
-            TextView threads = (TextView) findViewById(R.id.threads_value);
-            TextView tensileArea = (TextView) findViewById(R.id.minorarea_value);
+            TextView sizeDesignation = findViewById(R.id.sizeDesignation_value);
+            TextView majorDiameter = findViewById(R.id.majorDiameter_value);
+            TextView threads = findViewById(R.id.threads_value);
+            TextView tensileArea = findViewById(R.id.minorarea_value);
 
             void setText(String size_designation, String major_diameter, String threads_,
                          String tensile_area) {

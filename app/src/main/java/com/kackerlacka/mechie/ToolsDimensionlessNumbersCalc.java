@@ -14,16 +14,13 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-
 import katex.hourglass.in.mathlib.MathView;
 
 public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
 
-    private Toolbar toolbar;
     private Spinner spinner1;
     private EditText input_field1, input_field2, input_field3, input_field4;
     private TextView input_text1, input_text2, input_text3, input_text4;
@@ -44,17 +41,15 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Dimensionless Numbers Calculator");
 
         initializeActivity();
 
-        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
+        radioGroup = findViewById(R.id.radiogroup);
+        radioGroup.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
                 switch(checkedId) {
                     case R.id.metric:
                         switch(spinner1.getSelectedItemPosition()) {
@@ -132,7 +127,6 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         unitSel = 1;
                         break;
                 }
-            }
         });
 
         final Button button = (Button) findViewById(R.id.btn_calculate);
@@ -165,7 +159,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
 
     // Calculate the Reynolds Number
     public void calculateReynolds() {
-        resultCalc = (TextView) findViewById(R.id.answer);
+        resultCalc = findViewById(R.id.answer);
         String input1_string = input_field1.getText().toString();
         String input2_string = input_field2.getText().toString();
         String input3_string = input_field3.getText().toString();
@@ -197,7 +191,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
             input_field4.setError("Enter a viscosity");
         }
 
-        double result = ((double) a*b*c)/d;
+        double result = (a*b*c)/d;
         DecimalFormat formatter = new DecimalFormat("#.##");
         resultCalc.setText(formatter.format(result));
 
@@ -205,7 +199,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
 
     // Calculate the Mach Number
     public void calculateMach () {
-        resultCalc = (TextView) findViewById(R.id.answer);
+        resultCalc = findViewById(R.id.answer);
         String input1_string = input_field1.getText().toString();
 
         double a = 0;
@@ -218,12 +212,12 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         }
 
         if(unitSel == 0) {
-            double result = ((double) a)/343;
+            double result = a/343;
             DecimalFormat formatter = new DecimalFormat("#.##");
             resultCalc.setText(formatter.format(result));
         }
         else if(unitSel == 1) {
-            double result = ((double) a)/1125;
+            double result = a/1125;
             DecimalFormat formatter = new DecimalFormat("#.##");
             resultCalc.setText(formatter.format(result));
         }
@@ -231,7 +225,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
 
     // Calculate the Atwood Number
     public void calculateAtwood() {
-        resultCalc = (TextView) findViewById(R.id.answer);
+        resultCalc = findViewById(R.id.answer);
         String input1_string = input_field1.getText().toString();
         String input2_string = input_field2.getText().toString();
         double a = 0; double b = 0;
@@ -249,7 +243,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
             input_field2.setError("Enter a density");
         }
 
-        double result = ((double) a - b)/((double) a + b);
+        double result = (a - b)/(a + b);
         DecimalFormat formatter = new DecimalFormat("#.##");
         resultCalc.setText(formatter.format(result));
 
@@ -383,21 +377,21 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
     // get the selected dropdown list value
     public void initializeActivity() {
         // Define all edit texts and textviews
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        input_field1 = (EditText) findViewById(R.id.input_field1);
-        input_field2 = (EditText) findViewById(R.id.input_field2);
-        input_field3 = (EditText) findViewById(R.id.input_field3);
-        input_field4 = (EditText) findViewById(R.id.input_field4);
-        input_text1 = (TextView) findViewById(R.id.input1);
-        input_text2 = (TextView) findViewById(R.id.input2);
-        input_text3 = (TextView) findViewById(R.id.input3);
-        input_text4 = (TextView) findViewById(R.id.input4);
-        unit1 = (TextView) findViewById(R.id.unit1);
-        unit2 = (TextView) findViewById(R.id.unit2);
-        unit3 = (TextView) findViewById(R.id.unit3);
-        unit4 = (TextView) findViewById(R.id.unit4);
-        MathView dimensionlessFormula = (MathView) findViewById(R.id.formula);
-        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        spinner1 = findViewById(R.id.spinner1);
+        input_field1 = findViewById(R.id.input_field1);
+        input_field2 = findViewById(R.id.input_field2);
+        input_field3 = findViewById(R.id.input_field3);
+        input_field4 = findViewById(R.id.input_field4);
+        input_text1 = findViewById(R.id.input1);
+        input_text2 = findViewById(R.id.input2);
+        input_text3 = findViewById(R.id.input3);
+        input_text4 = findViewById(R.id.input4);
+        unit1 = findViewById(R.id.unit1);
+        unit2 = findViewById(R.id.unit2);
+        unit3 = findViewById(R.id.unit3);
+        unit4 = findViewById(R.id.unit4);
+        MathView dimensionlessFormula = findViewById(R.id.formula);
+        radioGroup = findViewById(R.id.radiogroup);
 
         final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, data1);
@@ -426,38 +420,38 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         numberSel = 1;
                         resetAll();
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{\\rho v D}{\\mu}$$</center>");
-                        input_text1.setText("Density (ρ)");
-                        input_text2.setText("Velocity (v)");
-                        input_text3.setText("Length, Diameter (D)");
-                        input_text4.setText("Dynamic Viscosity (µ)");
+                        input_text1.setText(R.string.properties_density);
+                        input_text2.setText(R.string.properties_velocity);
+                        input_text3.setText(R.string.properties_lengthDiameter);
+                        input_text4.setText(R.string.properties_dynamicViscosity);
                         line1Visible(); line2Visible(); line3Visible(); line4Visible();
 
                         if(unitSel == 0) {
-                            unit1.setText("kg/m³");
-                            unit2.setText("m/s");
-                            unit3.setText("m");
-                            unit4.setText("Pa·s");
+                            unit1.setText(R.string.units_metric_density);
+                            unit2.setText(R.string.units_metric_velocity);
+                            unit3.setText(R.string.units_metric_lengthDiameter);
+                            unit4.setText(R.string.units_metric_dynamicViscosity);
                         }
                         else if(unitSel == 1) {
-                            unit1.setText("slug/ft³");
-                            unit2.setText("ft/s");
-                            unit3.setText("ft");
-                            unit4.setText("lb·s/ft²");
+                            unit1.setText(R.string.units_imperial_density);
+                            unit2.setText(R.string.units_imperial_velocity);
+                            unit3.setText(R.string.units_imperial_lengthDiameter);
+                            unit4.setText(R.string.units_imperial_dynamicViscosity);
                         }
                         break;
                     case 1:
                         numberSel = 2;
                         resetAll();
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{u}{c}$$</center>");
-                        input_text1.setText("Velocity (v)");
-                        unit1.setText("m/s");
+                        input_text1.setText(R.string.properties_velocity);
+                        unit1.setText(R.string.units_metric_velocity);
                         line1Visible();
 
                         if(unitSel == 0) {
-                            unit1.setText("m/s");
+                            unit1.setText(R.string.units_metric_velocity);
                         }
                         else if(unitSel == 1) {
-                            unit1.setText("ft/s");
+                            unit1.setText(R.string.units_imperial_velocity);
                         }
                         break;
                     case 2:
@@ -466,16 +460,16 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{\\rho_1 - \\rho_2}{\\rho_1 + \\rho_2}$$</center>");
                         input_text1.setText("Heavier Density Fluid (ρ1)");
                         input_text2.setText("Lighter Density Fluid (ρ2)");
-                        unit1.setText("kg/m³");
-                        unit2.setText("kg/m³");
+                        unit1.setText(R.string.units_metric_density);
+                        unit2.setText(R.string.units_metric_density);
                         line1Visible(); line2Visible();
                         if(unitSel == 0) {
-                            unit1.setText("kg/m³");
-                            unit2.setText("kg/m³");
+                            unit1.setText(R.string.units_metric_density);
+                            unit2.setText(R.string.units_metric_density);
                         }
                         else if(unitSel == 1) {
-                            unit1.setText("slug/ft³");
-                            unit2.setText("slug/ft³");
+                            unit1.setText(R.string.units_imperial_density);
+                            unit2.setText(R.string.units_imperial_density);
                         }
                         break;
                     case 3:
@@ -495,7 +489,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                             unit3.setText("W/(m⋅K)");
                         }
                         else if(unitSel == 1){
-                            unit1.setText("ft");
+                            unit1.setText(R.string.units_imperial_lengthDiameter);
                             unit2.setText("BTU/(s⋅ft²⋅°F)");
                             unit3.setText("BTU/(hr⋅ft⋅°F)");
                         }

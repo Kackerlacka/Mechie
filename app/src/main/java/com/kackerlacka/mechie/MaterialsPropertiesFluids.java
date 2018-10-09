@@ -17,10 +17,8 @@ import java.util.List;
 
 public class MaterialsPropertiesFluids extends AppCompatActivity {
 
-    private Toolbar toolbar;
     private Spinner spinner1;
     List<String> data1 = new ArrayList<>();
-    List<String> data2 = new ArrayList<>();
     String[] water;
 
     @Override
@@ -29,16 +27,13 @@ public class MaterialsPropertiesFluids extends AppCompatActivity {
         setContentView(R.layout.materials_properties_fluids);
 
         Window window = this.getWindow();
-        // clear FLAG_TRANSLUCENT_STATUS flag:
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Fluid Properties");
 
         addListenerOnButton();
@@ -47,8 +42,8 @@ public class MaterialsPropertiesFluids extends AppCompatActivity {
 
     public void spinnerSelection(String[] data) {
 
-        final TextView density = (TextView)findViewById(R.id.density_value);
-        final TextView crystalStructure = (TextView)findViewById(R.id.boilingtemp_value);
+        final TextView density = findViewById(R.id.density_value);
+        final TextView crystalStructure = findViewById(R.id.boilingtemp_value);
 
         density.setText(data[0]);
         crystalStructure.setText(data[1]);
@@ -57,7 +52,7 @@ public class MaterialsPropertiesFluids extends AppCompatActivity {
     // get the selected dropdown list value
     public void addListenerOnButton() {
 
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
+        spinner1 = findViewById(R.id.spinner1);
 
         final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, data1);
@@ -66,7 +61,6 @@ public class MaterialsPropertiesFluids extends AppCompatActivity {
 
         data1.add("Water");
         data1.add("Oil");
-        data1.add("Ur mudda");
 
         spinner1.setAdapter(adapter1);
 

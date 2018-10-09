@@ -1,8 +1,6 @@
 package com.kackerlacka.mechie;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -94,7 +92,7 @@ public class MatchableArrayAdapter<T> extends BaseAdapter implements Filterable 
     private int mDropDownResource;
 
     /**
-     * If the inflated resource is not a TextView, {@link #mFieldId} is used to find
+     * If the inflated resource is not a TextView, {mFieldId} is used to find
      * a TextView inside the inflated views hierarchy. This field must contain the
      * identifier that matches the one defined in the resource file.
      */
@@ -122,9 +120,6 @@ public class MatchableArrayAdapter<T> extends BaseAdapter implements Filterable 
      * @param resource The resource ID for a layout file containing a TextView to use when
      *                 instantiating views.
      */
-    public MatchableArrayAdapter(Context context, int resource) {
-        init(context, resource, 0, new ArrayList<T>());
-    }
 
     /**
      * Constructor
@@ -134,10 +129,6 @@ public class MatchableArrayAdapter<T> extends BaseAdapter implements Filterable 
      *                 instantiating views.
      * @param textViewResourceId The id of the TextView within the layout resource to be populated
      */
-    public MatchableArrayAdapter(Context context, int resource, int textViewResourceId) {
-        init(context, resource, textViewResourceId, new ArrayList<T>());
-    }
-
     /**
      * Constructor
      *
@@ -146,7 +137,7 @@ public class MatchableArrayAdapter<T> extends BaseAdapter implements Filterable 
      *                 instantiating views.
      * @param objects The objects to represent in the ListView.
      */
-    public MatchableArrayAdapter(Context context, int resource, T[] objects) {
+    MatchableArrayAdapter(Context context, int resource, T[] objects) {
         init(context, resource, 0, Arrays.asList(objects));
     }
 

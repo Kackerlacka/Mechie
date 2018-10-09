@@ -9,7 +9,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,14 +18,12 @@ import java.util.List;
 
 public class MaterialsPropertiesMetal extends AppCompatActivity {
 
-    private Toolbar toolbar;
     private Spinner spinner1;
     private Spinner spinner2;
     List<String> data1 = new ArrayList<>();
     List<String> data2 = new ArrayList<>();
     private int units;
     private RadioGroup radioGroup;
-    private RadioButton radioButton;
     String[] copperStandard;
     String[] copperAnnealed;
     String[] copperColdWorked;
@@ -43,24 +40,18 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
         setContentView(R.layout.materials_properties_metal);
 
         Window window = this.getWindow();
-        // clear FLAG_TRANSLUCENT_STATUS flag:
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Metal Properties");
 
-        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        radioGroup = findViewById(R.id.radiogroup);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                // get selected radio button from radioGroup
+        radioGroup.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                 if(selectedId == 1) {
                     units = 0;
@@ -68,29 +59,27 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                 else if(selectedId == 2) {
                     units = 1;
                 }
-            }
         });
 
         addListenerOnButton();
-
     }
 
     public void spinnerSelection(String[] data) {
 
-        final TextView density = (TextView)findViewById(R.id.density_value);
-        final TextView crystalStructure = (TextView)findViewById(R.id.crystalstructure_value);
-        final TextView vickersHardness = (TextView)findViewById(R.id.hardness_value);
-        final TextView ultimateStrength = (TextView)findViewById(R.id.ultstr_value);
-        final TextView yieldStrength = (TextView)findViewById(R.id.yieldstr_value);
-        final TextView breakElongation = (TextView)findViewById(R.id.elong_value);
-        final TextView youngsModulus = (TextView)findViewById(R.id.youngsmodulus_value);
-        final TextView bulkModulus = (TextView)findViewById(R.id.bulkmodulus_value);
-        final TextView poissonRatio = (TextView)findViewById(R.id.poisson_value);
-        final TextView shearModulus = (TextView)findViewById(R.id.shearmodulus_value);
-        final TextView thermalConductivity = (TextView)findViewById(R.id.thermalconductivity_value);
-        final TextView meltingPoint = (TextView)findViewById(R.id.meltingpoint_value);
-        final TextView boilingPoint = (TextView)findViewById(R.id.boilingpoint_value);
-        final TextView CTE = (TextView)findViewById(R.id.thermalexpansion_value);
+        final TextView density = findViewById(R.id.density_value);
+        final TextView crystalStructure = findViewById(R.id.crystalstructure_value);
+        final TextView vickersHardness = findViewById(R.id.hardness_value);
+        final TextView ultimateStrength = findViewById(R.id.ultstr_value);
+        final TextView yieldStrength = findViewById(R.id.yieldstr_value);
+        final TextView breakElongation = findViewById(R.id.elong_value);
+        final TextView youngsModulus = findViewById(R.id.youngsmodulus_value);
+        final TextView bulkModulus = findViewById(R.id.bulkmodulus_value);
+        final TextView poissonRatio = findViewById(R.id.poisson_value);
+        final TextView shearModulus = findViewById(R.id.shearmodulus_value);
+        final TextView thermalConductivity = findViewById(R.id.thermalconductivity_value);
+        final TextView meltingPoint = findViewById(R.id.meltingpoint_value);
+        final TextView boilingPoint = findViewById(R.id.boilingpoint_value);
+        final TextView CTE = findViewById(R.id.thermalexpansion_value);
 
         density.setText(data[0]);
         crystalStructure.setText(data[1]);
@@ -111,8 +100,8 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
     // get the selected dropdown list value
     public void addListenerOnButton() {
 
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        spinner1 = findViewById(R.id.spinner1);
+        spinner2 = findViewById(R.id.spinner2);
 
         final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, data1);
@@ -137,8 +126,8 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
 
                 copperStandard = getResources().getStringArray(R.array.copper_standard);
                 copperAnnealed = getResources().getStringArray(R.array.copper_annealed);
-                copperColdWorked = getResources().getStringArray(R.array.copper_coldworked);
-                copperColdDrawn = getResources().getStringArray(R.array.copper_colddrawn);
+                copperColdWorked = getResources().getStringArray(R.array.copper_coldWorked);
+                copperColdDrawn = getResources().getStringArray(R.array.copper_coldDrawn);
                 titaniumStandard = getResources().getStringArray(R.array.titanium_standard);
                 titaniumCarbide = getResources().getStringArray(R.array.titanium_standard);
                 aluminum6061 = getResources().getStringArray(R.array.aluminum);

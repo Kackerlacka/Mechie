@@ -1,10 +1,7 @@
 package com.kackerlacka.mechie;
 
-import android.app.AlertDialog;
-import android.app.FragmentManager;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ListFragment;
 import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
@@ -13,11 +10,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Filter;
 import android.widget.ListView;
-import android.util.Log;
-import android.support.v4.app.DialogFragment;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -26,9 +20,6 @@ public class MainConstants extends ListFragment {
 
     private ListView listView; //Main listview
     private CustomListviewAdapter mAdapter; //Custom adapter for listview
-    private AlertDialog.Builder builder;
-    public static final String TAG = MainEquations.class.getSimpleName();
-    private TextView mEmptyView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,7 +28,7 @@ public class MainConstants extends ListFragment {
         setHasOptionsMenu(true);
 
         //Find listview in xml
-        listView = (ListView) view.findViewById(R.id.listView);
+        listView = view.findViewById(R.id.listView);
         ArrayList<CustomListViewClass> equationsList = new ArrayList<>();
 
         //Populate listview with items
@@ -63,7 +54,7 @@ public class MainConstants extends ListFragment {
         equationsList.add(new CustomListViewClass( "Natural Log Base [e]" , "2.71828182", 5));
         equationsList.add(new CustomListViewClass( "Neutron Mass [mₙ]", "1.674 x 10⁻²⁷ kg", 20));
         equationsList.add(new CustomListViewClass( "Permeability of Free Space [μ₀]", "4π x 10⁻⁷ Tm/A",12));
-        equationsList.add(new CustomListViewClass( "Permitivitty of Free Space [ε₀]", "8.854 x 10⁻¹² C²/Nm²", 10));
+        equationsList.add(new CustomListViewClass( "Permittivity of Free Space [ε₀]", "8.854 x 10⁻¹² C²/Nm²", 10));
         equationsList.add(new CustomListViewClass( "Pi [π]" , "3.14159265", 6));
         equationsList.add(new CustomListViewClass( "Planck Constant [h]", "6.626 x 10⁻³⁴ Js (4.136 x 10⁻¹⁵ eVs)", 8));
         equationsList.add(new CustomListViewClass( "Proton Mass [mₚ]", "1.672 x 10⁻²⁷ kg", 19));
@@ -71,12 +62,12 @@ public class MainConstants extends ListFragment {
         equationsList.add(new CustomListViewClass( "Speed of Light in a Vacuum [c]" , "299,792,458 (m/s)", 7));
         equationsList.add(new CustomListViewClass( "Stefan-Boltzmann Constant [σ]", "5.670 x 10⁻⁸ W/m²K⁴", 14));
         equationsList.add(new CustomListViewClass( "Vacuum Permeability [μ₀]", "4π x 10⁻⁷ Tm/A", 13));
-        equationsList.add(new CustomListViewClass( "Vacuum Permitivitty [ε₀]", "8.854 x 10⁻¹² C²/Nm²", 10));
+        equationsList.add(new CustomListViewClass( "Vacuum Permittivity [ε₀]", "8.854 x 10⁻¹² C²/Nm²", 10));
         equationsList.add(new CustomListViewClass( "Wien Displacement Constant [b]", "2.898 mm/K (58.78 GHz/K)", 16));
 
 
         mAdapter = new CustomListviewAdapter(getActivity(),equationsList);
-        mEmptyView = (TextView)view.findViewById(R.id.emptyView);
+        TextView mEmptyView = view.findViewById(R.id.emptyView);
         listView.setAdapter(mAdapter);
         listView.setEmptyView(mEmptyView);
 
@@ -85,7 +76,7 @@ public class MainConstants extends ListFragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         //Stuff
     }
 

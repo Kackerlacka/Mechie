@@ -71,13 +71,13 @@
                     android:paddingTop="8dp"
                     android:paddingEnd="8dp"
                     android:paddingStart="8dp"
-                    android:text="@string/castiglianostheorem_about" />
+                    android:text="@string/castiglianosTheorem_about_1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="@string/castiglianostheorem_about_2" />
+                    android:text="@string/castiglianosTheorem_about_2" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -111,13 +111,13 @@
                     android:paddingTop="8dp"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
-                    android:text="@string/castiglianostheorem_first_1"
+                    android:text="@string/castiglianosTheorem_about_3"
                     android:textStyle="italic"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="@string/castiglianostheorem_first_2" />
+                    android:text="@string/castiglianosTheorem_first_2" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -149,7 +149,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="@string/castiglianostheorem_second_1"
+                    android:text="@string/castiglianosTheorem_second_1"
                     android:textStyle="italic"/>
                 <katex.hourglass.in.mathlib.MathView
                     android:gravity="center"
@@ -162,7 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="@string/castiglianostheorem_second_2" />
+                    android:text="@string/castiglianosTheorem_second_2" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -194,7 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="@string/castiglianostheorem_example_1" />
+                    android:text="@string/castiglianosTheorem_example_1" />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -227,12 +227,12 @@
                     android:paddingTop="8dp"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
-                    android:text="@string/castiglianostheorem_example_2" />
+                    android:text="@string/castiglianosTheorem_example_2" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="@string/castiglianostheorem_example_3" />
+                    android:text="@string/castiglianosTheorem_example_3" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

@@ -11,32 +11,26 @@ import katex.hourglass.in.mathlib.MathView;
 
 public class MechanicsCastiglianosTheorem extends AppCompatActivity {
 
-    private Toolbar toolbar;
-    private MathView formula1, formula2, formula3, formula4, formula5;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mechanics_castiglianostheorem);
 
         Window window = this.getWindow();
-        // clear FLAG_TRANSLUCENT_STATUS flag:
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Castigliano's Method");
 
-        formula1 = findViewById(R.id.formula1);
-        formula2 = findViewById(R.id.formula2);
-        formula3 = findViewById(R.id.formula3);
-        formula4 = findViewById(R.id.formula4);
-        formula5 = findViewById(R.id.formula5);
+        MathView formula1 = findViewById(R.id.formula1);
+        MathView formula2 = findViewById(R.id.formula2);
+        MathView formula3 = findViewById(R.id.formula3);
+        MathView formula4 = findViewById(R.id.formula4);
+        MathView formula5 = findViewById(R.id.formula5);
 
         formula2.setTextSize(14);
         formula3.setTextSize(14);
