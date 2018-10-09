@@ -272,4 +272,50 @@
     <string name="units_imperial_lengthDiameter">ft</string>
     <string name="units_imperial_dynamicViscosity">lb·s/ft²</string>
 
+    //Hardness Values
+    <string-array name="brinell_values">
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>739</item>
+    </string-array>
+
+    <string-array name="vickers_values">
+        <item>1076</item>
+        <item>1044</item>
+        <item>940</item>
+        <item>900</item>
+        <item>865</item>
+        <item>832</item>
+    </string-array>
+
+    <string-array name="rockwellA_values">
+        <item>86.5</item>
+        <item>86.0</item>
+        <item>85.6</item>
+        <item>85.0</item>
+        <item>84.5</item>
+        <item>83.9</item>
+    </string-array>
+
+    <string-array name="rockwellB_values">
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+    </string-array>
+
+    <string-array name="rockwellC_values">
+        <item>70</item>
+        <item>69</item>
+        <item>68</item>
+        <item>67</item>
+        <item>66</item>
+        <item>65</item>
+    </string-array>
+
 </resources>

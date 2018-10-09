@@ -21,6 +21,8 @@ public class ToolsHardnessConverter extends AppCompatActivity {
     private Spinner spinner1;
     List<String> data1 = new ArrayList<>();
     private EditText hardnessInput;
+    String[] brinellHardness;
+    String[] vickersHardness;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,6 @@ public class ToolsHardnessConverter extends AppCompatActivity {
         data1.add("Rockwell A");
         data1.add("Rockwell B");
         data1.add("Rockwell C");
-        data1.add("Knoop");
 
         hardnessInput = findViewById(R.id.hardness_input);
 
@@ -68,38 +69,28 @@ public class ToolsHardnessConverter extends AppCompatActivity {
         final TextView rockwellA = findViewById(R.id.rwa_value);
         final TextView rockwellB = findViewById(R.id.rwb_value);
         final TextView rockwellC = findViewById(R.id.rwc_value);
-        final TextView knoop = findViewById(R.id.knoop_value);
+
+        brinellHardness = getResources().getStringArray(R.array.brinell_values);
+        vickersHardness = getResources().getStringArray(R.array.vickers_values);
 
         button.setOnClickListener((View v) -> {
+            String input = hardnessInput.getText().toString();
+            double a = Double.parseDouble(input);
                 switch (spinner1.getSelectedItemPosition()) {
                     case 0:
                         resetAll();
-                        brinell.setText("-");
-                        String input = hardnessInput.getText().toString();
-                        double a = Double.parseDouble(input);
-                        if(a > 722 && a < 739) {
-
-                        }
                         break;
                     case 1:
                         resetAll();
-                        vickers.setText("-");
                         break;
                     case 2:
                         resetAll();
-                        rockwellA.setText("-");
                         break;
                     case 3:
                         resetAll();
-                        rockwellB.setText("-");
                         break;
                     case 4:
                         resetAll();
-                        rockwellC.setText("-");
-                        break;
-                    case 5:
-                        resetAll();
-                        knoop.setText("-");
                         break;
                 }
         });
@@ -111,13 +102,11 @@ public class ToolsHardnessConverter extends AppCompatActivity {
         final TextView rockwellA = findViewById(R.id.rwa_value);
         final TextView rockwellB = findViewById(R.id.rwb_value);
         final TextView rockwellC = findViewById(R.id.rwc_value);
-        final TextView knoop = findViewById(R.id.knoop_value);
 
         brinell.setText("");
         vickers.setText("");
         rockwellA.setText("");
         rockwellB.setText("");
         rockwellC.setText("");
-        knoop.setText("");
     }
 }

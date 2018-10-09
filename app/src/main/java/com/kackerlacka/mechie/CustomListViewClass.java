@@ -6,12 +6,14 @@ public class CustomListViewClass {
     private String mEquation;
     // Store the name of the movie
     private String mName;
+    private String mVariable;
     public int mID;
 
     // Constructor that is used to create an instance of the CustomListViewClass object
-    CustomListViewClass(String mName, String mEquation, int mID) {
+    CustomListViewClass(String mName, String mVariable, String mEquation, int mID) {
         this.mEquation = mEquation;
         this.mName = mName;
+        this.mVariable = mVariable;
         this.mID = mID;
     }
 
@@ -21,6 +23,10 @@ public class CustomListViewClass {
 
     public String getmName() {
         return mName;
+    }
+
+    public String getmVariable() {
+        return mVariable;
     }
 
 }

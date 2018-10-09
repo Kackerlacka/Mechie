@@ -17,6 +17,8 @@ public class CustomListviewAdapter extends MatchableArrayAdapter<CustomListViewC
         text1.setText(item.getmName());
         TextView text2 = itemView.findViewById(R.id.formula_one);
         text2.setText(item.getmEquation());
+        TextView text3 = itemView.findViewById(R.id.variable);
+        text3.setText(item.getmVariable());
     }
     @Override
     protected boolean matches(CustomListViewClass value, CharSequence prefix, CharSequence lowerCasePrefix) {

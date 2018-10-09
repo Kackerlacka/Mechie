@@ -33,6 +33,9 @@ public class CustomEquationsDialog extends DialogFragment {
         String variables_two = info.getString("KEY_VARIABLES_TWO");
         Toolbar toolbar = view.findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.baseline_close_24);
+        toolbar.setNavigationOnClickListener((View v) -> {
+                dismiss();
+            });
         toolbar.setTitle(name);
 
         MathView equation_formula = view.findViewById(R.id.formula_one);

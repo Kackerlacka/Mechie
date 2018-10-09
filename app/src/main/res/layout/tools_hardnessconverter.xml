@@ -237,10 +237,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="8dp"
-                        android:text="Knoop" />
+                        android:text="Rockwell D" />
 
                     <TextView
-                        android:id="@+id/knoop_value"
+                        android:id="@+id/rwcd_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/header_main"
