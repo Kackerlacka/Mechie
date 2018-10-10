@@ -111,6 +111,7 @@
     //Fluid densities
     <string-array name="fluids_density_metric">
         <item>Acetic Acid</item>
+        <item>Air</item>
         <item>Coconut Oil</item>
         <item>Fresh water</item>
         <item>Sea water</item>
@@ -118,6 +119,7 @@
 
     <string-array name="fluids_density_imperial">
         <item>Acetic Acid</item>
+        <item>Air</item>
         <item>Coconut Oil</item>
         <item>Fresh water</item>
         <item>Sea water</item>
@@ -125,6 +127,7 @@
 
     <string-array name="fluids_dynamicViscosity_metric">
         <item>Acetic Acid</item>
+        <item>Air</item>
         <item>Ethylene Glycol</item>
         <item>Fresh water</item>
         <item>Propane</item>
@@ -132,6 +135,7 @@
 
     <string-array name="fluids_dynamicViscosity_imperial">
         <item>Acetic Acid</item>
+        <item>Air</item>
         <item>Ethylene Glycol</item>
         <item>Fresh water</item>
         <item>Propane</item>

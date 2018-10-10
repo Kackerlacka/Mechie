@@ -63,36 +63,36 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                 switch(checkedId) {
                     case R.id.metric:
                         clearInputs();
-                        switch(spinner1.getSelectedItemPosition()) {
-                            case 0:
+                        switch(spinner1.getSelectedItem().toString()) {
+                            case "Reynold's Number (Re)":
                                 unit1.setText("kg/m³");
                                 unit2.setText("m/s");
                                 unit3.setText("m");
                                 unit4.setText("Pa·s");
                                 break;
-                            case 1:
+                            case "Mach Number (Ma)":
                                 unit1.setText("m/s");
                                 break;
-                            case 2:
+                            case "Atwood Number (A)":
                                 unit1.setText("kg/m³");
                                 unit2.setText("kg/m³");
                                 break;
-                            case 3:
+                            case "Biot Number (Bi)":
                                 unit1.setText("m");
                                 unit2.setText("W/(m²⋅K)");
                                 unit3.setText("W/(m⋅K)");
                                 break;
-                            case 4:
+                            case "Sherwood Number (Sh)":
                                 unit1.setText("m⋅s⁻¹");
                                 unit2.setText("m²⋅s⁻¹");
                                 unit3.setText("m");
                                 break;
-                            case 5:
+                            case "Nusselt Number (Nu)":
                                 unit1.setText("W/(m²⋅K)");
                                 unit2.setText("m");
                                 unit3.setText("W/(m⋅K)");
                                 break;
-                            case 6:
+                            case "Prandtl Number (Pr)":
                                 unit1.setText("m²/s");
                                 unit2.setText("m²/s");
                                 break;
@@ -102,36 +102,36 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         break;
                     case R.id.imperial:
                         clearInputs();
-                        switch(spinner1.getSelectedItemPosition()) {
-                            case 0:
+                        switch(spinner1.getSelectedItem().toString()) {
+                            case "Reynold's Number (Re)":
                                 unit1.setText("lb/ft³");
                                 unit2.setText("ft/s");
                                 unit3.setText("ft");
                                 unit4.setText(R.string.units_imperial_dynamicViscosity);
                                 break;
-                            case 1:
+                            case "Mach Number (Ma)":
                                 unit1.setText("ft/s");
                                 break;
-                            case 2:
+                            case "Atwood Number (A)":
                                 unit1.setText("lb/ft³");
                                 unit2.setText("lb/ft³");
                                 break;
-                            case 3:
+                            case "Biot Number (Bi)":
                                 unit1.setText("ft");
                                 unit2.setText("BTU/(s⋅ft²⋅°F)");
                                 unit3.setText("BTU/(hr⋅ft⋅°F)");
                                 break;
-                            case 4:
+                            case "Sherwood Number (Sh)":
                                 unit1.setText("ft⋅s⁻¹");
                                 unit2.setText("ft²⋅s⁻¹");
                                 unit3.setText("ft");
                                 break;
-                            case 5:
+                            case "Nusselt Number (Nu)":
                                 unit1.setText("BTU/(s⋅ft²⋅°F)");
                                 unit2.setText("ft");
                                 unit3.setText("BTU/(hr⋅ft⋅°F)");
                                 break;
-                            case 6:
+                            case "Prandtl Number (Pr)":
                                 unit1.setText("ft²/s");
                                 unit2.setText("ft²/s");
                                 break;
@@ -178,62 +178,47 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
             });
 
         button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
+
         button1.setOnClickListener((View v) -> {
-            switch(spinner1.getSelectedItemPosition()) {
-                case 0:
+            switch(spinner1.getSelectedItem().toString()) {
+                case "Reynold's Number (Re)":
+                    input_field1.setError(null);
                     if(unitSel == 0) {
-                        displayAlert(fluidsDensityMetric, input_field1, "1049", "924", "1000", "1022");
+                        displayAlert(fluidsDensityMetric, input_field1, "1049", "1.205",
+                                "924", "1000", "1022");
                     }
                     else if(unitSel == 1) {
-                        displayAlert(fluidsDensityImperial, input_field1, "65.5", "57.7", "62.4", "63.8");
+                        displayAlert(fluidsDensityImperial, input_field1, "65.5", "0.0752",
+                                "57.7", "62.4", "63.8");
                     }
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
                     break;
 
             }
         });
 
-        button4 = findViewById(R.id.button4);
         button4.setOnClickListener((View v) -> {
-            switch(spinner1.getSelectedItemPosition()) {
-                case 0:
+            switch(spinner1.getSelectedItem().toString()) {
+                case "Reynold's Number (Re)":
+                    input_field4.setError(null);
                     if(unitSel == 0) {
-                        displayAlert(fluidsDynamicViscosityMetric, input_field4, "0.001155", "0.0162", "0.00089", "0.00011");
+                        displayAlert(fluidsDynamicViscosityMetric, input_field4, "0.001155",
+                                "0.00001722","0.0162", "0.00089", "0.00011");
                     }
                     else if(unitSel == 1) {
-                        displayAlert(fluidsDynamicViscosityImperial, input_field4, "0.000776", "0.0109", "0.0006", "0.000074");
+                        displayAlert(fluidsDynamicViscosityImperial, input_field4, "0.000776",
+                                "0.00001157","0.0109", "0.0006", "0.000074");
                     }
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
                     break;
 
             }
         });
     }
 
-
-    public void displayAlert(String[] fluids, EditText inputField, String num1, String num2, String num3, String num4) {
+    public void displayAlert(String[] fluids, EditText inputField, String num1, String num2, String num3,
+                             String num4, String num5) {
         // setup the alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Select a Fluid");
@@ -253,6 +238,9 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         break;
                     case 3:
                         inputField.setText(num4);
+                        break;
+                    case 4:
+                        inputField.setText(num5);
                         break;
                 }
             }
@@ -456,7 +444,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
 
     // Calculate the Prandtl Number
     public void calculatePrandtl() {
-        resultCalc = (TextView) findViewById(R.id.answer);
+        resultCalc = findViewById(R.id.answer);
         String input1_string = input_field1.getText().toString();
         String input2_string = input_field2.getText().toString();
         double a = 0; double b = 0;
@@ -514,24 +502,123 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         spinner1.setAdapter(adapter1);
 
         data1.add("Reynold's Number (Re)");
-        data1.add("Mach Number (Ma)");
+
+        data1.add("[X]Abbe Number (V)");
         data1.add("Atwood Number (A)");
+
+        data1.add("[X]Bagnold Number (Ba)");
+        data1.add("[X]Behan Number (Be)");
+        data1.add("[X]Bingham Number (Bm)");
         data1.add("Biot Number (Bi)");
-        data1.add("Sherwood Number (Sh)");
+        data1.add("[X]Blake Number (Bl)");
+        data1.add("[X]Bodenstein Number (Bd)");
+        data1.add("[X]Bond Number (Bo)");
+        data1.add("[X]Brinkman Number (Br)");
+        data1.add("[X]Brownell-Katz Number (NBK)");
+
+        data1.add("[X]Capillary Number (Ca)");
+        data1.add("[X]Chandrasekhar Number (Q)");
+        data1.add("[X]Cohesion Number (Coh)");
+        data1.add("[X]Courant-Friedrich-Levy No. (C)");
+
+        data1.add("[X]Damping Ratio (ζ)");
+        data1.add("[X]Darcy Number (Da)");
+        data1.add("[X]Dean Number (D)");
+        data1.add("[X]Deborah Number (De)");
+        data1.add("[X]Drag Coefficient (C𝒹)");
+        data1.add("[X]Dukhin Number (Du)");
+
+        data1.add("[X]Eckert Number (Ec)");
+        data1.add("[X]Ekman Number (Ek)");
+        data1.add("[X]Eötvös Number (Eo)");
+        data1.add("[X]Ericksen Number (Er)");
+        data1.add("[X]Euler Number (Eu)");
+        data1.add("[X]Excess Temperature Coefficient (Ɵᵣ)");
+
+        data1.add("[X]Fine-structure Constant (α)");
+        data1.add("[X]F-Number (f)");
+        data1.add("[X]Föppl–von Kármán Number (γ)");
+        data1.add("[X]Fourier Number (Fo)");
+        data1.add("[X]Fresnel Number (F)");
+        data1.add("[X]Froude Number (Fr)");
+
+        data1.add("[X]Galilei Number (Ga)");
+        data1.add("[X]Görtler Number (G)");
+        data1.add("[X]Graetz Number (Gz)");
+        data1.add("[X]Grashof Number (Gr)");
+        data1.add("[X]Gravitational Coupling Constant (αG)");
+
+        data1.add("[X]Hatta Number (Ha)");
+        data1.add("[X]Hagen Number (Hg)");
+        data1.add("[X]Havnes Parameter (Pₕ)");
+        data1.add("[X]Helmholtz Number (He)");
+        data1.add("[X]Hydraulic Gradient (i)");
+
+        data1.add("[X]Iribarren Number (Ir)");
+
+        data1.add("[X]Jakob Number (Ja)");
+
+        data1.add("[X]Karlovitz Number (Ka)");
+        data1.add("[X]Keulegan-Carpenter Number (Kc)");
+        data1.add("[X]Knudsen Number (Kn)");
+        data1.add("[X]Kutateladze Number (Ku)");
+
+        data1.add("[X]Laplace Number (La)");
+        data1.add("[X]Lewis Number (Le)");
+        data1.add("[X]Lift Coefficient (Cₗ)");
+        data1.add("[X]Lockhart-Martinelli Parameter (X)");
+        data1.add("[X]Lundquist Number (S)");
+
+        data1.add("[X]Mach Number (Ma)");
+        data1.add("[X]Magnetic Reynolds Number (Rₘ)");
+        data1.add("[X]Markstein Number (M)");
+        data1.add("[X]Morton Number (Mo)");
+
         data1.add("Nusselt Number (Nu)");
+
+        data1.add("[X]Ohnesorge Number (Oh)");
+
+        data1.add("[X]Péclet Number (Pe)");
+        data1.add("[X]Perveance (K)");
+        data1.add("[X]Plasma Physics Beta (β)");
+        data1.add("[X]Porosity (φ)");
         data1.add("Prandtl Number (Pr)");
-        //data1.add("Schmidt Number (Sc)");
-        //data1.add("Rayleigh Number (Ra)");
-        //data1.add("Stanton Number (St)");
-        //data1.add("Strouhal Number (St)");
-        //data1.add("Stuart Number (N)");
+        data1.add("[X]Pressure Coefficient (Cₚ)");
+
+        data1.add("[X]Rayleigh Number (Ra)");
+        data1.add("[X]Refractive Index (n)");
+        data1.add("[X]Richardson Number (Ri)");
+        data1.add("[X]Rolling Resistance Coefficient (Cᵣᵣ)");
+        data1.add("[X]Roshko Number (Ro)");
+        data1.add("[X]Rossby Number (Ro)");
+        data1.add("[X]Rouse Number (P)");
+
+        data1.add("[X]Schmidt Number (Sc)");
+        data1.add("Sherwood Number (Sh)");
+        data1.add("[X]Shields Parameter (τ*)");
+        data1.add("[X]Sommerfield Number (S)");
+        data1.add("[X]Stanton Number (St)");
+        data1.add("[X]Stefan Number (Ste)");
+        data1.add("[X]Stokes Number (Stk)");
+        data1.add("[X]Strouhal Number (St)");
+        data1.add("[X]Stuart Number (N)");
+
+        data1.add("[X]Taylor Number (Ta)");
+
+        data1.add("[X]Ursell Number (U)");
+
+        data1.add("[X]Weber Number (We)");
+        data1.add("[X]Weissenberg Number (Wi)");
+        data1.add("[X]Womersley Number (α)");
+
+        data1.add("[X]Zel'dovich Number (β)");
 
         adapter1.notifyDataSetChanged();
 
         spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener()  {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch(spinner1.getSelectedItemPosition()) {
-                    case 0:
+                switch(spinner1.getSelectedItem().toString()) {
+                    case "Reynold's Number (Re)":
                         numberSel = 1;
                         resetAll();
                         hideBtn(false, true, true, false);
@@ -555,7 +642,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                             unit4.setText(R.string.units_imperial_dynamicViscosity);
                         }
                         break;
-                    case 1:
+                    case "Mach Number (Ma)":
                         numberSel = 2;
                         resetAll();
                         hideBtn(true, false, false, false);
@@ -571,7 +658,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                             unit1.setText(R.string.units_imperial_velocity);
                         }
                         break;
-                    case 2:
+                    case "Atwood Number (A)":
                         numberSel = 3;
                         resetAll();
                         hideBtn(false, false, false, false);
@@ -590,7 +677,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                             unit2.setText(R.string.units_imperial_density);
                         }
                         break;
-                    case 3:
+                    case "Biot Number (Bi)":
                         numberSel = 4;
                         resetAll();
                         hideBtn(true, false, false, false);
@@ -613,7 +700,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                             unit3.setText("BTU/(hr⋅ft⋅°F)");
                         }
                         break;
-                    case 4:
+                    case "Sherwood Number (Sh)":
                         numberSel = 5;
                         resetAll();
                         hideBtn(false, false, true, false);
@@ -636,7 +723,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                             unit3.setText("ft");
                         }
                         break;
-                    case 5:
+                    case "Nusselt Number (Nu)":
                         numberSel = 6;
                         resetAll();
                         hideBtn(false, true, false, false);
@@ -659,7 +746,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                             unit3.setText("BTU/(hr⋅ft⋅°F)");
                         }
                         break;
-                    case 6:
+                    case "Prandtl Number (Pr)":
                         numberSel = 7;
                         resetAll();
                         hideBtn(false, false, false, false);
@@ -721,19 +808,19 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
     }
 
     public void hideBtn(Boolean one, Boolean two, Boolean three, Boolean four) {
-        if(one == true) {
+        if(one) {
             button1.setAlpha(.25f);
             button1.setClickable(false);
         }
-        if(two == true) {
+        if(two) {
             button2.setAlpha(.25f);
             button2.setClickable(false);
         }
-        if(three == true) {
+        if(three) {
             button3.setAlpha(.25f);
             button3.setClickable(false);
         }
-        if(four == true) {
+        if(four) {
             button4.setAlpha(.25f);
             button4.setClickable(false);
         }
@@ -766,9 +853,13 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
 
     public void clearInputs() {
         input_field1.setText("");
+        input_field1.setError(null);
         input_field2.setText("");
+        input_field2.setError(null);
         input_field3.setText("");
+        input_field3.setError(null);
         input_field4.setText("");
+        input_field4.setError(null);
 
     }
 }
