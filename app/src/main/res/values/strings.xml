@@ -108,6 +108,35 @@
         <item>The Golden Ratio</item>
     </string-array>
 
+    //Fluid densities
+    <string-array name="fluids_density_metric">
+        <item>Acetic Acid</item>
+        <item>Coconut Oil</item>
+        <item>Fresh water</item>
+        <item>Sea water</item>
+    </string-array>
+
+    <string-array name="fluids_density_imperial">
+        <item>Acetic Acid</item>
+        <item>Coconut Oil</item>
+        <item>Fresh water</item>
+        <item>Sea water</item>
+    </string-array>
+
+    <string-array name="fluids_dynamicViscosity_metric">
+        <item>Acetic Acid</item>
+        <item>Ethylene Glycol</item>
+        <item>Fresh water</item>
+        <item>Propane</item>
+    </string-array>
+
+    <string-array name="fluids_dynamicViscosity_imperial">
+        <item>Acetic Acid</item>
+        <item>Ethylene Glycol</item>
+        <item>Fresh water</item>
+        <item>Propane</item>
+    </string-array>
+
     //Metal Properties Lists
     <string-array name="copper_standard">
         <item>8.93 g/cm³</item>
@@ -267,10 +296,10 @@
     <string name="units_metric_dynamicViscosity">Pa·s</string>
 
     //Imperial Units
-    <string name="units_imperial_density">slug/ft³</string>
+    <string name="units_imperial_density">lb/ft³</string>
     <string name="units_imperial_velocity">ft/s</string>
     <string name="units_imperial_lengthDiameter">ft</string>
-    <string name="units_imperial_dynamicViscosity">lb·s/ft²</string>
+    <string name="units_imperial_dynamicViscosity">lb/ft·s</string>
 
     //Hardness Values
     <string-array name="brinell_values">
@@ -281,7 +310,6 @@
         <item>-</item>
         <item>739</item>
     </string-array>
-
     <string-array name="vickers_values">
         <item>1076</item>
         <item>1044</item>
@@ -290,7 +318,6 @@
         <item>865</item>
         <item>832</item>
     </string-array>
-
     <string-array name="rockwellA_values">
         <item>86.5</item>
         <item>86.0</item>
@@ -299,7 +326,6 @@
         <item>84.5</item>
         <item>83.9</item>
     </string-array>
-
     <string-array name="rockwellB_values">
         <item>-</item>
         <item>-</item>
@@ -308,7 +334,6 @@
         <item>-</item>
         <item>-</item>
     </string-array>
-
     <string-array name="rockwellC_values">
         <item>70</item>
         <item>69</item>

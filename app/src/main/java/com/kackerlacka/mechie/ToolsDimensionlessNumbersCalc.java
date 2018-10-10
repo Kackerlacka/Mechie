@@ -1,12 +1,16 @@
 package com.kackerlacka.mechie;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -31,6 +35,11 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
     List<String> data1 = new ArrayList<>();
     private RadioGroup radioGroup;
     private int unitSel;
+    Context context = this;
+    String[] fluidsDensityMetric;
+    String[] fluidsDensityImperial;
+    String[] fluidsDynamicViscosityMetric;
+    String[] fluidsDynamicViscosityImperial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +62,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         radioGroup.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
                 switch(checkedId) {
                     case R.id.metric:
+                        clearInputs();
                         switch(spinner1.getSelectedItemPosition()) {
                             case 0:
                                 unit1.setText("kg/m³");
@@ -91,19 +101,20 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         unitSel = 0;
                         break;
                     case R.id.imperial:
+                        clearInputs();
                         switch(spinner1.getSelectedItemPosition()) {
                             case 0:
-                                unit1.setText("slug/ft³");
+                                unit1.setText("lb/ft³");
                                 unit2.setText("ft/s");
                                 unit3.setText("ft");
-                                unit4.setText("lb·s/ft²");
+                                unit4.setText(R.string.units_imperial_dynamicViscosity);
                                 break;
                             case 1:
                                 unit1.setText("ft/s");
                                 break;
                             case 2:
-                                unit1.setText("slug/ft³");
-                                unit2.setText("slug/ft³");
+                                unit1.setText("lb/ft³");
+                                unit2.setText("lb/ft³");
                                 break;
                             case 3:
                                 unit1.setText("ft");
@@ -131,9 +142,18 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                 }
         });
 
-        final Button button = (Button) findViewById(R.id.btn_calculate);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        Button clearBtn = findViewById(R.id.btn_clear);
+        clearBtn.setOnClickListener((View v) -> {
+            clearInputs();
+        });
+
+        final Button button = findViewById(R.id.btn_calculate);
+        button.setOnClickListener((View v) -> {
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
                 if(numberSel == 1) {
                     calculateReynolds();
                 }
@@ -155,8 +175,92 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                 else if(numberSel == 7) {
                     calculatePrandtl();
                 }
+            });
+
+        button1 = findViewById(R.id.button1);
+        button1.setOnClickListener((View v) -> {
+            switch(spinner1.getSelectedItemPosition()) {
+                case 0:
+                    if(unitSel == 0) {
+                        displayAlert(fluidsDensityMetric, input_field1, "1049", "924", "1000", "1022");
+                    }
+                    else if(unitSel == 1) {
+                        displayAlert(fluidsDensityImperial, input_field1, "65.5", "57.7", "62.4", "63.8");
+                    }
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+
             }
         });
+
+        button4 = findViewById(R.id.button4);
+        button4.setOnClickListener((View v) -> {
+            switch(spinner1.getSelectedItemPosition()) {
+                case 0:
+                    if(unitSel == 0) {
+                        displayAlert(fluidsDynamicViscosityMetric, input_field4, "0.001155", "0.0162", "0.00089", "0.00011");
+                    }
+                    else if(unitSel == 1) {
+                        displayAlert(fluidsDynamicViscosityImperial, input_field4, "0.000776", "0.0109", "0.0006", "0.000074");
+                    }
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+
+            }
+        });
+    }
+
+
+    public void displayAlert(String[] fluids, EditText inputField, String num1, String num2, String num3, String num4) {
+        // setup the alert builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Select a Fluid");
+        // add a list
+        builder.setItems(fluids, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0:
+                        inputField.setText(num1);
+                        break;
+                    case 1:
+                        inputField.setText(num2);
+                        break;
+                    case 2:
+                        inputField.setText(num3);
+                        break;
+                    case 3:
+                        inputField.setText(num4);
+                        break;
+                }
+            }
+        });
+
+        // create and show the alert dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     // Calculate the Reynolds Number
@@ -399,6 +503,11 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         MathView dimensionlessFormula = findViewById(R.id.formula);
         radioGroup = findViewById(R.id.radiogroup);
 
+        fluidsDensityMetric = getResources().getStringArray(R.array.fluids_density_metric);
+        fluidsDensityImperial = getResources().getStringArray(R.array.fluids_density_imperial);
+        fluidsDynamicViscosityMetric = getResources().getStringArray(R.array.fluids_dynamicViscosity_metric);
+        fluidsDynamicViscosityImperial = getResources().getStringArray(R.array.fluids_dynamicViscosity_imperial);
+
         final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, data1);
 
@@ -425,6 +534,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                     case 0:
                         numberSel = 1;
                         resetAll();
+                        hideBtn(false, true, true, false);
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{\\rho v D}{\\mu}$$</center>");
                         input_text1.setText(R.string.properties_density);
                         input_text2.setText(R.string.properties_velocity);
@@ -448,6 +558,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                     case 1:
                         numberSel = 2;
                         resetAll();
+                        hideBtn(true, false, false, false);
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{u}{c}$$</center>");
                         input_text1.setText(R.string.properties_velocity);
                         unit1.setText(R.string.units_metric_velocity);
@@ -463,6 +574,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                     case 2:
                         numberSel = 3;
                         resetAll();
+                        hideBtn(false, false, false, false);
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{\\rho_1 - \\rho_2}{\\rho_1 + \\rho_2}$$</center>");
                         input_text1.setText("Heavier Density Fluid (ρ1)");
                         input_text2.setText("Lighter Density Fluid (ρ2)");
@@ -481,6 +593,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                     case 3:
                         numberSel = 4;
                         resetAll();
+                        hideBtn(true, false, false, false);
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{L_C h}{k}$$<center>");
                         input_text1.setText("Characterstic Length (Lc)");
                         input_text2.setText("Heat Transfer (film) Coefficient (h)");
@@ -503,8 +616,9 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                     case 4:
                         numberSel = 5;
                         resetAll();
+                        hideBtn(false, false, true, false);
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{h}{D/L}$$<center>");
-                        input_text1.setText("Convective Mass Transfer Film Coefficient (h)");
+                        input_text1.setText("Convective Film Coefficient (h)");
                         input_text2.setText("Mass Diffusivity (D)");
                         input_text3.setText("Characteristic Length (L)");
                         unit1.setText("m⋅s⁻¹");
@@ -525,6 +639,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                     case 5:
                         numberSel = 6;
                         resetAll();
+                        hideBtn(false, true, false, false);
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{h L}{k}$$<center>");
                         input_text1.setText("Convective Heat Transfer Coefficient (h)");
                         input_text2.setText("Characteristic Length (L)");
@@ -547,6 +662,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                     case 6:
                         numberSel = 7;
                         resetAll();
+                        hideBtn(false, false, false, false);
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{\\nu}{\\alpha}$$<center>");
                         input_text1.setText("Kinematic Viscosity (ν)");
                         input_text2.setText("Thermal Diffusivity (α)");
@@ -594,6 +710,33 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         button2.setVisibility(View.GONE);
         button3.setVisibility(View.GONE);
         button4.setVisibility(View.GONE);
+        button1.setAlpha(1f);
+        button1.setClickable(true);
+        button2.setAlpha(1f);
+        button2.setClickable(true);
+        button3.setAlpha(1f);
+        button3.setClickable(true);
+        button4.setAlpha(1f);
+        button4.setClickable(true);
+    }
+
+    public void hideBtn(Boolean one, Boolean two, Boolean three, Boolean four) {
+        if(one == true) {
+            button1.setAlpha(.25f);
+            button1.setClickable(false);
+        }
+        if(two == true) {
+            button2.setAlpha(.25f);
+            button2.setClickable(false);
+        }
+        if(three == true) {
+            button3.setAlpha(.25f);
+            button3.setClickable(false);
+        }
+        if(four == true) {
+            button4.setAlpha(.25f);
+            button4.setClickable(false);
+        }
     }
 
     public void line1Visible() {
@@ -619,5 +762,13 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         input_field4.setVisibility(View.VISIBLE);
         unit4.setVisibility(View.VISIBLE);
         button4.setVisibility(View.VISIBLE);
+    }
+
+    public void clearInputs() {
+        input_field1.setText("");
+        input_field2.setText("");
+        input_field3.setText("");
+        input_field4.setText("");
+
     }
 }
