@@ -25,6 +25,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
     private EditText input_field1, input_field2, input_field3, input_field4;
     private TextView input_text1, input_text2, input_text3, input_text4;
     private TextView unit1, unit2, unit3, unit4;
+    private Button button1, button2, button3, button4;
     private TextView resultCalc;
     private int numberSel;
     List<String> data1 = new ArrayList<>();
@@ -75,6 +76,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                                 unit1.setText("m⋅s⁻¹");
                                 unit2.setText("m²⋅s⁻¹");
                                 unit3.setText("m");
+                                break;
                             case 5:
                                 unit1.setText("W/(m²⋅K)");
                                 unit2.setText("m");
@@ -390,6 +392,10 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         unit2 = findViewById(R.id.unit2);
         unit3 = findViewById(R.id.unit3);
         unit4 = findViewById(R.id.unit4);
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
         MathView dimensionlessFormula = findViewById(R.id.formula);
         radioGroup = findViewById(R.id.radiogroup);
 
@@ -584,26 +590,34 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         input_field2.getText().clear();
         input_field3.getText().clear();
         input_field4.getText().clear();
+        button1.setVisibility(View.GONE);
+        button2.setVisibility(View.GONE);
+        button3.setVisibility(View.GONE);
+        button4.setVisibility(View.GONE);
     }
 
     public void line1Visible() {
         input_text1.setVisibility(View.VISIBLE);
         input_field1.setVisibility(View.VISIBLE);
         unit1.setVisibility(View.VISIBLE);
+        button1.setVisibility(View.VISIBLE);
     }
     public void line2Visible() {
         input_text2.setVisibility(View.VISIBLE);
         input_field2.setVisibility(View.VISIBLE);
         unit2.setVisibility(View.VISIBLE);
+        button2.setVisibility(View.VISIBLE);
     }
     public void line3Visible() {
         input_text3.setVisibility(View.VISIBLE);
         input_field3.setVisibility(View.VISIBLE);
         unit3.setVisibility(View.VISIBLE);
+        button3.setVisibility(View.VISIBLE);
     }
     public void line4Visible() {
         input_text4.setVisibility(View.VISIBLE);
         input_field4.setVisibility(View.VISIBLE);
         unit4.setVisibility(View.VISIBLE);
+        button4.setVisibility(View.VISIBLE);
     }
 }

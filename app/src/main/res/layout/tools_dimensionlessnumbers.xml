@@ -162,30 +162,38 @@
                     android:paddingTop="8dp"
                     android:paddingLeft="8dp">
 
+                    <Button
+                        android:id="@+id/button1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:text="?"
+                        android:layout_weight="0.2"/>
+
                     <TextView
                         android:id="@+id/input1"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/header_main"
-                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.9"
                         android:padding="8dp"
-                        android:text="Density (ρ)" />
+                        android:text="Density (ρ)"
+                        android:gravity="center_vertical"/>
 
                     <EditText
                         android:id="@+id/input_field1"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
                         android:padding="8dp"
                         android:inputType="numberDecimal"/>
 
                     <TextView
                         android:id="@+id/unit1"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="0.4"
                         android:padding="8dp"
-                        android:text="kg/m³"/>
+                        android:text="kg/m³"
+                        android:gravity="center_vertical"/>
 
                 </LinearLayout>
 
@@ -196,29 +204,38 @@
                     android:weightSum="2"
                     android:paddingLeft="8dp">
 
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:text="?"
+                        android:layout_weight="0.2"/>
+
                     <TextView
                         android:id="@+id/input2"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.9"
                         android:padding="8dp"
-                        android:text="Velocity (v)" />
+                        android:text="Velocity (v)"
+                        android:gravity="center_vertical"/>
 
                     <EditText
                         android:id="@+id/input_field2"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".6"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
                         android:padding="8dp"
                         android:inputType="numberDecimal"/>
 
                     <TextView
                         android:id="@+id/unit2"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="0.4"
                         android:padding="8dp"
-                        android:text="m/s"/>
+                        android:text="m/s"
+                        android:gravity="center_vertical"/>
 
                 </LinearLayout>
 
@@ -229,29 +246,38 @@
                     android:weightSum="2"
                     android:paddingLeft="8dp">
 
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:text="?"
+                        android:layout_weight="0.2"/>
+
                     <TextView
                         android:id="@+id/input3"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.9"
                         android:padding="8dp"
-                        android:text="Length, Diameter (D)" />
+                        android:text="Length, Diameter (D)"
+                        android:gravity="center_vertical"/>
 
                     <EditText
                         android:id="@+id/input_field3"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".6"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
                         android:padding="8dp"
                         android:inputType="numberDecimal"/>
 
                     <TextView
                         android:id="@+id/unit3"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="0.4"
                         android:padding="8dp"
-                        android:text="m"/>
+                        android:text="m"
+                        android:gravity="center_vertical"/>
 
                 </LinearLayout>
 
@@ -262,29 +288,38 @@
                     android:weightSum="2"
                     android:paddingLeft="8dp">
 
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:text="?"
+                        android:layout_weight="0.2"/>
+
                     <TextView
                         android:id="@+id/input4"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.9"
                         android:padding="8dp"
-                        android:text="Dynamic Viscosity (µ)" />
+                        android:text="Dynamic Viscosity (µ)"
+                        android:gravity="center_vertical"/>
 
                     <EditText
                         android:id="@+id/input_field4"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".6"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
                         android:padding="8dp"
                         android:inputType="numberDecimal"/>
 
                     <TextView
                         android:id="@+id/unit4"
                         android:layout_width="0px"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="0.4"
                         android:padding="8dp"
-                        android:text="Pa·s"/>
+                        android:text="Pa·s"
+                        android:gravity="center_vertical"/>
 
                 </LinearLayout>
 
