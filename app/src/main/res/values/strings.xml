@@ -92,21 +92,79 @@
     //Concepts Lists
     <string-array name="concepts_mechanics">
         <item>Castigliano\'s Method</item>
+        <item>Hooke\'s Law</item>
+        <item>Modified Goodman Failure Theory</item>
+        <item>Tresca Failure Theory</item>
     </string-array>
     <string-array name="concepts_materials">
+        <item>Ceramics and Glasses</item>
+        <item>Crystallography</item>
         <item>Galvanic Corrosion</item>
+        <item>Metallurgy</item>
+        <item>Nanotechnology</item>
+        <item>Polymers</item>
     </string-array>
     <string-array name="concepts_chemistry">
+        <item>Acids/Bases</item>
+        <item>Atomic Structure</item>
+        <item>Avogadro\'s Law</item>
+        <item>Beer-Lampert Law</item>
+        <item>Boyle\'s Law</item>
+        <item>Charles\'s Law</item>
+        <item>Gibb\'s Free Energy</item>
+        <item>Henry\'s Law</item>
+        <item>Hess\'s Law</item>
         <item>Ideal Gas Law</item>
+        <item>Le Chatelier\'s Principle</item>
+        <item>Lewis Structure</item>
+        <item>Orbital Theory</item>
+        <item>Periodic Table</item>
+        <item>Raoult\'s Law</item>
+        <item>Stoichiometry</item>
     </string-array>
     <string-array name="concepts_physics">
-        <item>Kinematics</item>
+        <item>Acceleration</item>
+        <item>Ampère's Circuital Law</item>
+        <item>Center of Mass</item>
+        <item>Circular Motion</item>
+        <item>Coulomb\'s Law</item>
+        <item>Doppler Effect</item>
+        <item>Energy</item>
+        <item>Electricity</item>
+        <item>Electrical Components</item>
+        <item>Faraday\'s Law of Induction</item>
+        <item>Force</item>
+        <item>Lenz\'s Law</item>
+        <item>Magnetism</item>
+        <item>Mass</item>
+        <item>Momentum/Impulse</item>
+        <item>Newton\'s Laws of Motion</item>
+        <item>Ohm\'s Law</item>
+        <item>Optics</item>
+        <item>Snell\'s Law</item>
+        <item>Speed/Velocity</item>
+        <item>String Theory</item>
+        <item>The Standard Model</item>
+        <item>Torque</item>
+        <item>Work</item>
     </string-array>
     <string-array name="concepts_thermalEngineering">
         <item>1st Law of Thermodynamics</item>
+        <item>2nd Law of Thermodynamics</item>
+        <item>Boiler</item>
+        <item>Condenser</item>
+        <item>Conduction</item>
+        <item>Convection</item>
+        <item>Enthalpy</item>
+        <item>Entropy</item>
+        <item>Heat Exchanger</item>
+        <item>Radiation</item>
+        <item>Thermal Energy</item>
+        <item>Thermodynamic Cycle</item>
     </string-array>
     <string-array name="concepts_mathematics">
-        <item>The Golden Ratio</item>
+        <item>Golden Ratio</item>
+        <item>Pythagorean Theorem</item>
     </string-array>
 
     //Fluid properties names
