@@ -36,10 +36,22 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
     private RadioGroup radioGroup;
     private int unitSel;
     Context context = this;
-    String[] fluidsDensityMetric;
-    String[] fluidsDensityImperial;
-    String[] fluidsDynamicViscosityMetric;
-    String[] fluidsDynamicViscosityImperial;
+    String[] densityMetricName;
+    String[] densityImperialName;
+    String[] dynamicViscosityMetricName;
+    String[] dynamicViscosityImperialName;
+    String[] densityMetricValue;
+    String[] densityImperialValue;
+    String[] dynamicViscosityMetricValue;
+    String[] dynamicViscosityImperialValue;
+    String[] heatTransferMetricName;
+    String[] heatTransferImperialName;
+    String[] heatTransferMetricValue;
+    String[] heatTransferImperialValue;
+    String[] thermalConductivityMetricName;
+    String[] thermalConductivityImperialName;
+    String[] thermalConductivityMetricValue;
+    String[] thermalConductivityImperialValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,7 +130,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                                 break;
                             case "Biot Number (Bi)":
                                 unit1.setText("ft");
-                                unit2.setText("BTU/(s⋅ft²⋅°F)");
+                                unit2.setText("BTU/(hr⋅ft²⋅°F)");
                                 unit3.setText("BTU/(hr⋅ft⋅°F)");
                                 break;
                             case "Sherwood Number (Sh)":
@@ -127,7 +139,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                                 unit3.setText("ft");
                                 break;
                             case "Nusselt Number (Nu)":
-                                unit1.setText("BTU/(s⋅ft²⋅°F)");
+                                unit1.setText("BTU/(hr⋅ft²⋅°F)");
                                 unit2.setText("ft");
                                 unit3.setText("BTU/(hr⋅ft⋅°F)");
                                 break;
@@ -177,39 +189,73 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                 }
             });
 
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
-
         button1.setOnClickListener((View v) -> {
+            input_field1.setError(null);
             switch(spinner1.getSelectedItem().toString()) {
                 case "Reynold's Number (Re)":
-                    input_field1.setError(null);
                     if(unitSel == 0) {
-                        displayAlert(fluidsDensityMetric, input_field1, "1049", "1.205",
-                                "924", "1000", "1022");
+                        displayAlert(densityMetricName, input_field1, densityMetricValue);
                     }
                     else if(unitSel == 1) {
-                        displayAlert(fluidsDensityImperial, input_field1, "65.5", "0.0752",
-                                "57.7", "62.4", "63.8");
+                        displayAlert(densityImperialName, input_field1, densityImperialValue);
                     }
                     break;
+                case "Atwood Number (A)":
+                    if(unitSel == 0) {
+                        displayAlert(densityMetricName, input_field1, densityMetricValue);
+                    }
+                    else if(unitSel == 1) {
+                        displayAlert(densityImperialName, input_field1, densityImperialValue);
+                    }
+                    break;
+            }
+        });
+
+        button2.setOnClickListener((View v) -> {
+            input_field1.setError(null);
+            switch(spinner1.getSelectedItem().toString()) {
+                case "Atwood Number (A)":
+                    if(unitSel == 0) {
+                        displayAlert(densityMetricName, input_field2, densityMetricValue);
+                    }
+                    else if(unitSel == 1) {
+                        displayAlert(densityImperialName, input_field2, densityImperialValue);
+                    }
+                    break;
+                case "Biot Number (Bi)":
+                    if(unitSel == 0) {
+                        displayAlert(heatTransferMetricName, input_field2, heatTransferMetricValue);
+                    }
+                    else if(unitSel == 1){
+                        displayAlert(heatTransferImperialName, input_field2, heatTransferImperialValue);
+                    }
+
+            }
+        });
+
+        button3.setOnClickListener((View v) -> {
+            input_field1.setError(null);
+            switch(spinner1.getSelectedItem().toString()) {
+                case "Biot Number (Bi)":
+                    if(unitSel == 0) {
+                        displayAlert(thermalConductivityMetricName, input_field3, thermalConductivityMetricValue);
+                    }
+                    else if(unitSel == 1){
+                        displayAlert(thermalConductivityImperialName, input_field3, thermalConductivityImperialValue);
+                    }
 
             }
         });
 
         button4.setOnClickListener((View v) -> {
+            input_field1.setError(null);
             switch(spinner1.getSelectedItem().toString()) {
                 case "Reynold's Number (Re)":
-                    input_field4.setError(null);
                     if(unitSel == 0) {
-                        displayAlert(fluidsDynamicViscosityMetric, input_field4, "0.001155",
-                                "0.00001722","0.0162", "0.00089", "0.00011");
+                        displayAlert(dynamicViscosityMetricName, input_field4, dynamicViscosityMetricValue);
                     }
                     else if(unitSel == 1) {
-                        displayAlert(fluidsDynamicViscosityImperial, input_field4, "0.000776",
-                                "0.00001157","0.0109", "0.0006", "0.000074");
+                        displayAlert(dynamicViscosityImperialName, input_field4, dynamicViscosityImperialValue);
                     }
                     break;
 
@@ -217,8 +263,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         });
     }
 
-    public void displayAlert(String[] fluids, EditText inputField, String num1, String num2, String num3,
-                             String num4, String num5) {
+    public void displayAlert(String[] fluids, EditText inputField, String[] numbers) {
         // setup the alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Select a Fluid");
@@ -228,19 +273,55 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 switch (which) {
                     case 0:
-                        inputField.setText(num1);
+                        inputField.setText(numbers[0]);
                         break;
                     case 1:
-                        inputField.setText(num2);
+                        inputField.setText(numbers[1]);
                         break;
                     case 2:
-                        inputField.setText(num3);
+                        inputField.setText(numbers[2]);
                         break;
                     case 3:
-                        inputField.setText(num4);
+                        inputField.setText(numbers[3]);
                         break;
                     case 4:
-                        inputField.setText(num5);
+                        inputField.setText(numbers[4]);
+                        break;
+                    case 5:
+                        inputField.setText(numbers[5]);
+                        break;
+                    case 6:
+                        inputField.setText(numbers[6]);
+                        break;
+                    case 7:
+                        inputField.setText(numbers[7]);
+                        break;
+                    case 8:
+                        inputField.setText(numbers[8]);
+                        break;
+                    case 9:
+                        inputField.setText(numbers[9]);
+                        break;
+                    case 10:
+                        inputField.setText(numbers[10]);
+                        break;
+                    case 11:
+                        inputField.setText(numbers[11]);
+                        break;
+                    case 12:
+                        inputField.setText(numbers[12]);
+                        break;
+                    case 13:
+                        inputField.setText(numbers[13]);
+                        break;
+                    case 14:
+                        inputField.setText(numbers[14]);
+                        break;
+                    case 15:
+                        inputField.setText(numbers[15]);
+                        break;
+                    case 16:
+                        inputField.setText(numbers[16]);
                         break;
                 }
             }
@@ -491,10 +572,23 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         MathView dimensionlessFormula = findViewById(R.id.formula);
         radioGroup = findViewById(R.id.radiogroup);
 
-        fluidsDensityMetric = getResources().getStringArray(R.array.fluids_density_metric);
-        fluidsDensityImperial = getResources().getStringArray(R.array.fluids_density_imperial);
-        fluidsDynamicViscosityMetric = getResources().getStringArray(R.array.fluids_dynamicViscosity_metric);
-        fluidsDynamicViscosityImperial = getResources().getStringArray(R.array.fluids_dynamicViscosity_imperial);
+        densityMetricName = getResources().getStringArray(R.array.density_metric_name);
+        densityImperialName = getResources().getStringArray(R.array.density_imperial_name);
+        dynamicViscosityMetricName = getResources().getStringArray(R.array.dynamicViscosity_metric_name);
+        dynamicViscosityImperialName = getResources().getStringArray(R.array.dynamicViscosity_imperial_name);
+        heatTransferMetricName = getResources().getStringArray(R.array.heatTransfer_metric_name);
+        heatTransferImperialName = getResources().getStringArray(R.array.heatTransfer_imperial_name);
+        thermalConductivityMetricName = getResources().getStringArray(R.array.thermalConductivity_metric_name);
+        thermalConductivityImperialName = getResources().getStringArray(R.array.thermalConductivity_imperial_name);
+
+        densityMetricValue = getResources().getStringArray(R.array.density_metric_value);
+        densityImperialValue = getResources().getStringArray(R.array.density_imperial_value);
+        dynamicViscosityMetricValue = getResources().getStringArray(R.array.dynamicViscosity_metric_value);
+        dynamicViscosityImperialValue = getResources().getStringArray(R.array.dynamicViscosity_imperial_value);
+        heatTransferMetricValue = getResources().getStringArray(R.array.heatTransfer_metric_value);
+        heatTransferImperialValue = getResources().getStringArray(R.array.heatTransfer_imperial_value);
+        thermalConductivityMetricValue = getResources().getStringArray(R.array.thermalConductivity_metric_value);
+        thermalConductivityImperialValue = getResources().getStringArray(R.array.thermalConductivity_imperial_value);
 
         final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, data1);
@@ -503,115 +597,115 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
 
         data1.add("Reynold's Number (Re)");
 
-        data1.add("[X]Abbe Number (V)");
+        //data1.add("[X]Abbe Number (V)");
         data1.add("Atwood Number (A)");
 
-        data1.add("[X]Bagnold Number (Ba)");
-        data1.add("[X]Behan Number (Be)");
-        data1.add("[X]Bingham Number (Bm)");
+        //data1.add("[X]Bagnold Number (Ba)");
+        //data1.add("[X]Behan Number (Be)");
+        //data1.add("[X]Bingham Number (Bm)");
         data1.add("Biot Number (Bi)");
-        data1.add("[X]Blake Number (Bl)");
-        data1.add("[X]Bodenstein Number (Bd)");
-        data1.add("[X]Bond Number (Bo)");
-        data1.add("[X]Brinkman Number (Br)");
-        data1.add("[X]Brownell-Katz Number (NBK)");
+        //data1.add("[X]Blake Number (Bl)");
+        //data1.add("[X]Bodenstein Number (Bd)");
+        //data1.add("[X]Bond Number (Bo)");
+        //data1.add("[X]Brinkman Number (Br)");
+        //data1.add("[X]Brownell-Katz Number (NBK)");
 
-        data1.add("[X]Capillary Number (Ca)");
-        data1.add("[X]Chandrasekhar Number (Q)");
-        data1.add("[X]Cohesion Number (Coh)");
-        data1.add("[X]Courant-Friedrich-Levy No. (C)");
+        //data1.add("[X]Capillary Number (Ca)");
+        //data1.add("[X]Chandrasekhar Number (Q)");
+        //data1.add("[X]Cohesion Number (Coh)");
+        //data1.add("[X]Courant-Friedrich-Levy No. (C)");
 
-        data1.add("[X]Damping Ratio (ζ)");
-        data1.add("[X]Darcy Number (Da)");
-        data1.add("[X]Dean Number (D)");
-        data1.add("[X]Deborah Number (De)");
-        data1.add("[X]Drag Coefficient (C𝒹)");
-        data1.add("[X]Dukhin Number (Du)");
+        //data1.add("[X]Damping Ratio (ζ)");
+        //data1.add("[X]Darcy Number (Da)");
+        //data1.add("[X]Dean Number (D)");
+        //data1.add("[X]Deborah Number (De)");
+        //data1.add("[X]Drag Coefficient (C𝒹)");
+        //data1.add("[X]Dukhin Number (Du)");
 
-        data1.add("[X]Eckert Number (Ec)");
-        data1.add("[X]Ekman Number (Ek)");
-        data1.add("[X]Eötvös Number (Eo)");
-        data1.add("[X]Ericksen Number (Er)");
-        data1.add("[X]Euler Number (Eu)");
-        data1.add("[X]Excess Temperature Coefficient (Ɵᵣ)");
+        //data1.add("[X]Eckert Number (Ec)");
+        //data1.add("[X]Ekman Number (Ek)");
+        //data1.add("[X]Eötvös Number (Eo)");
+        //data1.add("[X]Ericksen Number (Er)");
+        //data1.add("[X]Euler Number (Eu)");
+        //data1.add("[X]Excess Temperature Coefficient (Ɵᵣ)");
 
-        data1.add("[X]Fine-structure Constant (α)");
-        data1.add("[X]F-Number (f)");
-        data1.add("[X]Föppl–von Kármán Number (γ)");
-        data1.add("[X]Fourier Number (Fo)");
-        data1.add("[X]Fresnel Number (F)");
-        data1.add("[X]Froude Number (Fr)");
+        //data1.add("[X]Fine-structure Constant (α)");
+        //data1.add("[X]F-Number (f)");
+        //data1.add("[X]Föppl–von Kármán Number (γ)");
+        //data1.add("[X]Fourier Number (Fo)");
+        //data1.add("[X]Fresnel Number (F)");
+        //data1.add("[X]Froude Number (Fr)");
 
-        data1.add("[X]Galilei Number (Ga)");
-        data1.add("[X]Görtler Number (G)");
-        data1.add("[X]Graetz Number (Gz)");
-        data1.add("[X]Grashof Number (Gr)");
-        data1.add("[X]Gravitational Coupling Constant (αG)");
+        //data1.add("[X]Galilei Number (Ga)");
+        //data1.add("[X]Görtler Number (G)");
+        //data1.add("[X]Graetz Number (Gz)");
+        //data1.add("[X]Grashof Number (Gr)");
+        //data1.add("[X]Gravitational Coupling Constant (αG)");
 
-        data1.add("[X]Hatta Number (Ha)");
-        data1.add("[X]Hagen Number (Hg)");
-        data1.add("[X]Havnes Parameter (Pₕ)");
-        data1.add("[X]Helmholtz Number (He)");
-        data1.add("[X]Hydraulic Gradient (i)");
+        //data1.add("[X]Hatta Number (Ha)");
+        //data1.add("[X]Hagen Number (Hg)");
+        //data1.add("[X]Havnes Parameter (Pₕ)");
+        //data1.add("[X]Helmholtz Number (He)");
+        //data1.add("[X]Hydraulic Gradient (i)");
 
-        data1.add("[X]Iribarren Number (Ir)");
+        //data1.add("[X]Iribarren Number (Ir)");
 
-        data1.add("[X]Jakob Number (Ja)");
+        //data1.add("[X]Jakob Number (Ja)");
 
-        data1.add("[X]Karlovitz Number (Ka)");
-        data1.add("[X]Keulegan-Carpenter Number (Kc)");
-        data1.add("[X]Knudsen Number (Kn)");
-        data1.add("[X]Kutateladze Number (Ku)");
+        //data1.add("[X]Karlovitz Number (Ka)");
+        //data1.add("[X]Keulegan-Carpenter Number (Kc)");
+        //data1.add("[X]Knudsen Number (Kn)");
+        //data1.add("[X]Kutateladze Number (Ku)");
 
-        data1.add("[X]Laplace Number (La)");
-        data1.add("[X]Lewis Number (Le)");
-        data1.add("[X]Lift Coefficient (Cₗ)");
-        data1.add("[X]Lockhart-Martinelli Parameter (X)");
-        data1.add("[X]Lundquist Number (S)");
+        //data1.add("[X]Laplace Number (La)");
+        //data1.add("[X]Lewis Number (Le)");
+        //data1.add("[X]Lift Coefficient (Cₗ)");
+        //data1.add("[X]Lockhart-Martinelli Parameter (X)");
+        //data1.add("[X]Lundquist Number (S)");
 
-        data1.add("[X]Mach Number (Ma)");
-        data1.add("[X]Magnetic Reynolds Number (Rₘ)");
-        data1.add("[X]Markstein Number (M)");
-        data1.add("[X]Morton Number (Mo)");
+        data1.add("Mach Number (Ma)");
+        //data1.add("[X]Magnetic Reynolds Number (Rₘ)");
+        //data1.add("[X]Markstein Number (M)");
+        //data1.add("[X]Morton Number (Mo)");
 
         data1.add("Nusselt Number (Nu)");
 
-        data1.add("[X]Ohnesorge Number (Oh)");
+        //data1.add("[X]Ohnesorge Number (Oh)");
 
-        data1.add("[X]Péclet Number (Pe)");
-        data1.add("[X]Perveance (K)");
-        data1.add("[X]Plasma Physics Beta (β)");
-        data1.add("[X]Porosity (φ)");
+        //data1.add("[X]Péclet Number (Pe)");
+        //data1.add("[X]Perveance (K)");
+        //data1.add("[X]Plasma Physics Beta (β)");
+        //data1.add("[X]Porosity (φ)");
         data1.add("Prandtl Number (Pr)");
-        data1.add("[X]Pressure Coefficient (Cₚ)");
+        //data1.add("[X]Pressure Coefficient (Cₚ)");
 
-        data1.add("[X]Rayleigh Number (Ra)");
-        data1.add("[X]Refractive Index (n)");
-        data1.add("[X]Richardson Number (Ri)");
-        data1.add("[X]Rolling Resistance Coefficient (Cᵣᵣ)");
-        data1.add("[X]Roshko Number (Ro)");
-        data1.add("[X]Rossby Number (Ro)");
-        data1.add("[X]Rouse Number (P)");
+        //data1.add("[X]Rayleigh Number (Ra)");
+        //data1.add("[X]Refractive Index (n)");
+        //data1.add("[X]Richardson Number (Ri)");
+        //data1.add("[X]Rolling Resistance Coefficient (Cᵣᵣ)");
+        //data1.add("[X]Roshko Number (Ro)");
+        //data1.add("[X]Rossby Number (Ro)");
+        //data1.add("[X]Rouse Number (P)");
 
-        data1.add("[X]Schmidt Number (Sc)");
+        //data1.add("[X]Schmidt Number (Sc)");
         data1.add("Sherwood Number (Sh)");
-        data1.add("[X]Shields Parameter (τ*)");
-        data1.add("[X]Sommerfield Number (S)");
-        data1.add("[X]Stanton Number (St)");
-        data1.add("[X]Stefan Number (Ste)");
-        data1.add("[X]Stokes Number (Stk)");
-        data1.add("[X]Strouhal Number (St)");
-        data1.add("[X]Stuart Number (N)");
+        //data1.add("[X]Shields Parameter (τ*)");
+        //data1.add("[X]Sommerfield Number (S)");
+        //data1.add("[X]Stanton Number (St)");
+        //data1.add("[X]Stefan Number (Ste)");
+        //data1.add("[X]Stokes Number (Stk)");
+        //data1.add("[X]Strouhal Number (St)");
+        //data1.add("[X]Stuart Number (N)");
 
-        data1.add("[X]Taylor Number (Ta)");
+        //data1.add("[X]Taylor Number (Ta)");
 
-        data1.add("[X]Ursell Number (U)");
+        //data1.add("[X]Ursell Number (U)");
 
-        data1.add("[X]Weber Number (We)");
-        data1.add("[X]Weissenberg Number (Wi)");
-        data1.add("[X]Womersley Number (α)");
+        //data1.add("[X]Weber Number (We)");
+        //data1.add("[X]Weissenberg Number (Wi)");
+        //data1.add("[X]Womersley Number (α)");
 
-        data1.add("[X]Zel'dovich Number (β)");
+        //data1.add("[X]Zel'dovich Number (β)");
 
         adapter1.notifyDataSetChanged();
 
@@ -696,7 +790,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         }
                         else if(unitSel == 1){
                             unit1.setText(R.string.units_imperial_lengthDiameter);
-                            unit2.setText("BTU/(s⋅ft²⋅°F)");
+                            unit2.setText("BTU/(hr⋅ft²⋅°F)");
                             unit3.setText("BTU/(hr⋅ft⋅°F)");
                         }
                         break;
@@ -741,7 +835,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                             unit3.setText("W/(m⋅K)");
                         }
                         else if(unitSel == 1){
-                            unit1.setText("BTU/(s⋅ft²⋅°F)");
+                            unit1.setText("BTU/(hr⋅ft²⋅°F)");
                             unit2.setText("ft");
                             unit3.setText("BTU/(hr⋅ft⋅°F)");
                         }

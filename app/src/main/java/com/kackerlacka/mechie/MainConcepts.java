@@ -28,7 +28,7 @@ public class MainConcepts extends Fragment {
         Picasso.get().load(R.drawable.chemistry).resize(600, 600).into(chemistry);
         Picasso.get().load(R.drawable.physics).resize(600, 600).into(physics);
         Picasso.get().load(R.drawable.thermal).resize(600, 600).into(thermalEngineering);
-        Picasso.get().load(R.drawable.mathematics).resize(600, 600).into(mathematics);
+        Picasso.get().load(R.drawable.equations).resize(600, 600).into(mathematics);
         return view;
 
     }

@@ -22,16 +22,24 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
     private Spinner spinner2;
     List<String> data1 = new ArrayList<>();
     List<String> data2 = new ArrayList<>();
-    private int units;
+    private int unitSel;
     private RadioGroup radioGroup;
-    String[] copperStandard;
-    String[] copperAnnealed;
-    String[] copperColdWorked;
-    String[] copperColdDrawn;
-    String[] titaniumStandard;
-    String[] titaniumCarbide;
-    String[] aluminum6061;
-    String[] ironStandard;
+    String[] copperStandardMetric;
+    String[] copperAnnealedMetric;
+    String[] copperColdWorkedMetric;
+    String[] copperColdDrawnMetric;
+    String[] titaniumStandardMetric;
+    String[] titaniumCarbideMetric;
+    String[] aluminum6061Metric;
+    String[] ironStandardMetric;
+    String[] copperStandardImperial;
+    String[] copperAnnealedImperial;
+    String[] copperColdWorkedImperial;
+    String[] copperColdDrawnImperial;
+    String[] titaniumStandardImperial;
+    String[] titaniumCarbideImperial;
+    String[] aluminum6061Imperial;
+    String[] ironStandardImperial;
     String[] placeholder;
 
     @Override
@@ -50,15 +58,101 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
         getSupportActionBar().setTitle("Metal Properties");
 
         radioGroup = findViewById(R.id.radiogroup);
-
         radioGroup.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-                if(selectedId == 1) {
-                    units = 0;
-                }
-                else if(selectedId == 2) {
-                    units = 1;
-                }
+            switch(checkedId) {
+                case R.id.metric:
+                    unitSel = 0;
+                    switch(spinner1.getSelectedItem().toString()) {
+                        case "Copper":
+                            switch(spinner2.getSelectedItem().toString()) {
+                                case "Standard":
+                                    spinnerSelection(copperStandardMetric);
+                                    break;
+                                case "Annealed":
+                                    spinnerSelection(copperAnnealedMetric);
+                                    break;
+                                case "Cold-Worked":
+                                    spinnerSelection(copperColdWorkedMetric);
+                                    break;
+                                case "Cold Drawn":
+                                    spinnerSelection(copperColdDrawnMetric);
+                                    break;
+                            }
+                            break;
+                        case "Titanium":
+                            switch(spinner2.getSelectedItem().toString()) {
+                                case "Standard":
+                                    spinnerSelection(titaniumStandardMetric);
+                                    break;
+                                case "Carbide":
+                                    spinnerSelection(titaniumCarbideMetric);
+                                    break;
+                            }
+                            break;
+                        case "Aluminum":
+                            switch(spinner2.getSelectedItem().toString()) {
+                                case "6061-T6 Alloy":
+                                    spinnerSelection(aluminum6061Metric);
+                                    break;
+                            }
+                            break;
+                        case "Iron":
+                            switch(spinner2.getSelectedItem().toString()) {
+                                case "Standard":
+                                    spinnerSelection(ironStandardMetric);
+                                    break;
+                            }
+                            break;
+
+                    }
+                    break;
+                case R.id.imperial:
+                    unitSel = 1;
+                    switch(spinner1.getSelectedItem().toString()) {
+                        case "Copper":
+                            switch(spinner2.getSelectedItem().toString()) {
+                                case "Standard":
+                                    spinnerSelection(copperStandardImperial);
+                                    break;
+                                case "Annealed":
+                                    spinnerSelection(copperAnnealedImperial);
+                                    break;
+                                case "Cold-Worked":
+                                    spinnerSelection(copperColdWorkedImperial);
+                                    break;
+                                case "Cold Drawn":
+                                    spinnerSelection(copperColdDrawnImperial);
+                                    break;
+                            }
+                            break;
+                        case "Titanium":
+                            switch(spinner2.getSelectedItem().toString()) {
+                                case "Standard":
+                                    spinnerSelection(titaniumStandardImperial);
+                                    break;
+                                case "Carbide":
+                                    spinnerSelection(titaniumCarbideImperial);
+                                    break;
+                            }
+                            break;
+                        case "Aluminum":
+                            switch(spinner2.getSelectedItem().toString()) {
+                                case "6061-T6 Alloy":
+                                    spinnerSelection(aluminum6061Imperial);
+                                    break;
+                            }
+                            break;
+                        case "Iron":
+                            switch(spinner2.getSelectedItem().toString()) {
+                                case "Standard":
+                                    spinnerSelection(ironStandardImperial);
+                                    break;
+                            }
+                            break;
+
+                    }
+                    break;
+            }
         });
 
         addListenerOnButton();
@@ -124,15 +218,23 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
 
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                copperStandard = getResources().getStringArray(R.array.copper_standard);
-                copperAnnealed = getResources().getStringArray(R.array.copper_annealed);
-                copperColdWorked = getResources().getStringArray(R.array.copper_coldWorked);
-                copperColdDrawn = getResources().getStringArray(R.array.copper_coldDrawn);
-                titaniumStandard = getResources().getStringArray(R.array.titanium_standard);
-                titaniumCarbide = getResources().getStringArray(R.array.titanium_standard);
-                aluminum6061 = getResources().getStringArray(R.array.aluminum);
-                ironStandard = getResources().getStringArray(R.array.iron_standard);
-                placeholder = getResources().getStringArray(R.array.placeholder);
+                copperStandardMetric = getResources().getStringArray(R.array.copper_standard_metric);
+                copperAnnealedMetric = getResources().getStringArray(R.array.copper_annealed_metric);
+                copperColdWorkedMetric = getResources().getStringArray(R.array.copper_coldWorked_metric);
+                copperColdDrawnMetric = getResources().getStringArray(R.array.copper_coldDrawn_metric);
+                titaniumStandardMetric = getResources().getStringArray(R.array.titanium_standard_metric);
+                titaniumCarbideMetric = getResources().getStringArray(R.array.titanium_carbide_metric);
+                aluminum6061Metric = getResources().getStringArray(R.array.aluminum_6061_metric);
+                ironStandardMetric = getResources().getStringArray(R.array.iron_standard_metric);
+
+                copperStandardImperial = getResources().getStringArray(R.array.copper_standard_imperial);
+                copperAnnealedImperial = getResources().getStringArray(R.array.copper_annealed_imperial);
+                copperColdWorkedImperial = getResources().getStringArray(R.array.copper_coldWorked_imperial);
+                copperColdDrawnImperial = getResources().getStringArray(R.array.copper_coldDrawn_imperial);
+                titaniumStandardImperial = getResources().getStringArray(R.array.titanium_standard_imperial);
+                titaniumCarbideImperial = getResources().getStringArray(R.array.titanium_carbide_imperial);
+                aluminum6061Imperial = getResources().getStringArray(R.array.aluminum_6061_imperial);
+                ironStandardImperial = getResources().getStringArray(R.array.iron_standard_imperial);
 
                 switch(spinner1.getSelectedItemPosition()) {
                     case 0:
@@ -143,39 +245,44 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         data2.add("Cold-Worked");
                         data2.add("Cold Drawn");
                         adapter2.notifyDataSetChanged();
-                        spinnerSelection(copperStandard);
+                        if(unitSel == 0) {
+                            spinnerSelection(copperStandardMetric);
+                        }
+                        else if(unitSel == 1) {
+                            spinnerSelection(copperStandardImperial);
+                        }
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 if(spinner2.getSelectedItemPosition() == 0) {
-                                    if(units == 0) {
-                                        spinnerSelection(copperStandard);
+                                    if(unitSel == 0) {
+                                        spinnerSelection(copperStandardMetric);
                                     }
-                                    else if(units == 1) {
-                                        spinnerSelection(placeholder);
+                                    else if(unitSel == 1) {
+                                        spinnerSelection(copperStandardImperial);
                                     }
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 1) {
-                                    if(units == 0) {
-                                        spinnerSelection(copperAnnealed);
+                                    if(unitSel == 0) {
+                                        spinnerSelection(copperAnnealedMetric);
                                     }
-                                    else if(units == 1) {
-                                        spinnerSelection(placeholder);
+                                    else if(unitSel == 1) {
+                                        spinnerSelection(copperAnnealedImperial);
                                     }
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 2){
-                                    if(units == 0) {
-                                        spinnerSelection(copperColdWorked);
+                                    if(unitSel == 0) {
+                                        spinnerSelection(copperColdWorkedMetric);
                                     }
-                                    else if(units == 1) {
-                                        spinnerSelection(placeholder);
+                                    else if(unitSel == 1) {
+                                        spinnerSelection(copperColdWorkedImperial);
                                     }
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 3){
-                                    if(units == 0) {
-                                        spinnerSelection(copperColdDrawn);
+                                    if(unitSel == 0) {
+                                        spinnerSelection(copperColdDrawnMetric);
                                     }
-                                    else if(units == 1) {
-                                        spinnerSelection(placeholder);
+                                    else if(unitSel == 1) {
+                                        spinnerSelection(copperColdDrawnImperial);
                                     }
                                 }
                             }
@@ -187,14 +294,29 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         data2.add("Standard");
                         data2.add("Carbide");
                         adapter2.notifyDataSetChanged();
-                        spinnerSelection(titaniumStandard);
+                        if(unitSel == 0) {
+                            spinnerSelection(titaniumStandardMetric);
+                        }
+                        else if(unitSel == 1) {
+                            spinnerSelection(titaniumStandardImperial);
+                        }
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 if(spinner2.getSelectedItemPosition() == 0) {
-                                    spinnerSelection(titaniumStandard);
+                                    if(unitSel == 0) {
+                                        spinnerSelection(copperColdDrawnMetric);
+                                    }
+                                    else if(unitSel == 1) {
+                                        spinnerSelection(copperColdDrawnImperial);
+                                    }
                                 }
                                 else if(spinner2.getSelectedItemPosition() == 1){
-                                    spinnerSelection(titaniumCarbide);
+                                    if(unitSel == 0) {
+                                        spinnerSelection(titaniumCarbideMetric);
+                                    }
+                                    else if(unitSel == 1) {
+                                        spinnerSelection(titaniumCarbideImperial);
+                                    }
                                 }
                             }
                         });
@@ -205,12 +327,21 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         data2.clear();
                         data2.add("6061-T6 Alloy");
                         adapter2.notifyDataSetChanged();
-
-                        spinnerSelection(aluminum6061);
+                        if(unitSel == 0) {
+                            spinnerSelection(aluminum6061Metric);
+                        }
+                        else if(unitSel == 1) {
+                            spinnerSelection(aluminum6061Imperial);
+                        }
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 if(spinner2.getSelectedItemPosition() == 0) {
-                                    spinnerSelection(aluminum6061);
+                                    if(unitSel == 0) {
+                                        spinnerSelection(aluminum6061Metric);
+                                    }
+                                    else if(unitSel == 1) {
+                                        spinnerSelection(aluminum6061Imperial);
+                                    }
                                 }
                             }
                         });
@@ -221,11 +352,21 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                         data2.clear();
                         data2.add("Standard");
                         adapter2.notifyDataSetChanged();
-                        spinnerSelection(ironStandard);
+                        if(unitSel == 0) {
+                            spinnerSelection(ironStandardMetric);
+                        }
+                        else if(unitSel == 1) {
+                            spinnerSelection(ironStandardImperial);
+                        }
                         spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 if(spinner2.getSelectedItemPosition() == 0) {
-                                    spinnerSelection(ironStandard);
+                                    if(unitSel == 0) {
+                                        spinnerSelection(ironStandardMetric);
+                                    }
+                                    else if(unitSel == 1) {
+                                        spinnerSelection(ironStandardImperial);
+                                    }
                                 }
                             }
                         });

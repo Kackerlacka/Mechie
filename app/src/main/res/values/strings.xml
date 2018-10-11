@@ -22,8 +22,9 @@
         not liable nor responsible for any damages or losses incurred from using this information. It is
         expressly understood that the user understands the risk of continued use of this information
         in an \'as-is'\ basis.</string>
-    <string name="about_sources">Many of the concepts, constants, equations, and information on tools was
-        sourced from Wikipedia.com.</string>
+    <string name="about_sources">Much of the conceptual information contained in this application was
+        comes from Wikipedia.com and its various sources, while most of the data (thermal coefficients,
+        densities, numbers, etc) was sourced from Matweb.com and EngineeringToolbox.com.</string>
 
     //Copyleft Activity
     <string name="copyleft_title">Use of the information presented in this app is subject to the following terms:</string>
@@ -108,41 +109,124 @@
         <item>The Golden Ratio</item>
     </string-array>
 
-    //Fluid densities
-    <string-array name="fluids_density_metric">
+    //Fluid properties names
+    <string-array name="density_metric_name">
         <item>Acetic Acid</item>
         <item>Air</item>
         <item>Coconut Oil</item>
         <item>Fresh water</item>
         <item>Sea water</item>
     </string-array>
-
-    <string-array name="fluids_density_imperial">
+    <string-array name="density_imperial_name">
         <item>Acetic Acid</item>
         <item>Air</item>
         <item>Coconut Oil</item>
         <item>Fresh water</item>
         <item>Sea water</item>
     </string-array>
-
-    <string-array name="fluids_dynamicViscosity_metric">
+    <string-array name="dynamicViscosity_metric_name">
         <item>Acetic Acid</item>
         <item>Air</item>
         <item>Ethylene Glycol</item>
         <item>Fresh water</item>
         <item>Propane</item>
     </string-array>
-
-    <string-array name="fluids_dynamicViscosity_imperial">
+    <string-array name="dynamicViscosity_imperial_name">
         <item>Acetic Acid</item>
         <item>Air</item>
         <item>Ethylene Glycol</item>
         <item>Fresh water</item>
         <item>Propane</item>
     </string-array>
+    <string-array name="heatTransfer_metric_name">
+        <item>Air, low speed flow over surface (forced convection)</item>
+        <item>Air, moderate speed flow over surface (forced convection)</item>
+        <item>Air, moderate cross-speed flow over cylinder (forced convection)</item>
+        <item>Air</item>
+        <item>Water, moderate flow in pipe (forced convection)</item>
+        <item>Water (boiling), flow in pipe (forced convection)</item>
+        <item>Molten Metals (forced convection)</item>
+        <item>Water and Liquids (forced convection)</item>
+        <item>Water and Liquids (free convection)</item>
+        <item>Gases and Dry Vapors (free convection)</item>
+        <item>Free Convection (vertical plate in air with 30°C temp difference)</item>
+        <item>Boiling water</item>
+        <item>Water flowing in tubes</item>
+        <item>Condensing water vapor</item>
+        <item>Water in free convection</item>
+        <item>Oil in free convection</item>
+        <item>Gas flow on tubes and between tubes</item>
+    </string-array>
+    <string-array name="heatTransfer_imperial_name">
+        <item>Placeholder</item>
+    </string-array>
+    <string-array name="thermalConductivity_metric_name">
+        <item>Placeholder</item>
+    </string-array>
+    <string-array name="thermalConductivity_imperial_name">
+        <item>Placeholder</item>
+    </string-array>
 
-    //Metal Properties Lists
-    <string-array name="copper_standard">
+    //Fluid properties values
+    <string-array name="density_metric_value">
+        <item>1049</item>
+        <item>1.225</item>
+        <item>924</item>
+        <item>1000</item>
+        <item>1022</item>
+    </string-array>
+    <string-array name="density_imperial_value">
+        <item>65.5</item>
+        <item>0.0752</item>
+        <item>57.7</item>
+        <item>62.4</item>
+        <item>63.8</item>
+    </string-array>
+    <string-array name="dynamicViscosity_metric_value">
+        <item>0.001155</item>
+        <item>0.00001722</item>
+        <item>0.0162</item>
+        <item>0.00089</item>
+        <item>0.00011</item>
+    </string-array>
+    <string-array name="dynamicViscosity_imperial_value">
+        <item>0.000776</item>
+        <item>0.00001157</item>
+        <item>0.0109</item>
+        <item>0.0006</item>
+        <item>0.000074</item>
+    </string-array>
+    <string-array name="heatTransfer_metric_value">
+        <item>10</item>
+        <item>100</item>
+        <item>200</item>
+        <item>10&#8211;100</item>
+        <item>3000</item>
+        <item>50,000</item>
+        <item>2000&#8211;45000</item>
+        <item>50&#8211;10000</item>
+        <item>50&#8211;3000</item>
+        <item>5&#8211;37</item>
+        <item>5</item>
+        <item>3&#8211;100</item>
+        <item>500&#8211;1200</item>
+        <item>5&#8211;100</item>
+        <item>100&#8211;1200</item>
+        <item>50&#8211;350</item>
+        <item>10&#8211;350</item>
+    </string-array>
+    <string-array name="heatTransfer_imperial_value">
+        <item>Placeholder</item>
+    </string-array>
+    <string-array name="thermalConductivity_metric_value">
+        <item>Placeholder</item>
+    </string-array>
+    <string-array name="thermalConductivity_imperial_value">
+        <item>Placeholder</item>
+    </string-array>
+
+    //Metal Properties Metric
+    <string-array name="copper_standard_metric">
         <item>8.93 g/cm³</item>
         <item>Face-centered Cubic</item>
         <item>-</item>
@@ -158,7 +242,7 @@
         <item>2595 °C</item>
         <item>17 µm/m-°C</item>
     </string-array>
-    <string-array name="copper_annealed">
+    <string-array name="copper_annealed_metric">
         <item>7.764 g/cm³</item>
         <item>Face-centered Cubic</item>
         <item>100</item>
@@ -174,7 +258,7 @@
         <item>2562 °C</item>
         <item>16.4 µm/m-°C</item>
     </string-array>
-    <string-array name="copper_coldWorked">
+    <string-array name="copper_coldWorked_metric">
         <item>8.96 g/cm³</item>
         <item>Face-centered Cubic</item>
         <item>50</item>
@@ -190,7 +274,7 @@
         <item>2562 °C</item>
         <item>16.4 µm/m-°C</item>
     </string-array>
-    <string-array name="copper_coldDrawn">
+    <string-array name="copper_coldDrawn_metric">
         <item>8.96 g/cm³</item>
         <item>Face-centered Cubic</item>
         <item>-</item>
@@ -206,7 +290,7 @@
         <item>2562 °C</item>
         <item>16.4 µm/m-°C</item>
     </string-array>
-    <string-array name="titanium_standard">
+    <string-array name="titanium_standard_metric">
         <item>4.50 g/cm³</item>
         <item>Hexagonal close-packed</item>
         <item>60</item>
@@ -222,7 +306,7 @@
         <item>3287 °C</item>
         <item>8.90 µm/m-°C</item>
     </string-array>
-    <string-array name="titanium_carbide">
+    <string-array name="titanium_carbide_metric">
         <item>4.94 g/cm³</item>
         <item>Cubic</item>
         <item>-</item>
@@ -238,7 +322,7 @@
         <item>-</item>
         <item>7.70 µm/m-°C</item>
     </string-array>
-    <string-array name="aluminum">
+    <string-array name="aluminum_6061_metric">
         <item>2.7 g/cm³</item>
         <item>Face-centered Cubic</item>
         <item>107</item>
@@ -254,7 +338,7 @@
         <item>-</item>
         <item>23.6 &#8211; 25.2 µm/m-°C</item>
     </string-array>
-    <string-array name="iron_standard">
+    <string-array name="iron_standard_metric">
         <item>7.87 g/cm³</item>
         <item>Face-centered Cubic</item>
         <item>150</item>
@@ -270,21 +354,135 @@
         <item>2861 °C</item>
         <item>12.2 &#8211; 24 µm/m-°C</item>
     </string-array>
-    <string-array name="placeholder">
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
-        <item>Placeholder</item>
+
+    //Metal Properties Imperial
+    <string-array name="copper_standard_imperial">
+        <item>0.3226 lb/in³</item>
+        <item>Face-centered Cubic</item>
+        <item>-</item>
+        <item>29.01 kpsi</item>
+        <item>10.88 kpsi</item>
+        <item>40%</item>
+        <item>18854.91 kpsi</item>
+        <item>20305.28 kpsi</item>
+        <item>0.343</item>
+        <item>6671.74 kpsi</item>
+        <item>228 BTU·in/hr·ft²·°F</item>
+        <item>1981.4 °F</item>
+        <item>4703 °F</item>
+        <item>9.44 µin/in-°F</item>
+    </string-array>
+    <string-array name="copper_annealed_imperial">
+        <item>0.2805 lb/in³</item>
+        <item>Face-centered Cubic</item>
+        <item>100</item>
+        <item>30.50 kpsi</item>
+        <item>4.83 kpsi</item>
+        <item>60%</item>
+        <item>16000 kpsi</item>
+        <item>20300 kpsi</item>
+        <item>0.343</item>
+        <item>6670 kpsi</item>
+        <item>2670 BTU·in/hr·ft²·°F</item>
+        <item>1981.8 &#8211; 1982.5 °F</item>
+        <item>4644 °F</item>
+        <item>9.11 µm/m-°F</item>
+    </string-array>
+    <string-array name="copper_coldWorked_imperial">
+        <item>0.324 lb/in³</item>
+        <item>Face-centered Cubic</item>
+        <item>50</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>16000 kpsi</item>
+        <item>20300 kpsi</item>
+        <item>0.35</item>
+        <item>6670 kpsi</item>
+        <item>2670 BTU·in/hr·ft²·°F</item>
+        <item>1981.8 &#8211; 1982.5 °F</item>
+        <item>4644 °F</item>
+        <item>9.11 µm/m-°F</item>
+    </string-array>
+    <string-array name="copper_coldDrawn_imperial">
+        <item>0.324 lb/in³</item>
+        <item>Face-centered Cubic</item>
+        <item>-</item>
+        <item>49.90 kpsi</item>
+        <item>48.36 kpsi</item>
+        <item>14%</item>
+        <item>16000 kpsi</item>
+        <item>20300 kpsi</item>
+        <item>0.364</item>
+        <item>6670 kpsi</item>
+        <item>2670 BTU·in/hr·ft²·°F</item>
+        <item>1981.8 &#8211; 1982.5 °F</item>
+        <item>4644 °F</item>
+        <item>9.11 µm/m-°F</item>
+    </string-array>
+    <string-array name="titanium_standard_imperial">
+        <item>4.50 g/cm³</item>
+        <item>Hexagonal close-packed</item>
+        <item>60</item>
+        <item>220 MPa</item>
+        <item>140 MPa</item>
+        <item>54%</item>
+        <item>116 GPa</item>
+        <item>-</item>
+        <item>0.34</item>
+        <item>43 GPa</item>
+        <item>17 W/m·K</item>
+        <item>1650 &#8211; 1670 °C</item>
+        <item>3287 °C</item>
+        <item>8.90 µm/m-°C</item>
+    </string-array>
+    <string-array name="titanium_carbide_imperial">
+        <item>4.94 g/cm³</item>
+        <item>Cubic</item>
+        <item>-</item>
+        <item>258 MPa</item>
+        <item>-</item>
+        <item>-</item>
+        <item>448 &#8211; 451 GPa</item>
+        <item>-</item>
+        <item>0.18 &#8211; 0.19</item>
+        <item>110 &#8211; 193 GPa</item>
+        <item>-</item>
+        <item>3065 °C</item>
+        <item>-</item>
+        <item>7.70 µm/m-°C</item>
+    </string-array>
+    <string-array name="aluminum_6061_imperial">
+        <item>2.7 g/cm³</item>
+        <item>Face-centered Cubic</item>
+        <item>107</item>
+        <item>310 MPa</item>
+        <item>276 MPa</item>
+        <item>12 &#8211; 17%</item>
+        <item>68.9 GPa</item>
+        <item>-</item>
+        <item>0.33</item>
+        <item>26 GPa</item>
+        <item>167 W/m·K</item>
+        <item>582 &#8211; 652 °C</item>
+        <item>-</item>
+        <item>23.6 &#8211; 25.2 µm/m-°C</item>
+    </string-array>
+    <string-array name="iron_standard_imperial">
+        <item>7.87 g/cm³</item>
+        <item>Face-centered Cubic</item>
+        <item>150</item>
+        <item>540 MPa</item>
+        <item>50 MPa</item>
+        <item>-</item>
+        <item>200 GPa</item>
+        <item>166 GPa</item>
+        <item>0.291</item>
+        <item>77.5 GPa</item>
+        <item>76.2 W/m·K</item>
+        <item>1535 °C</item>
+        <item>2861 °C</item>
+        <item>12.2 &#8211; 24 µm/m-°C</item>
     </string-array>
 
     //Properties
