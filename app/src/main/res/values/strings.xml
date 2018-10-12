@@ -216,13 +216,135 @@
         <item>Gas flow on tubes and between tubes</item>
     </string-array>
     <string-array name="heatTransfer_imperial_name">
-        <item>Placeholder</item>
+        <item>Air, low speed flow over surface (forced convection)</item>
+        <item>Air, moderate speed flow over surface (forced convection)</item>
+        <item>Air, moderate cross-speed flow over cylinder (forced convection)</item>
+        <item>Air</item>
+        <item>Water, moderate flow in pipe (forced convection)</item>
+        <item>Water (boiling), flow in pipe (forced convection)</item>
+        <item>Molten Metals (forced convection)</item>
+        <item>Water and Liquids (forced convection)</item>
+        <item>Water and Liquids (free convection)</item>
+        <item>Gases and Dry Vapors (free convection)</item>
+        <item>Free Convection (vertical plate in air with 30°C temp difference)</item>
+        <item>Boiling water</item>
+        <item>Water flowing in tubes</item>
+        <item>Condensing water vapor</item>
+        <item>Water in free convection</item>
+        <item>Oil in free convection</item>
+        <item>Gas flow on tubes and between tubes</item>
     </string-array>
     <string-array name="thermalConductivity_metric_name">
-        <item>Placeholder</item>
+        <item>Acetic Acid</item>
+        <item>Acetone</item>
+        <item>Alcohol, Ethyl</item>
+        <item>Alcohol, Methyl</item>
+        <item>Alcohol, Propyl</item>
+        <item>Ammonia, Saturated</item>
+        <item>Aniline</item>
+        <item>Benzene</item>
+        <item>Benzine</item>
+        <item>Carbon Disulfide</item>
+        <item>Carbon Tetrachloride</item>
+        <item>Castor Oil</item>
+        <item>Chloroform</item>
+        <item>Decane</item>
+        <item>Dichlorodifluoromethane Refrigerant R-12</item>
+        <item>Diesel Oil</item>
+        <item>Dodecane</item>
+        <item>Engine Oil, Unused</item>
+        <item>Ether</item>
+        <item>Ethyl Acetate</item>
+        <item>Ethylene Glycol</item>
+        <item>Gas Oil</item>
+        <item>Glycerine</item>
+        <item>Heating Oil</item>
+        <item>Hexane</item>
+        <item>Hydrochloric Acid 10%</item>
+        <item>Hydrofluoric Acid</item>
+        <item>Isobutyl Alcohol</item>
+        <item>Kerosene</item>
+        <item>Linseed Oil</item>
+        <item>Machine Oil</item>
+        <item>Medicinal Paraffin</item>
+        <item>Mercury</item>
+        <item>Methane</item>
+        <item>n-Butyl Alcohol</item>
+        <item>n-Heptane</item>
+        <item>n-Octane</item>
+        <item>n-Pentane</item>
+        <item>n-Propyl Alcohol</item>
+        <item>Nitric Acid</item>
+        <item>Nitrogen</item>
+        <item>Oil, Cylinder</item>
+        <item>Oil, Transformer</item>
+        <item>Petroleum</item>
+        <item>Petroleum Ether</item>
+        <item>Phenol</item>
+        <item>Propylene Glycol</item>
+        <item>Sulfuric Acid, Concentrated</item>
+        <item>Toluene</item>
+        <item>Trichloric Ethylene</item>
+        <item>Trichlorofluoromethane Refrigerant R-11</item>
+        <item>Turpentine</item>
+        <item>Water, Fresh</item>
+        <item>Xenon</item>
     </string-array>
     <string-array name="thermalConductivity_imperial_name">
-        <item>Placeholder</item>
+        <item>Acetic Acid</item>
+        <item>Acetone</item>
+        <item>Alcohol, Ethyl</item>
+        <item>Alcohol, Methyl</item>
+        <item>Alcohol, Propyl</item>
+        <item>Ammonia, Saturated</item>
+        <item>Aniline</item>
+        <item>Benzene</item>
+        <item>Benzine</item>
+        <item>Carbon Disulfide</item>
+        <item>Carbon Tetrachloride</item>
+        <item>Castor Oil</item>
+        <item>Chloroform</item>
+        <item>Decane</item>
+        <item>Dichlorodifluoromethane Refrigerant R-12</item>
+        <item>Diesel Oil</item>
+        <item>Dodecane</item>
+        <item>Engine Oil, Unused</item>
+        <item>Ether</item>
+        <item>Ethyl Acetate</item>
+        <item>Ethylene Glycol</item>
+        <item>Gas Oil</item>
+        <item>Glycerine</item>
+        <item>Heating Oil</item>
+        <item>Hexane</item>
+        <item>Hydrochloric Acid 10%</item>
+        <item>Hydrofluoric Acid</item>
+        <item>Isobutyl Alcohol</item>
+        <item>Kerosene</item>
+        <item>Linseed Oil</item>
+        <item>Machine Oil</item>
+        <item>Medicinal Paraffin</item>
+        <item>Mercury</item>
+        <item>Methane</item>
+        <item>n-Butyl Alcohol</item>
+        <item>n-Heptane</item>
+        <item>n-Octane</item>
+        <item>n-Pentane</item>
+        <item>n-Propyl Alcohol</item>
+        <item>Nitric Acid</item>
+        <item>Nitrogen</item>
+        <item>Oil, Cylinder</item>
+        <item>Oil, Transformer</item>
+        <item>Petroleum</item>
+        <item>Petroleum Ether</item>
+        <item>Phenol</item>
+        <item>Propylene Glycol</item>
+        <item>Sulfuric Acid, Concentrated</item>
+        <item>Toluene</item>
+        <item>Trichloric Ethylene</item>
+        <item>Trichlorofluoromethane Refrigerant R-11</item>
+        <item>Turpentine</item>
+        <item>Water, Fresh</item>
+        <item>Xenon</item>
     </string-array>
 
     //Fluid properties values
@@ -258,26 +380,42 @@
         <item>10</item>
         <item>100</item>
         <item>200</item>
-        <item>10&#8211;100</item>
+        <item>55</item>
         <item>3000</item>
-        <item>50,000</item>
-        <item>2000&#8211;45000</item>
-        <item>50&#8211;10000</item>
-        <item>50&#8211;3000</item>
-        <item>5&#8211;37</item>
+        <item>50000</item>
+        <item>23500</item>
+        <item>5025</item>
+        <item>1525</item>
+        <item>21</item>
         <item>5</item>
-        <item>3&#8211;100</item>
-        <item>500&#8211;1200</item>
-        <item>5&#8211;100</item>
-        <item>100&#8211;1200</item>
-        <item>50&#8211;350</item>
-        <item>10&#8211;350</item>
+        <item>51.5</item>
+        <item>850</item>
+        <item>52.5</item>
+        <item>650</item>
+        <item>200</item>
+        <item>180</item>
     </string-array>
     <string-array name="heatTransfer_imperial_value">
-        <item>Placeholder</item>
+        <item>0.00048919</item>
+        <item>0.0048919</item>
+        <item>0.0097839</item>
+        <item>0.0026905</item>
+        <item>0.146758</item>
+        <item>2.44597</item>
+        <item>1.1496</item>
+        <item>0.24582</item>
+        <item>0.07460</item>
+        <item>0.001027</item>
+        <item>0.00024459</item>
+        <item>0.0025193</item>
+        <item>0.041581</item>
+        <item>0.002568</item>
+        <item>0.0317976</item>
+        <item>0.009783</item>
+        <item>0.00880</item>
     </string-array>
     <string-array name="thermalConductivity_metric_value">
-        <item>Placeholder</item>
+        <item>1000</item>
     </string-array>
     <string-array name="thermalConductivity_imperial_value">
         <item>Placeholder</item>
