@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import java.text.DecimalFormat;
@@ -28,13 +29,14 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
     private Spinner spinner1;
     private EditText input_field1, input_field2, input_field3, input_field4;
     private TextView input_text1, input_text2, input_text3, input_text4;
-    private TextView unit1, unit2, unit3, unit4;
+    private TextView tvProgressLabel;
     private Button button1, button2, button3, button4;
     private TextView resultCalc;
     private int numberSel;
     List<String> data1 = new ArrayList<>();
     private RadioGroup radioGroup;
     private int unitSel;
+    DecimalFormat formatter;
     Context context = this;
     String[] densityMetricName;
     String[] densityImperialName;
@@ -77,36 +79,36 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         clearInputs();
                         switch(spinner1.getSelectedItem().toString()) {
                             case "Reynold's Number (Re)":
-                                unit1.setText("kg/m³");
-                                unit2.setText("m/s");
-                                unit3.setText("m");
-                                unit4.setText("Pa·s");
+                                input_field1.setHint("kg/m³");
+                                input_field2.setHint("m/s");
+                                input_field3.setHint("m");
+                                input_field4.setHint("Pa·s");
                                 break;
                             case "Mach Number (Ma)":
-                                unit1.setText("m/s");
+                                input_field1.setHint("m/s");
                                 break;
                             case "Atwood Number (A)":
-                                unit1.setText("kg/m³");
-                                unit2.setText("kg/m³");
+                                input_field1.setHint("kg/m³");
+                                input_field2.setHint("kg/m³");
                                 break;
                             case "Biot Number (Bi)":
-                                unit1.setText("m");
-                                unit2.setText("W/(m²⋅K)");
-                                unit3.setText("W/(m⋅K)");
+                                input_field1.setHint("m");
+                                input_field3.setHint("W/(m²⋅K)");
+                                input_field3.setHint("W/(m⋅K)");
                                 break;
                             case "Sherwood Number (Sh)":
-                                unit1.setText("m⋅s⁻¹");
-                                unit2.setText("m²⋅s⁻¹");
-                                unit3.setText("m");
+                                input_field1.setHint("m⋅s⁻¹");
+                                input_field2.setHint("m²⋅s⁻¹");
+                                input_field3.setHint("m");
                                 break;
                             case "Nusselt Number (Nu)":
-                                unit1.setText("W/(m²⋅K)");
-                                unit2.setText("m");
-                                unit3.setText("W/(m⋅K)");
+                                input_field1.setHint("W/(m²⋅K)");
+                                input_field2.setHint("m");
+                                input_field3.setHint("W/(m⋅K)");
                                 break;
                             case "Prandtl Number (Pr)":
-                                unit1.setText("m²/s");
-                                unit2.setText("m²/s");
+                                input_field1.setHint("m²/s");
+                                input_field2.setHint("m²/s");
                                 break;
 
                         }
@@ -116,36 +118,36 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         clearInputs();
                         switch(spinner1.getSelectedItem().toString()) {
                             case "Reynold's Number (Re)":
-                                unit1.setText("lb/ft³");
-                                unit2.setText("ft/s");
-                                unit3.setText("ft");
-                                unit4.setText(R.string.units_imperial_dynamicViscosity);
+                                input_field1.setHint("lb/ft³");
+                                input_field2.setHint("ft/s");
+                                input_field3.setHint("ft");
+                                input_field4.setHint(R.string.units_imperial_dynamicViscosity);
                                 break;
                             case "Mach Number (Ma)":
-                                unit1.setText("ft/s");
+                                input_field1.setHint("ft/s");
                                 break;
                             case "Atwood Number (A)":
-                                unit1.setText("lb/ft³");
-                                unit2.setText("lb/ft³");
+                                input_field1.setHint("lb/ft³");
+                                input_field2.setHint("lb/ft³");
                                 break;
                             case "Biot Number (Bi)":
-                                unit1.setText("ft");
-                                unit2.setText("BTU/(hr⋅ft²⋅°F)");
-                                unit3.setText("BTU/(hr⋅ft⋅°F)");
+                                input_field1.setHint("ft");
+                                input_field2.setHint("BTU/(hr⋅ft²⋅°F)");
+                                input_field3.setHint("BTU/(hr⋅ft⋅°F)");
                                 break;
                             case "Sherwood Number (Sh)":
-                                unit1.setText("ft⋅s⁻¹");
-                                unit2.setText("ft²⋅s⁻¹");
-                                unit3.setText("ft");
+                                input_field1.setHint("ft⋅s⁻¹");
+                                input_field2.setHint("ft²⋅s⁻¹");
+                                input_field3.setHint("ft");
                                 break;
                             case "Nusselt Number (Nu)":
-                                unit1.setText("BTU/(hr⋅ft²⋅°F)");
-                                unit2.setText("ft");
-                                unit3.setText("BTU/(hr⋅ft⋅°F)");
+                                input_field1.setHint("BTU/(hr⋅ft²⋅°F)");
+                                input_field2.setHint("ft");
+                                input_field3.setHint("BTU/(hr⋅ft⋅°F)");
                                 break;
                             case "Prandtl Number (Pr)":
-                                unit1.setText("ft²/s");
-                                unit2.setText("ft²/s");
+                                input_field1.setHint("ft²/s");
+                                input_field2.setHint("ft²/s");
                                 break;
 
                         }
@@ -153,6 +155,12 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         break;
                 }
         });
+
+        // set a change listener on the SeekBar
+        SeekBar seekBar = findViewById(R.id.seekBar);
+        seekBar.setOnSeekBarChangeListener(seekBarChangeListener);
+        int progress = seekBar.getProgress();
+        tvProgressLabel.setText("Accuracy: " + progress + " Decimals");
 
         Button clearBtn = findViewById(R.id.btn_clear);
         clearBtn.setOnClickListener((View v) -> {
@@ -263,6 +271,60 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         });
     }
 
+    SeekBar.OnSeekBarChangeListener seekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            // updated continuously as the user slides the thumb
+            tvProgressLabel.setText("Accuracy: " + progress + " Decimals");
+            switch(progress) {
+                case 0:
+                    formatter = new DecimalFormat("#");
+                    break;
+                case 1:
+                    formatter = new DecimalFormat("#.#");
+                    break;
+                case 2:
+                    formatter = new DecimalFormat("#.##");
+                    break;
+                case 3:
+                    formatter = new DecimalFormat("#.###");
+                    break;
+                case 4:
+                    formatter = new DecimalFormat("#.####");
+                    break;
+                case 5:
+                    formatter = new DecimalFormat("#.#####");
+                    break;
+                case 6:
+                    formatter = new DecimalFormat("#.######");
+                    break;
+                case 7:
+                    formatter = new DecimalFormat("#.#######");
+                    break;
+                case 8:
+                    formatter = new DecimalFormat("#.########");
+                    break;
+                case 9:
+                    formatter = new DecimalFormat("#.#########");
+                    break;
+                case 10:
+                    formatter = new DecimalFormat("#.##########");
+                    break;
+            }
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+            // called when the user first touches the SeekBar
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+            // called after the user finishes moving the SeekBar
+        }
+    };
+
     public void displayAlert(String[] fluids, EditText inputField, String[] numbers) {
         // setup the alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -367,7 +429,6 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         }
 
         double result = (a*b*c)/d;
-        DecimalFormat formatter = new DecimalFormat("#.##");
         resultCalc.setText(formatter.format(result));
 
     }
@@ -393,7 +454,6 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         }
         else if(unitSel == 1) {
             double result = a/1125;
-            DecimalFormat formatter = new DecimalFormat("#.##");
             resultCalc.setText(formatter.format(result));
         }
     }
@@ -419,7 +479,6 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         }
 
         double result = (a - b)/(a + b);
-        DecimalFormat formatter = new DecimalFormat("#.##");
         resultCalc.setText(formatter.format(result));
 
     }
@@ -430,29 +489,28 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         String input1_string = input_field1.getText().toString();
         String input2_string = input_field2.getText().toString();
         String input3_string = input_field3.getText().toString();
-        double a = 0; double b = 0; double c = 0;
+        double e = 0; double f = 0; double g = 0;
 
         if (!input1_string.equals("")) {
-            a = Double.parseDouble(input1_string);
+            e = Double.parseDouble(input1_string);
         }
         else {
             input_field1.setError("Enter a length");
         }
         if (!input2_string.equals("")) {
-            b = Double.parseDouble(input2_string);
+            f = Double.parseDouble(input2_string);
         }
         else {
             input_field2.setError("Enter a heat transfer coefficient");
         }
         if (!input3_string.equals("")) {
-            b = Double.parseDouble(input3_string);
+            g = Double.parseDouble(input3_string);
         }
         else {
             input_field3.setError("Enter a thermal conductivity");
         }
 
-        double result = ((double) a*b)/((double) c);
-        DecimalFormat formatter = new DecimalFormat("#.##");
+        double result = (e*f)/g;
         resultCalc.setText(formatter.format(result));
 
     }
@@ -463,29 +521,28 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         String input1_string = input_field1.getText().toString();
         String input2_string = input_field2.getText().toString();
         String input3_string = input_field3.getText().toString();
-        double a = 0; double b = 0; double c = 0;
+        double h = 0; double i = 0; double j = 0;
 
         if (!input1_string.equals("")) {
-            a = Double.parseDouble(input1_string);
+            h = Double.parseDouble(input1_string);
         }
         else {
             input_field1.setError("Enter a length");
         }
         if (!input2_string.equals("")) {
-            b = Double.parseDouble(input2_string);
+            i = Double.parseDouble(input2_string);
         }
         else {
             input_field2.setError("Enter a mass diffusivity");
         }
         if (!input3_string.equals("")) {
-            b = Double.parseDouble(input3_string);
+            j = Double.parseDouble(input3_string);
         }
         else {
             input_field3.setError("Enter a convective mass transfer film coefficient");
         }
 
-        double result = ((double) a)/((double) b*c);
-        DecimalFormat formatter = new DecimalFormat("#.##");
+        double result = h/(i*j);
         resultCalc.setText(formatter.format(result));
 
     }
@@ -496,29 +553,28 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         String input1_string = input_field1.getText().toString();
         String input2_string = input_field2.getText().toString();
         String input3_string = input_field3.getText().toString();
-        double a = 0; double b = 0; double c = 0;
+        double k = 0; double l = 0; double m = 0;
 
         if (!input1_string.equals("")) {
-            a = Double.parseDouble(input1_string);
+            k = Double.parseDouble(input1_string);
         }
         else {
             input_field1.setError("Enter a convective heat transfer coefficient");
         }
         if (!input2_string.equals("")) {
-            b = Double.parseDouble(input2_string);
+            l = Double.parseDouble(input2_string);
         }
         else {
             input_field2.setError("Enter a mass characteristic length");
         }
         if (!input3_string.equals("")) {
-            b = Double.parseDouble(input3_string);
+            m = Double.parseDouble(input3_string);
         }
         else {
             input_field3.setError("Enter a thermal conductivity");
         }
 
-        double result = ((double) a*b)/((double) c);
-        DecimalFormat formatter = new DecimalFormat("#.##");
+        double result = ((double) k*l)/((double) m);
         resultCalc.setText(formatter.format(result));
 
     }
@@ -528,23 +584,22 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         resultCalc = findViewById(R.id.answer);
         String input1_string = input_field1.getText().toString();
         String input2_string = input_field2.getText().toString();
-        double a = 0; double b = 0;
+        double n = 0; double o = 0;
 
         if (!input1_string.equals("")) {
-            a = Double.parseDouble(input1_string);
+            n = Double.parseDouble(input1_string);
         }
         else {
             input_field1.setError("Enter a kinematic viscosity");
         }
         if (!input2_string.equals("")) {
-            b = Double.parseDouble(input2_string);
+            o = Double.parseDouble(input2_string);
         }
         else {
             input_field2.setError("Enter a thermal diffusivity");
         }
 
-        double result = ((double) a)/((double) b);
-        DecimalFormat formatter = new DecimalFormat("#.##");
+        double result = ((double) n)/((double) o);
         resultCalc.setText(formatter.format(result));
 
     }
@@ -561,16 +616,15 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         input_text2 = findViewById(R.id.input2);
         input_text3 = findViewById(R.id.input3);
         input_text4 = findViewById(R.id.input4);
-        unit1 = findViewById(R.id.unit1);
-        unit2 = findViewById(R.id.unit2);
-        unit3 = findViewById(R.id.unit3);
-        unit4 = findViewById(R.id.unit4);
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
         MathView dimensionlessFormula = findViewById(R.id.formula);
         radioGroup = findViewById(R.id.radiogroup);
+        tvProgressLabel = findViewById(R.id.progress);
+
+        formatter = new DecimalFormat("#.##");
 
         densityMetricName = getResources().getStringArray(R.array.density_metric_name);
         densityImperialName = getResources().getStringArray(R.array.density_imperial_name);
@@ -724,16 +778,16 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         line1Visible(); line2Visible(); line3Visible(); line4Visible();
 
                         if(unitSel == 0) {
-                            unit1.setText(R.string.units_metric_density);
-                            unit2.setText(R.string.units_metric_velocity);
-                            unit3.setText(R.string.units_metric_lengthDiameter);
-                            unit4.setText(R.string.units_metric_dynamicViscosity);
+                            input_field1.setHint(R.string.units_metric_density);
+                            input_field2.setHint(R.string.units_metric_velocity);
+                            input_field3.setHint(R.string.units_metric_lengthDiameter);
+                            input_field4.setHint(R.string.units_metric_dynamicViscosity);
                         }
                         else if(unitSel == 1) {
-                            unit1.setText(R.string.units_imperial_density);
-                            unit2.setText(R.string.units_imperial_velocity);
-                            unit3.setText(R.string.units_imperial_lengthDiameter);
-                            unit4.setText(R.string.units_imperial_dynamicViscosity);
+                            input_field1.setHint(R.string.units_imperial_density);
+                            input_field2.setHint(R.string.units_imperial_velocity);
+                            input_field3.setHint(R.string.units_imperial_lengthDiameter);
+                            input_field4.setHint(R.string.units_imperial_dynamicViscosity);
                         }
                         break;
                     case "Mach Number (Ma)":
@@ -742,14 +796,14 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         hideBtn(true, false, false, false);
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{u}{c}$$</center>");
                         input_text1.setText(R.string.properties_velocity);
-                        unit1.setText(R.string.units_metric_velocity);
+                        input_field1.setHint(R.string.units_metric_velocity);
                         line1Visible();
 
                         if(unitSel == 0) {
-                            unit1.setText(R.string.units_metric_velocity);
+                            input_field1.setHint(R.string.units_metric_velocity);
                         }
                         else if(unitSel == 1) {
-                            unit1.setText(R.string.units_imperial_velocity);
+                            input_field1.setHint(R.string.units_imperial_velocity);
                         }
                         break;
                     case "Atwood Number (A)":
@@ -759,16 +813,16 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{\\rho_1 - \\rho_2}{\\rho_1 + \\rho_2}$$</center>");
                         input_text1.setText("Heavier Density Fluid (ρ1)");
                         input_text2.setText("Lighter Density Fluid (ρ2)");
-                        unit1.setText(R.string.units_metric_density);
-                        unit2.setText(R.string.units_metric_density);
+                        input_field1.setHint(R.string.units_metric_density);
+                        input_field2.setHint(R.string.units_metric_density);
                         line1Visible(); line2Visible();
                         if(unitSel == 0) {
-                            unit1.setText(R.string.units_metric_density);
-                            unit2.setText(R.string.units_metric_density);
+                            input_field1.setHint(R.string.units_metric_density);
+                            input_field2.setHint(R.string.units_metric_density);
                         }
                         else if(unitSel == 1) {
-                            unit1.setText(R.string.units_imperial_density);
-                            unit2.setText(R.string.units_imperial_density);
+                            input_field1.setHint(R.string.units_imperial_density);
+                            input_field2.setHint(R.string.units_imperial_density);
                         }
                         break;
                     case "Biot Number (Bi)":
@@ -779,19 +833,19 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         input_text1.setText("Characterstic Length (Lc)");
                         input_text2.setText("Heat Transfer (film) Coefficient (h)");
                         input_text3.setText("Thermal Conductivity (k)");
-                        unit1.setText("m");
-                        unit2.setText("W/(m²⋅K)");
-                        unit3.setText("W/(m⋅K)");
+                        input_field1.setHint("m");
+                        input_field2.setHint("W/(m²⋅K)");
+                        input_field3.setHint("W/(m⋅K)");
                         line1Visible(); line2Visible(); line3Visible();
                         if(unitSel == 0){
-                            unit1.setText("m");
-                            unit2.setText("W/(m²⋅K)");
-                            unit3.setText("W/(m⋅K)");
+                            input_field1.setHint("m");
+                            input_field2.setHint("W/(m²⋅K)");
+                            input_field3.setHint("W/(m⋅K)");
                         }
                         else if(unitSel == 1){
-                            unit1.setText(R.string.units_imperial_lengthDiameter);
-                            unit2.setText("BTU/(hr⋅ft²⋅°F)");
-                            unit3.setText("BTU/(hr⋅ft⋅°F)");
+                            input_field1.setHint(R.string.units_imperial_lengthDiameter);
+                            input_field2.setHint("BTU/(hr⋅ft²⋅°F)");
+                            input_field3.setHint("BTU/(hr⋅ft⋅°F)");
                         }
                         break;
                     case "Sherwood Number (Sh)":
@@ -802,19 +856,19 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         input_text1.setText("Convective Film Coefficient (h)");
                         input_text2.setText("Mass Diffusivity (D)");
                         input_text3.setText("Characteristic Length (L)");
-                        unit1.setText("m⋅s⁻¹");
-                        unit2.setText("m²⋅s⁻¹");
-                        unit3.setText("m");
+                        input_field1.setHint("m⋅s⁻¹");
+                        input_field2.setHint("m²⋅s⁻¹");
+                        input_field3.setHint("m");
                         line1Visible(); line2Visible(); line3Visible();
                         if(unitSel == 0){
-                            unit1.setText("m⋅s⁻¹");
-                            unit2.setText("m²⋅s⁻¹");
-                            unit3.setText("m");
+                            input_field1.setHint("m⋅s⁻¹");
+                            input_field2.setHint("m²⋅s⁻¹");
+                            input_field3.setHint("m");
                         }
                         else if(unitSel == 1){
-                            unit1.setText("ft⋅s⁻¹");
-                            unit2.setText("ft²⋅s⁻¹");
-                            unit3.setText("ft");
+                            input_field1.setHint("ft⋅s⁻¹");
+                            input_field2.setHint("ft²⋅s⁻¹");
+                            input_field3.setHint("ft");
                         }
                         break;
                     case "Nusselt Number (Nu)":
@@ -825,19 +879,19 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         input_text1.setText("Convective Heat Transfer Coefficient (h)");
                         input_text2.setText("Characteristic Length (L)");
                         input_text3.setText("Thermal Conductivity (k)");
-                        unit1.setText("W/(m²⋅K)");
-                        unit2.setText("m");
-                        unit3.setText("W/(m⋅K)");
+                        input_field1.setHint("W/(m²⋅K)");
+                        input_field2.setHint("m");
+                        input_field3.setHint("W/(m⋅K)");
                         line1Visible(); line2Visible(); line3Visible();
                         if(unitSel == 0){
-                            unit1.setText("W/(m²⋅K)");
-                            unit2.setText("m");
-                            unit3.setText("W/(m⋅K)");
+                            input_field1.setHint("W/(m²⋅K)");
+                            input_field2.setHint("m");
+                            input_field3.setHint("W/(m⋅K)");
                         }
                         else if(unitSel == 1){
-                            unit1.setText("BTU/(hr⋅ft²⋅°F)");
-                            unit2.setText("ft");
-                            unit3.setText("BTU/(hr⋅ft⋅°F)");
+                            input_field1.setHint("BTU/(hr⋅ft²⋅°F)");
+                            input_field2.setHint("ft");
+                            input_field3.setHint("BTU/(hr⋅ft⋅°F)");
                         }
                         break;
                     case "Prandtl Number (Pr)":
@@ -847,16 +901,16 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
                         dimensionlessFormula.setDisplayText("<center>$$\\frac{\\nu}{\\alpha}$$<center>");
                         input_text1.setText("Kinematic Viscosity (ν)");
                         input_text2.setText("Thermal Diffusivity (α)");
-                        unit1.setText("m²/s");
-                        unit2.setText("m²/s");
+                        input_field1.setHint("m²/s");
+                        input_field2.setHint("m²/s");
                         line1Visible(); line2Visible();
                         if(unitSel == 0){
-                            unit1.setText("m²/s");
-                            unit2.setText("m²/s");
+                            input_field1.setHint("m²/s");
+                            input_field2.setHint("m²/s");
                         }
                         else if(unitSel == 1){
-                            unit1.setText("ft²/s");
-                            unit2.setText("ft²/s");
+                            input_field1.setHint("ft²/s");
+                            input_field2.setHint("ft²/s");
                         }
                         break;
 
@@ -867,6 +921,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
     }
 
     public void resetAll() {
+        resultCalc = findViewById(R.id.answer);
         input_text1.setVisibility(View.GONE);
         input_text2.setVisibility(View.GONE);
         input_text3.setVisibility(View.GONE);
@@ -879,10 +934,6 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         input_field3.setError(null);
         input_field4.setVisibility(View.GONE);
         input_field4.setError(null);
-        unit1.setVisibility(View.GONE);
-        unit2.setVisibility(View.GONE);
-        unit3.setVisibility(View.GONE);
-        unit4.setVisibility(View.GONE);
         input_field1.getText().clear();
         input_field2.getText().clear();
         input_field3.getText().clear();
@@ -899,6 +950,7 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         button3.setClickable(true);
         button4.setAlpha(1f);
         button4.setClickable(true);
+        resultCalc.setText("");
     }
 
     public void hideBtn(Boolean one, Boolean two, Boolean three, Boolean four) {
@@ -923,25 +975,21 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
     public void line1Visible() {
         input_text1.setVisibility(View.VISIBLE);
         input_field1.setVisibility(View.VISIBLE);
-        unit1.setVisibility(View.VISIBLE);
         button1.setVisibility(View.VISIBLE);
     }
     public void line2Visible() {
         input_text2.setVisibility(View.VISIBLE);
         input_field2.setVisibility(View.VISIBLE);
-        unit2.setVisibility(View.VISIBLE);
         button2.setVisibility(View.VISIBLE);
     }
     public void line3Visible() {
         input_text3.setVisibility(View.VISIBLE);
         input_field3.setVisibility(View.VISIBLE);
-        unit3.setVisibility(View.VISIBLE);
         button3.setVisibility(View.VISIBLE);
     }
     public void line4Visible() {
         input_text4.setVisibility(View.VISIBLE);
         input_field4.setVisibility(View.VISIBLE);
-        unit4.setVisibility(View.VISIBLE);
         button4.setVisibility(View.VISIBLE);
     }
 
@@ -954,6 +1002,5 @@ public class ToolsDimensionlessNumbersCalc extends AppCompatActivity {
         input_field3.setError(null);
         input_field4.setText("");
         input_field4.setError(null);
-
     }
 }

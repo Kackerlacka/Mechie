@@ -49,33 +49,104 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2"
-                    android:padding="10dp">
+                    android:orientation="vertical" >
 
-                    <Spinner
-                        android:id="@+id/spinner1"
-                        android:layout_width="0px"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.5"/>
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:paddingTop="10dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp">
 
-                    <Spinner
-                        android:id="@+id/spinner2"
-                        android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"/>
+                        <CheckBox
+                            android:id="@+id/chk1"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Diameter (D)"/>
 
-                    <Spinner
-                        android:id="@+id/spinner3"
-                        android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"/>
+                        <CheckBox
+                            android:id="@+id/chk2"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Length (L)"/>
+                    </LinearLayout>
 
-                    <Spinner
-                        android:id="@+id/spinner4"
-                        android:layout_width="0px"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.5"/>
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:paddingTop="10dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp">
+
+                        <CheckBox
+                            android:id="@+id/chk3"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Velocity (v)"/>
+
+                        <CheckBox
+                            android:id="@+id/chk4"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Density (ρ)"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:paddingTop="10dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp">
+
+                        <CheckBox
+                            android:id="@+id/chk5"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Pressure change (Δp)"/>
+
+                        <CheckBox
+                            android:id="@+id/chk6"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Dynamic Viscosity (μ)"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:paddingTop="10dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="10dp">
+
+                        <CheckBox
+                            android:id="@+id/chk7"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Surface Roughness (η)"/>
+
+                        <CheckBox
+                            android:id="@+id/chk8"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Force (F)"/>
+                    </LinearLayout>
 
                 </LinearLayout>
             </LinearLayout>

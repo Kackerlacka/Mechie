@@ -83,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //Physics Concepts
+    public void springDesigner(View view) {
+        Intent intent = new Intent(this, SpringDesigner.class);
+        startActivity(intent);
+    }
+
     //Metal Properties
     public void metalProperties(View view) {
         Intent intent = new Intent(this, MaterialsPropertiesMetal.class);

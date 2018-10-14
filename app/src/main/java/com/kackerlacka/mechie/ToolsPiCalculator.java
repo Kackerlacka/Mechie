@@ -34,34 +34,5 @@ public class ToolsPiCalculator extends AppCompatActivity {
         if(getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Buckingham Pi Calculator");
 
-        addListenerOnButton();
-
-    }
-
-    // get the selected dropdown list value
-    public void addListenerOnButton() {
-
-        Spinner spinner1 = findViewById(R.id.spinner1);
-        Spinner spinner2 = findViewById(R.id.spinner2);
-        Spinner spinner3 = findViewById(R.id.spinner3);
-        Spinner spinner4 = findViewById(R.id.spinner4);
-
-        final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_dropdown_item, data1);
-
-        spinner1.setAdapter(adapter1);
-        spinner2.setAdapter(adapter1);
-        spinner3.setAdapter(adapter1);
-        spinner4.setAdapter(adapter1);
-
-        data1.add("D");
-        data1.add("v");
-        data1.add("ρ");
-        data1.add("Δp");
-        data1.add("μ");
-        data1.add("l");
-        data1.add("η");
-
-        adapter1.notifyDataSetChanged();
     }
 }

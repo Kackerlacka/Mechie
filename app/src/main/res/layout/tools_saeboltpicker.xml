@@ -236,15 +236,15 @@
 
                         <EditText
                             android:id="@+id/editText"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0px"
                             android:layout_height="wrap_content"
-                            android:hint="Enter Root Area (in²)"
+                            android:hint="in²"
                             android:inputType="numberDecimal"
                             android:layout_weight="0.5" />
 
                         <Button
                             android:id="@+id/btnSubmit"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0px"
                             android:layout_height="wrap_content"
                             android:text="Submit"
                             android:layout_marginLeft="20dp"

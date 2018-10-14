@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:auto="http://schemas.android.com/apk/res-auto"
@@ -7,394 +7,405 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-    </android.support.v7.widget.Toolbar>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view1"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            card_view:cardCornerRadius="3dp"
-            card_view:cardPreventCornerOverlap="false"
-            card_view:cardUseCompatPadding="true">
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
 
-            <LinearLayout
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/header_main"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorAccentBlue"
-                    android:padding="8dp"
-                    android:text="Select Dimensionless Number"
-                    android:textColor="@android:color/white"
-                    android:textSize="10pt"
-                    android:textStyle="bold" />
+                android:layout_margin="6dp"
+                card_view:cardCornerRadius="3dp"
+                card_view:cardPreventCornerOverlap="false"
+                card_view:cardUseCompatPadding="true">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2">
+                    android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="0px"
+                    <TextView
+                        android:id="@+id/header_main"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.5"
-                        android:padding="10dp">
+                        android:background="@color/colorAccentBlue"
+                        android:padding="8dp"
+                        android:text="Select Dimensionless Number"
+                        android:textColor="@android:color/white"
+                        android:textSize="10pt"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/spinner1_textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Type"
+                                android:textSize="6pt" />
+
+                            <Spinner
+                                android:id="@+id/spinner1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/spinner1_textView" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:paddingTop="8dp">
+
+                            <katex.hourglass.in.mathlib.MathView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/formula"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                app:setClickable="true"
+                                app:setTextSize="8dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                card_view:cardCornerRadius="3dp"
+                card_view:cardPreventCornerOverlap="false"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorAccent"
+                        android:weightSum="2">
 
                         <TextView
-                            android:id="@+id/spinner1_textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Type"
-                            android:textSize="6pt" />
-
-                        <Spinner
-                            android:id="@+id/spinner1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/spinner1_textView" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:paddingTop="8dp">
-
-                        <katex.hourglass.in.mathlib.MathView xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/formula"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            app:setClickable="true"
-                            app:setTextSize="8dp" />
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            card_view:cardCornerRadius="3dp"
-            card_view:cardPreventCornerOverlap="false"
-            card_view:cardUseCompatPadding="true">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorAccent"
-                    android:weightSum="2">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@color/colorAccent"
-                        android:padding="8dp"
-                        android:text="Inputs"
-                        android:textColor="@android:color/white"
-                        android:textSize="10pt" />
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent"
+                            android:padding="8dp"
+                            android:text="Inputs"
+                            android:textColor="@android:color/white"
+                            android:textSize="10pt" />
 
 
-                    <RadioGroup
-                        android:id="@+id/radiogroup"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/metric"
+                        <RadioGroup
+                            android:id="@+id/radiogroup"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.5"
-                            android:buttonTint="@android:color/white"
-                            android:checked="true"
-                            android:text="Metric"
-                            android:textColor="@android:color/white" />
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
-                        <RadioButton
-                            android:id="@+id/imperial"
-                            android:layout_width="wrap_content"
+                            <RadioButton
+                                android:id="@+id/metric"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@android:color/white"
+                                android:checked="true"
+                                android:text="Metric"
+                                android:textColor="@android:color/white" />
+
+                            <RadioButton
+                                android:id="@+id/imperial"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_toRightOf="@id/metric"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@android:color/white"
+                                android:text="Imperial"
+                                android:textColor="@android:color/white" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="8dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/input1"
+                            android:layout_width="0px"
                             android:layout_height="match_parent"
-                            android:layout_toRightOf="@id/metric"
-                            android:layout_weight="0.5"
-                            android:buttonTint="@android:color/white"
-                            android:text="Imperial"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:padding="8dp"
+                            android:text="Density (ρ)" />
+
+                        <EditText
+                            android:id="@+id/input_field1"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:inputType="numberDecimal"
+                            android:padding="8dp"
+                            android:hint="kg/m³"/>
+
+                        <Button
+                            android:id="@+id/button1"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:text="?" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/input2"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:padding="8dp"
+                            android:text="Velocity (v)" />
+
+                        <EditText
+                            android:id="@+id/input_field2"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:inputType="numberDecimal"
+                            android:padding="8dp"
+                            android:hint="m/s"/>
+
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:text="?" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/input3"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:padding="8dp"
+                            android:text="Length, Diameter (D)" />
+
+                        <EditText
+                            android:id="@+id/input_field3"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:inputType="numberDecimal"
+                            android:padding="8dp"
+                            android:hint="m"/>
+
+                        <Button
+                            android:id="@+id/button3"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:text="?" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/input4"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:padding="8dp"
+                            android:text="Dynamic Viscosity (µ)" />
+
+                        <EditText
+                            android:id="@+id/input_field4"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:inputType="numberDecimal"
+                            android:padding="8dp"
+                            android:hint="Pa·s"/>
+
+                        <Button
+                            android:id="@+id/button4"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:text="?" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <Button
+                            android:id="@+id/btn_clear"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="0.25"
+                            android:backgroundTint="@android:color/holo_red_light"
+                            android:text="Clear"
                             android:textColor="@android:color/white" />
 
-                    </RadioGroup>
+                        <Button
+                            android:id="@+id/btn_calculate"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="0.75"
+                            android:backgroundTint="@color/colorAccentBlue"
+                            android:text="Calculate"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="8dp"
-                    android:weightSum="2">
-
-                    <Button
-                        android:id="@+id/button1"
-                        android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2"
-                        android:text="?" />
-
-                    <TextView
-                        android:id="@+id/input1"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.9"
-                        android:gravity="center_vertical"
-                        android:padding="8dp"
-                        android:text="Density (ρ)" />
-
-                    <EditText
-                        android:id="@+id/input_field1"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.5"
-                        android:inputType="numberDecimal"
-                        android:padding="8dp" />
-
-                    <TextView
-                        android:id="@+id/unit1"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.4"
-                        android:gravity="center_vertical"
-                        android:padding="8dp"
-                        android:text="kg/m³" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingLeft="8dp"
-                    android:weightSum="2">
-
-                    <Button
-                        android:id="@+id/button2"
-                        android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2"
-                        android:text="?" />
-
-                    <TextView
-                        android:id="@+id/input2"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.9"
-                        android:gravity="center_vertical"
-                        android:padding="8dp"
-                        android:text="Velocity (v)" />
-
-                    <EditText
-                        android:id="@+id/input_field2"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight=".5"
-                        android:inputType="numberDecimal"
-                        android:padding="8dp" />
-
-                    <TextView
-                        android:id="@+id/unit2"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.4"
-                        android:gravity="center_vertical"
-                        android:padding="8dp"
-                        android:text="m/s" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingLeft="8dp"
-                    android:weightSum="2">
-
-                    <Button
-                        android:id="@+id/button3"
-                        android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2"
-                        android:text="?" />
-
-                    <TextView
-                        android:id="@+id/input3"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.9"
-                        android:gravity="center_vertical"
-                        android:padding="8dp"
-                        android:text="Length, Diameter (D)" />
-
-                    <EditText
-                        android:id="@+id/input_field3"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.5"
-                        android:inputType="numberDecimal"
-                        android:padding="8dp" />
-
-                    <TextView
-                        android:id="@+id/unit3"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.4"
-                        android:gravity="center_vertical"
-                        android:padding="8dp"
-                        android:text="m" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingLeft="8dp"
-                    android:weightSum="2">
-
-                    <Button
-                        android:id="@+id/button4"
-                        android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2"
-                        android:text="?" />
-
-                    <TextView
-                        android:id="@+id/input4"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.9"
-                        android:gravity="center_vertical"
-                        android:padding="8dp"
-                        android:text="Dynamic Viscosity (µ)" />
-
-                    <EditText
-                        android:id="@+id/input_field4"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.5"
-                        android:inputType="numberDecimal"
-                        android:padding="8dp" />
-
-                    <TextView
-                        android:id="@+id/unit4"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.4"
-                        android:gravity="center_vertical"
-                        android:padding="8dp"
-                        android:text="Pa·s" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-                    <Button
-                        android:id="@+id/btn_clear"
-                        android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_weight="0.25"
-                        android:backgroundTint="@android:color/holo_red_light"
-                        android:text="Clear"
-                        android:textColor="@android:color/white" />
-
-                    <Button
-                        android:id="@+id/btn_calculate"
-                        android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_weight="0.75"
-                        android:backgroundTint="@color/colorAccentBlue"
-                        android:text="Calculate"
-                        android:textColor="@android:color/white" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:padding="8dp"
-            app:cardCornerRadius="3dp"
-            app:cardElevation="3dp">
-
-            <LinearLayout
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:layout_margin="10dp"
+                android:padding="8dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="3dp">
 
-                <TextView
-                    android:layout_width="0px"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:padding="8dp"
-                    android:text="Result"
-                    android:textSize="20dp" />
+                    android:orientation="vertical" >
 
-                <TextView
-                    android:id="@+id/answer"
-                    android:layout_width="0px"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:padding="8dp"
-                    android:textSize="20dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
-            </LinearLayout>
+                        <TextView
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="Result"
+                            android:textSize="20dp" />
 
-        </android.support.v7.widget.CardView>
+                        <TextView
+                            android:id="@+id/answer"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:padding="8dp"
+                            android:textSize="20dp"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/progress"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:text="Decimal Places to Show: "
+                            android:layout_weight="0.5"/>
+
+                        <SeekBar
+                            android:id="@+id/seekBar"
+                            android:max="10"
+                            android:progress="2"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>
