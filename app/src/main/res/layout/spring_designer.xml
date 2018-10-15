@@ -204,7 +204,7 @@
                         <RelativeLayout
                             android:layout_width="0px"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2"
+                            android:layout_weight="1"
                             android:padding="10dp">
 
                             <TextView
@@ -219,6 +219,27 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/springEnds_textView" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/springEnd_condition"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Spring End Condition"
+                                android:textSize="6pt" />
+
+                            <Spinner
+                                android:id="@+id/spinner_endCondition"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/springEnd_condition" />
 
                         </RelativeLayout>
 
@@ -359,51 +380,6 @@
                             android:inputType="numberDecimal"
                             android:padding="8dp"
                             android:hint="N"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:weightSum="2">
-
-                        <TextView
-                            android:layout_width="0px"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
-                            android:padding="8dp"
-                            android:text="Input Power (P)" />
-
-                        <EditText
-                            android:id="@+id/input_power1"
-                            android:layout_width="0px"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.4"
-                            android:inputType="numberDecimal"
-                            android:padding="8dp"
-                            android:hint="W"/>
-
-                        <TextView
-                            android:layout_width="0px"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:gravity="center"
-                            android:padding="8dp"
-                            android:text="---"
-                            android:textStyle="bold"/>
-
-                        <EditText
-                            android:id="@+id/input_power2"
-                            android:layout_width="0px"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.4"
-                            android:inputType="numberDecimal"
-                            android:padding="8dp"
-                            android:hint="W"/>
 
                     </LinearLayout>
 
@@ -631,7 +607,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Shear Stress-Correction Factor (Ks):" />
+                            android:text="Shear Stress-Correction Factor (Kₛ):" />
 
                         <TextView
                             android:id="@+id/ks_value"
@@ -697,7 +673,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Ultimate Tensile Strength (Sut):" />
+                            android:text="Ultimate Tensile Strength (Sᵤₜ):" />
 
                         <TextView
                             android:id="@+id/sut_value"
@@ -719,7 +695,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Shear Strength (Ssy):" />
+                            android:text="Shear Strength (Sₛᵧ):" />
 
                         <TextView
                             android:id="@+id/ssy_value"
@@ -741,7 +717,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Factor of Safety"
+                            android:text="Factor of Safety (nₛ):"
                             android:textStyle="bold"/>
 
                         <TextView
@@ -785,7 +761,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Bergsträsser Factor (Kb):" />
+                            android:text="Bergsträsser Factor (Kᵦ):" />
 
                         <TextView
                             android:id="@+id/kb_value"
@@ -807,7 +783,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Shear Stress Amplitude (τa)" />
+                            android:text="Shear Stress Amplitude (τₐ)" />
 
                         <TextView
                             android:id="@+id/taua_value"
@@ -829,7 +805,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Midrange Shear Stress (τm):" />
+                            android:text="Midrange Shear Stress (τₘ):" />
 
                         <TextView
                             android:id="@+id/taum_value"
@@ -851,7 +827,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Torsional Modulus of Rupture (Ssu):" />
+                            android:text="Torsional Modulus of Rupture (Sₛᵤ):" />
 
                         <TextView
                             android:id="@+id/ssu_value"
@@ -873,7 +849,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Amplitude Component of Strength (Ssa):" />
+                            android:text="Amplitude Component of Strength (Sₛₐ):" />
 
                         <TextView
                             android:id="@+id/ssa_value"
@@ -895,7 +871,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Mean Component of Strength (Ssm):" />
+                            android:text="Mean Component of Strength (Sₛₘ):" />
 
                         <TextView
                             android:id="@+id/ssm_value"
@@ -917,7 +893,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Gerber Ordinate Intercept for Shear (Sse):" />
+                            android:text="Gerber Ordinate Intercept for Shear (Sₛₑ):" />
 
                         <TextView
                             android:id="@+id/sse_value"
@@ -939,7 +915,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Factor of Safety"
+                            android:text="Factor of Safety (n𝒻)"
                             android:textStyle="bold"/>
 
                         <TextView
@@ -1022,7 +998,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Active Coils (Na):" />
+                            android:text="Active Coils (Nₐ):" />
 
                         <TextView
                             android:id="@+id/active_coils"
@@ -1044,7 +1020,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Total Coils (Nt):" />
+                            android:text="Total Coils (Nₜ):" />
 
                         <TextView
                             android:id="@+id/total_coils"
@@ -1066,51 +1042,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Deflection from Free Length to Solid Length (ys):" />
-
-                        <TextView
-                            android:id="@+id/deflection"
-                            android:layout_width="0px"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="end|center_vertical"
-                            android:padding="8dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:weightSum="2">
-
-                        <TextView
-                            android:layout_width="0px"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:padding="8dp"
-                            android:text="Free Length (L0):" />
-
-                        <TextView
-                            android:id="@+id/free_length"
-                            android:layout_width="0px"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="end|center_vertical"
-                            android:padding="8dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:weightSum="2">
-
-                        <TextView
-                            android:layout_width="0px"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:padding="8dp"
-                            android:text="Solid Length (Ls)" />
+                            android:text="Solid Length (Lₛ)" />
 
                         <TextView
                             android:id="@+id/solid_length"
@@ -1132,10 +1064,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Pitch (p):" />
+                            android:text="Free Length (L𝒻)" />
 
                         <TextView
-                            android:id="@+id/pitch"
+                            android:id="@+id/free_length"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -1191,15 +1123,60 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Factor of Safety" />
+                            android:text="Spring Weight (W)" />
 
                         <TextView
-                            android:id="@+id/fs_frequency_value"
+                            android:id="@+id/spring_weight"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="end|center_vertical"
                             android:padding="8dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="Motor Frequency (fₘ)" />
+
+                        <TextView
+                            android:id="@+id/motor_frequency"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end|center_vertical"
+                            android:padding="8dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="Natural Frequency (fₙ)" />
+
+                        <TextView
+                            android:id="@+id/natural_frequency"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end|center_vertical"
+                            android:padding="8dp"
+                            android:textStyle="bold"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -1249,15 +1226,38 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:padding="8dp"
-                            android:text="Factor of Safety" />
+                            android:text="End Condition Constant (α):" />
 
                         <TextView
-                            android:id="@+id/fs_buckling_value"
+                            android:id="@+id/end_condition"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="end|center_vertical"
                             android:padding="8dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/buckling_criteria" />
+
+                        <TextView
+                            android:id="@+id/buckling_criteria"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end|center_vertical"
+                            android:padding="8dp"
+                            android:textStyle="bold"/>
                     </LinearLayout>
 
                 </LinearLayout>

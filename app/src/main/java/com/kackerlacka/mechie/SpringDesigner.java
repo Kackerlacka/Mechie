@@ -29,14 +29,17 @@ public class SpringDesigner extends AppCompatActivity {
     private Spinner wireMaterialSpinner;
     private Spinner noSpringsSpinner;
     private Spinner springEndsSpinner;
+    private Spinner endConditionSpinner;
     private EditText input_wireDiameter, input_springIndex, input_extForce, input_springDeflection,
         input_loadings1, input_loadings2, input_power1, input_power2, input_speed1, input_speed2;
     private TextView ksValue, tauStaticValue, DValue, SsyValue, SutValue, FSStaticValue;
     private TextView kbValue, tauAValue, tauMValue, SsuValue, SsaValue, SsmValue, SseValue, FSFatigueValue;
-    private TextView EModulus, ShearModulus, NtValue, NaValue, KValue;
+    private TextView EModulus, ShearModulusValue, NtValue, NaValue, KValue, LsValue, LfValue, springWeightValue;
+    private TextView NfValue, MfValue, EndConditionValue, BucklingCriteriaValue;
     List<String> wireMaterial = new ArrayList<>();
     List<String> noSprings = new ArrayList<>();
     List<String> springEnds = new ArrayList<>();
+    List<String> endConditionList = new ArrayList<>();
     private RadioGroup unitsRadioGroup;
     private RadioGroup peenedRadioGroup;
     private int unitSel = 1;
@@ -88,8 +91,6 @@ public class SpringDesigner extends AppCompatActivity {
                     input_springDeflection.setHint("in");
                     input_loadings1.setHint("lb");
                     input_loadings2.setHint("lb");
-                    input_power1.setHint("hp");
-                    input_power2.setHint("hp");
                     ssa = 57.5;
                     ssm = 77.5;
                     unitSel = 2;
@@ -163,12 +164,20 @@ public class SpringDesigner extends AppCompatActivity {
             }
 
             calculateFSFatigue();
+            calculateLs();
+            calculateLf();
+            calculateSpringWeight();
+            calculateMotorFrequency();
+            calculateNaturalFrequency();
+
+            calculateEndCondition();
+            calculateBucklingCriteria();
 
             if(!input_wireDiameter.getText().toString().equals("") && scrollValue == 1 &&
                     !input_springIndex.getText().toString().equals("") && !input_extForce.getText().toString().equals("")
                     && !input_springDeflection.getText().toString().equals("") && !input_loadings1.getText().toString().equals("")
-                    && !input_loadings2.equals("") && !input_power1.equals("") && !input_power2.equals("") &&
-                    !input_speed1.getText().toString().equals("") && !input_speed2.getText().toString().equals("")) {
+                    && !input_loadings2.equals("") && !input_speed1.getText().toString().equals("") &&
+                    !input_speed2.getText().toString().equals("")) {
                 ScrollView sv = findViewById(R.id.scrollview);
                 sv.smoothScrollTo(0, sv.getBottom());
 
@@ -177,6 +186,130 @@ public class SpringDesigner extends AppCompatActivity {
 
     }
 
+    public double shearModulus() {
+        double G = 0;
+        double dia = 0;
+        ShearModulusValue = findViewById(R.id.shear_modulus_value);
+
+        try {
+            String diameter = input_wireDiameter.getText().toString();
+            dia = Double.parseDouble(diameter);
+        } catch (NumberFormatException e) {
+            input_wireDiameter.setError("Enter a wire diameter");
+        }
+
+        switch(wireMaterialSpinner.getSelectedItemPosition()) {
+            case 0:
+                if(unitSel == 1) {
+                    if(dia < 0.8128) {
+                        G = 82700000;
+                    }
+                    else if(dia >= 0.8382 && dia <= 1.6002) {
+                        G = 81700000;
+                    }
+                    else if(dia >= 1.6256 && dia <= 3.175) {
+                        G = 81000000;
+                    }
+                    else if(dia > 3.175) {
+                        G = 80000000;
+                    }
+                }
+                else if(unitSel == 2){
+                    if(dia < 0.032) {
+                        G = 12000000;
+                    }
+                    else if(dia >= 0.033 && dia <= 0.063) {
+                        G = 11850000;
+                    }
+                    else if(dia >= 0.064 && dia <= 0.125) {
+                        G = 11750000;
+                    }
+                    else if(dia > 0.125) {
+                        G = 11600000;
+                    }
+                }
+                break;
+            case 1:
+                if(unitSel == 1) {
+                    G = 77200000;
+                }
+                else if(unitSel == 2) {
+                    G = 11200000;
+                }
+                break;
+            case 2:
+                if(unitSel == 1) {
+                    if(dia < 0.8128) {
+                        G = 80700000;
+                    }
+                    else if(dia >= 0.8382 && dia <= 1.6002) {
+                        G = 80000000;
+                    }
+                    else if(dia >= 1.6256 && dia <= 3.175) {
+                        G = 79300000;
+                    }
+                    else if(dia > 3.175) {
+                        G = 78600000;
+                    }
+                }
+                else if(unitSel == 2){
+                    if(dia < 0.032) {
+                        G = 11700000;
+                    }
+                    else if(dia >= 0.033 && dia <= 0.063) {
+                        G = 11600000;
+                    }
+                    else if(dia >= 0.064 && dia <= 0.125) {
+                        G = 11500000;
+                    }
+                    else if(dia > 0.125) {
+                        G = 11400000;
+                    }
+                }
+                break;
+            case 3:
+                if(unitSel == 1) {
+                    G = 77200000;
+                }
+                else if(unitSel == 2) {
+                    G = 11200000;
+                }
+                break;
+            case 4:
+                if(unitSel == 1) {
+                    G = 77200000;
+                }
+                else if(unitSel == 2) {
+                    G = 11200000;
+                }
+                break;
+            case 5:
+                if(unitSel == 1) {
+                    G = 69000000;
+                }
+                else if(unitSel == 2) {
+                    G = 10000000;
+                }
+                break;
+            case 6:
+                if(unitSel == 1) {
+                    G = 41400000;
+                }
+                else if(unitSel == 2) {
+                    G = 6000000;
+                }
+                break;
+        }
+
+        if(unitSel == 1) {
+            ShearModulusValue.setText(formatter.format(G/1000000) + " GPa");
+        }
+        else if(unitSel == 2) {
+            ShearModulusValue.setText(formatter.format(G/1000000) + " Mpsi");
+        }
+
+        return G;
+    }
 
     public double calculateKs() {
         ksValue = findViewById(R.id.ks_value);
@@ -765,6 +898,14 @@ public class SpringDesigner extends AppCompatActivity {
 
         double fsStatic = ssy/tau;
         FSStaticValue.setText(formatter.format(fsStatic));
+
+        if(fsStatic <= 1.2) {
+            FSStaticValue.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_light));
+        }
+        else if(fsStatic > 1.2) {
+            FSStaticValue.setTextColor(ContextCompat.getColor(context, R.color.colorAccentBlue));
+        }
+
         return fsStatic;
     }
 
@@ -942,6 +1083,13 @@ public class SpringDesigner extends AppCompatActivity {
 
         double fsFatigue = 1/((tauA/Sse) + (tauM/Ssu));
         FSFatigueValue.setText(formatter.format(fsFatigue));
+
+        if(fsFatigue <= 1.2) {
+            FSFatigueValue.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_light));
+        }
+        else if(fsFatigue > 1.2) {
+            FSFatigueValue.setTextColor(ContextCompat.getColor(context, R.color.colorAccentBlue));
+        }
         return fsFatigue;
     }
 
@@ -967,119 +1115,15 @@ public class SpringDesigner extends AppCompatActivity {
     public double calculateNa() {
         NaValue = findViewById(R.id.active_coils);
         double dia = 0;
+        double G = shearModulus();
+        double D = calculateD();
+        double k = calculateK();
 
         try {
             String diameter = input_wireDiameter.getText().toString();
             dia = Double.parseDouble(diameter);
         } catch (NumberFormatException e) {
             input_wireDiameter.setError("Enter a wire diameter");
-        }
-
-        double G = 0;
-        double D = calculateD();
-        double k = calculateK();
-
-        switch(wireMaterialSpinner.getSelectedItemPosition()) {
-            case 0:
-                if(unitSel == 1) {
-                    if(dia < 0.8128) {
-                        G = 82700000;
-                    }
-                    else if(dia >= 0.8382 && dia <= 1.6002) {
-                        G = 81700000;
-                    }
-                    else if(dia >= 1.6256 && dia <= 3.175) {
-                        G = 81000000;
-                    }
-                    else if(dia > 3.175) {
-                        G = 80000000;
-                    }
-                }
-                else if(unitSel == 2){
-                    if(dia < 0.032) {
-                        G = 12000000;
-                    }
-                    else if(dia >= 0.033 && dia <= 0.063) {
-                        G = 11850000;
-                    }
-                    else if(dia >= 0.064 && dia <= 0.125) {
-                        G = 11750000;
-                    }
-                    else if(dia > 0.125) {
-                        G = 11600000;
-                    }
-                }
-                break;
-            case 1:
-                if(unitSel == 1) {
-                    G = 77200000;
-                }
-                else if(unitSel == 2) {
-                    G = 11200000;
-                }
-                break;
-            case 2:
-                if(unitSel == 1) {
-                    if(dia < 0.8128) {
-                        G = 80700000;
-                    }
-                    else if(dia >= 0.8382 && dia <= 1.6002) {
-                        G = 80000000;
-                    }
-                    else if(dia >= 1.6256 && dia <= 3.175) {
-                        G = 79300000;
-                    }
-                    else if(dia > 3.175) {
-                        G = 78600000;
-                    }
-                }
-                else if(unitSel == 2){
-                    if(dia < 0.032) {
-                        G = 11700000;
-                    }
-                    else if(dia >= 0.033 && dia <= 0.063) {
-                        G = 11600000;
-                    }
-                    else if(dia >= 0.064 && dia <= 0.125) {
-                        G = 11500000;
-                    }
-                    else if(dia > 0.125) {
-                        G = 11400000;
-                    }
-                }
-                break;
-            case 3:
-                if(unitSel == 1) {
-                    G = 77200000;
-                }
-                else if(unitSel == 2) {
-                    G = 11200000;
-                }
-                break;
-            case 4:
-                if(unitSel == 1) {
-                    G = 77200000;
-                }
-                else if(unitSel == 2) {
-                    G = 11200000;
-                }
-                break;
-            case 5:
-                if(unitSel == 1) {
-                    G = 69000000;
-                }
-                else if(unitSel == 2) {
-                    G = 10000000;
-                }
-                break;
-            case 6:
-                if(unitSel == 1) {
-                    G = 41400000;
-                }
-                else if(unitSel == 2) {
-                    G = 6000000;
-                }
-                break;
         }
 
         double Na = ((dia*dia*dia*dia) * G) / (8 * (D*D*D) * k);
@@ -1112,6 +1156,201 @@ public class SpringDesigner extends AppCompatActivity {
         return Nt;
     }
 
+    public double calculateLf() {
+        double Lf;
+        double y = 0;
+        double Ls = calculateLs();
+        LfValue = findViewById(R.id.free_length);
+
+        try {
+            String deflection = input_springDeflection.getText().toString();
+            y = Double.parseDouble(deflection);
+        } catch (NumberFormatException e) {
+            input_springDeflection.setError("Enter a deflection");
+        }
+
+        Lf = Ls + y;
+
+        if(unitSel == 1) {
+            LfValue.setText(formatter.format(Lf) + " mm");
+        }
+        else if(unitSel == 2) {
+            LfValue.setText(formatter.format(Lf) + " in");
+        }
+
+        return Lf;
+    }
+
+    public double calculateLs() {
+        double Ls = 0;
+        double Nt = calculateNt();
+        double dia = 0;
+        LsValue = findViewById(R.id.solid_length);
+
+        try {
+            String diameter = input_wireDiameter.getText().toString();
+            dia = Double.parseDouble(diameter);
+        } catch (NumberFormatException e) {
+            input_wireDiameter.setError("Enter a wire diameter");
+        }
+
+        switch(springEndsSpinner.getSelectedItemPosition()) {
+            case 0:
+                Ls = dia * (Nt + 1);
+                break;
+            case 1:
+                Ls = dia * Nt;
+                break;
+            case 2:
+                Ls = dia * (Nt + 1);
+                break;
+            case 3:
+                Ls = dia * Nt;
+                break;
+        }
+
+        if(unitSel == 1) {
+            LsValue.setText(formatter.format(Ls) + " mm");
+        }
+        else if(unitSel == 2) {
+            LsValue.setText(formatter.format(Ls) + " in");
+        }
+
+        return Ls;
+    }
+
+    public double calculateSpringWeight() {
+        double sr;
+        double dia = 0;
+        double D = calculateD();
+        double Na = calculateNa();
+        double specificWeight = 0;
+
+            if(unitSel == 1) {
+                specificWeight = 0.00000786109;
+            }
+            else if(unitSel == 2) {
+                specificWeight = 0.284;
+            }
+
+        try {
+            String diameter = input_wireDiameter.getText().toString();
+            dia = Double.parseDouble(diameter);
+        } catch (NumberFormatException e) {
+            input_wireDiameter.setError("Enter a wire diameter");
+        }
+
+        sr = ((PI * PI)*(dia * dia) * D * Na * specificWeight)/4;
+
+        springWeightValue = findViewById(R.id.spring_weight);
+
+        if(unitSel == 1) {
+            springWeightValue.setText(formatter.format(sr) + " N");
+        }
+        else if(unitSel == 2) {
+            springWeightValue.setText(formatter.format(sr) + " lbf");
+        }
+
+        return sr;
+    }
+
+    public double calculateMotorFrequency() {
+        double mf;
+        double speedMax = 0;
+        MfValue = findViewById(R.id.motor_frequency);
+
+        try {
+            String MaxSpeed = input_speed2.getText().toString();
+            speedMax = Double.parseDouble(MaxSpeed);
+        } catch (NumberFormatException e) {
+            input_speed2.setError("Enter a max speed");
+        }
+
+        mf = speedMax/60;
+
+        MfValue.setText(formatter.format(mf) + " Hz");
+        return mf;
+    }
+
+    public double calculateNaturalFrequency() {
+        double nf;
+        double K = calculateK();
+        double W = calculateSpringWeight();
+        double g = 0;
+        double sqrt;
+        double num;
+        double mf = calculateMotorFrequency();
+
+        if(unitSel == 1) {
+            g = 9810;
+        }
+        else if(unitSel == 2) {
+            g = 386;
+        }
+
+        NfValue = findViewById(R.id.natural_frequency);
+
+        num = (K * g) / W;
+        sqrt = Math.pow(num, 0.5);
+        nf = (0.5)*sqrt;
+
+        NfValue.setText(formatter.format(nf) + " Hz");
+
+        if(nf <= 15*mf) {
+            NfValue.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_light));
+        }
+        else if(nf > 15*mf) {
+            NfValue.setTextColor(ContextCompat.getColor(context, R.color.colorAccentBlue));
+        }
+
+        return nf;
+    }
+
+    public double calculateEndCondition() {
+        double ec = 0;
+        endConditionSpinner = findViewById(R.id.spinner_endCondition);
+        EndConditionValue = findViewById(R.id.end_condition);
+
+        switch(endConditionSpinner.getSelectedItemPosition()) {
+            case 0:
+                ec = 0.5;
+                break;
+            case 1:
+                ec = 0.7;
+                break;
+            case 2:
+                ec = 1;
+                break;
+            case 3:
+                ec = 2;
+                break;
+        }
+
+        EndConditionValue.setText(formatter.format(ec));
+        return ec;
+    }
+
+    public double calculateBucklingCriteria() {
+        double bc = 0;
+        double D = calculateD();
+        double a = calculateEndCondition();
+        double lf = calculateLf();
+        BucklingCriteriaValue = findViewById(R.id.buckling_criteria);
+
+        bc = 2.63 * (D/a);
+
+        BucklingCriteriaValue.setText(formatter.format(bc));
+
+        if(bc < lf) {
+            BucklingCriteriaValue.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_light));
+        }
+        else if(bc > lf) {
+            BucklingCriteriaValue.setTextColor(ContextCompat.getColor(context, R.color.colorAccentBlue));
+        }
+
+        return bc;
+    }
+
     public void initializeActivity() {
         input_wireDiameter = findViewById(R.id.input_wireDiameter);
         input_springIndex = findViewById(R.id.input_springIndex);
@@ -1119,13 +1358,11 @@ public class SpringDesigner extends AppCompatActivity {
         input_springDeflection = findViewById(R.id.input_springDeflection);
         input_loadings1 = findViewById(R.id.input_loadings1);
         input_loadings2 = findViewById(R.id.input_loadings2);
-        input_power1 = findViewById(R.id.input_power1);
-        input_power2 = findViewById(R.id.input_power2);
         input_speed1 = findViewById(R.id.input_speed1);
         input_speed2 = findViewById(R.id.input_speed2);
         peenedRadioGroup = findViewById(R.id.peened_group);
         EModulus = findViewById(R.id.elasticity_value);
-        ShearModulus = findViewById(R.id.shear_modulus_value);
+        ShearModulusValue = findViewById(R.id.shear_modulus_value);
         formatter = new DecimalFormat("#.###");
 
 
@@ -1155,6 +1392,16 @@ public class SpringDesigner extends AppCompatActivity {
         noSprings.add("7");
         noSprings.add("8");
         noSpringsAdapter.notifyDataSetChanged();
+
+        endConditionSpinner = findViewById(R.id.spinner_endCondition);
+        final ArrayAdapter<String> endConditionAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_dropdown_item, endConditionList);
+        endConditionSpinner.setAdapter(endConditionAdapter);
+        endConditionList.add("Fixed-Fixed");
+        endConditionList.add("Fixed-Hinged");
+        endConditionList.add("Hinged-Hinged");
+        endConditionList.add("Clamped-Free");
+        endConditionAdapter.notifyDataSetChanged();
 
         springEndsSpinner = findViewById(R.id.spinner_springEnds);
         final ArrayAdapter<String> springEndsAdapter = new ArrayAdapter<>(this,
@@ -1186,10 +1433,6 @@ public class SpringDesigner extends AppCompatActivity {
         input_loadings1.setError(null);
         input_loadings2.setText("");
         input_loadings2.setError(null);
-        input_power1.setText("");
-        input_power1.setError(null);
-        input_power2.setText("");
-        input_power2.setError(null);
         input_speed1.setText("");
         input_speed1.setError(null);
         input_speed2.setText("");

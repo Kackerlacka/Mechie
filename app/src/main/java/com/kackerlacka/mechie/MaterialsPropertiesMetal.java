@@ -40,6 +40,8 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
     String[] titaniumCarbideImperial;
     String[] aluminum6061Imperial;
     String[] ironStandardImperial;
+    String[] steel1005Metric;
+    String[] steel1005Imperial;
     String[] placeholder;
 
     @Override
@@ -103,6 +105,13 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                                     break;
                             }
                             break;
+                        case "Steel":
+                            switch(spinner2.getSelectedItem().toString()) {
+                                case "AISI 1005":
+                                    spinnerSelection(steel1005Metric);
+                                    break;
+                            }
+                            break;
 
                     }
                     break;
@@ -146,6 +155,13 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                             switch(spinner2.getSelectedItem().toString()) {
                                 case "Standard":
                                     spinnerSelection(ironStandardImperial);
+                                    break;
+                            }
+                            break;
+                        case "Steel":
+                            switch(spinner2.getSelectedItem().toString()) {
+                                case "Standard":
+                                    spinnerSelection(steel1005Imperial);
                                     break;
                             }
                             break;
@@ -210,6 +226,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
         data1.add("Titanium");
         data1.add("Aluminum");
         data1.add("Iron");
+        data1.add("Steel");
 
         spinner1.setAdapter(adapter1);
         spinner2.setAdapter(adapter2);
@@ -226,6 +243,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                 titaniumCarbideMetric = getResources().getStringArray(R.array.titanium_carbide_metric);
                 aluminum6061Metric = getResources().getStringArray(R.array.aluminum_6061_metric);
                 ironStandardMetric = getResources().getStringArray(R.array.iron_standard_metric);
+                steel1005Metric = getResources().getStringArray(R.array.steel_1005_metric);
 
                 copperStandardImperial = getResources().getStringArray(R.array.copper_standard_imperial);
                 copperAnnealedImperial = getResources().getStringArray(R.array.copper_annealed_imperial);
@@ -235,6 +253,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                 titaniumCarbideImperial = getResources().getStringArray(R.array.titanium_carbide_imperial);
                 aluminum6061Imperial = getResources().getStringArray(R.array.aluminum_6061_imperial);
                 ironStandardImperial = getResources().getStringArray(R.array.iron_standard_imperial);
+                steel1005Imperial = getResources().getStringArray(R.array.steel_1005_imperial);
 
                 switch(spinner1.getSelectedItemPosition()) {
                     case 0:
@@ -366,6 +385,30 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                                     }
                                     else if(unitSel == 1) {
                                         spinnerSelection(ironStandardImperial);
+                                    }
+                                }
+                            }
+                        });
+                        break;
+                    case 4:
+                        spinner2.setSelection(0);
+                        data2.clear();
+                        data2.add("AISI 1005");
+                        adapter2.notifyDataSetChanged();
+                        if(unitSel == 0) {
+                            spinnerSelection(steel1005Metric);
+                        }
+                        else if(unitSel == 1) {
+                            spinnerSelection(steel1005Imperial);
+                        }
+                        spinner2.setOnItemSelectedListener(new CustomOnItemSelectedListener() {
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                if(spinner2.getSelectedItemPosition() == 0) {
+                                    if(unitSel == 0) {
+                                        spinnerSelection(steel1005Metric);
+                                    }
+                                    else if(unitSel == 1) {
+                                        spinnerSelection(steel1005Imperial);
                                     }
                                 }
                             }

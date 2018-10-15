@@ -8,6 +8,7 @@
     <string name="AISI_prompt">Select an AISI Number</string>
     <string name="treatments_prompt">Select a treatment</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="buckling_criteria">Buckling Criteria (L𝒻 &#60; 2.63(D/α):</string>
 
     //Source Activity
     <string name="source_icon_source">Source <a href="https://openclipart.org/detail/278694/gear-wrench-icon"> </a></string>
@@ -521,7 +522,7 @@
     <string-array name="aluminum_6061_metric">
         <item>2.7 g/cm³</item>
         <item>Face-centered Cubic</item>
-        <item>107</item>
+        <item>15</item>
         <item>310 MPa</item>
         <item>276 MPa</item>
         <item>12 &#8211; 17%</item>
@@ -532,7 +533,7 @@
         <item>167 W/m·K</item>
         <item>582 &#8211; 652 °C</item>
         <item>-</item>
-        <item>23.6 &#8211; 25.2 µm/m-°C</item>
+        <item>23.6 µm/m-°C</item>
     </string-array>
     <string-array name="iron_standard_metric">
         <item>7.87 g/cm³</item>
@@ -548,7 +549,23 @@
         <item>76.2 W/m·K</item>
         <item>1535 °C</item>
         <item>2861 °C</item>
-        <item>12.2 &#8211; 24 µm/m-°C</item>
+        <item>12.2 µm/m-°C</item>
+    </string-array>
+    <string-array name="steel_1005_metric">
+        <item>7.87 g/cm³</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>200 GPa</item>
+        <item>160 GPa</item>
+        <item>-</item>
+        <item>80 GPa</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>12.6 µm/m-°C</item>
     </string-array>
 
     //Metal Properties Imperial
@@ -582,7 +599,7 @@
         <item>2670 BTU·in/hr·ft²·°F</item>
         <item>1981.8 &#8211; 1982.5 °F</item>
         <item>4644 °F</item>
-        <item>9.11 µm/m-°F</item>
+        <item>9.11 µin/in-°F</item>
     </string-array>
     <string-array name="copper_coldWorked_imperial">
         <item>0.324 lb/in³</item>
@@ -598,7 +615,7 @@
         <item>2670 BTU·in/hr·ft²·°F</item>
         <item>1981.8 &#8211; 1982.5 °F</item>
         <item>4644 °F</item>
-        <item>9.11 µm/m-°F</item>
+        <item>9.11 µin/in-°F</item>
     </string-array>
     <string-array name="copper_coldDrawn_imperial">
         <item>0.324 lb/in³</item>
@@ -614,71 +631,87 @@
         <item>2670 BTU·in/hr·ft²·°F</item>
         <item>1981.8 &#8211; 1982.5 °F</item>
         <item>4644 °F</item>
-        <item>9.11 µm/m-°F</item>
+        <item>9.11 µin/in-°F</item>
     </string-array>
     <string-array name="titanium_standard_imperial">
-        <item>4.50 g/cm³</item>
+        <item>0.163 lb/in³</item>
         <item>Hexagonal close-packed</item>
         <item>60</item>
-        <item>220 MPa</item>
-        <item>140 MPa</item>
+        <item>31.9 kpsi</item>
+        <item>20.3 kpsi</item>
         <item>54%</item>
-        <item>116 GPa</item>
+        <item>16800 kpsi</item>
         <item>-</item>
         <item>0.34</item>
-        <item>43 GPa</item>
-        <item>17 W/m·K</item>
-        <item>1650 &#8211; 1670 °C</item>
-        <item>3287 °C</item>
-        <item>8.90 µm/m-°C</item>
+        <item>6240 kpsi</item>
+        <item>118 BTU·in/hr·ft²·°F</item>
+        <item>3000 &#8211; 3040 °C</item>
+        <item>5949 °C</item>
+        <item>4.94 µin/in-°F</item>
     </string-array>
     <string-array name="titanium_carbide_imperial">
-        <item>4.94 g/cm³</item>
+        <item>0.178 lb/in³</item>
         <item>Cubic</item>
         <item>-</item>
-        <item>258 MPa</item>
+        <item>37.4 kpsi</item>
         <item>-</item>
         <item>-</item>
-        <item>448 &#8211; 451 GPa</item>
+        <item>65000 &#8211; 65400 kpsi</item>
         <item>-</item>
         <item>0.18 &#8211; 0.19</item>
-        <item>110 &#8211; 193 GPa</item>
+        <item>16000 &#8211; 28000 kpsi</item>
         <item>-</item>
-        <item>3065 °C</item>
+        <item>5549 °F</item>
         <item>-</item>
-        <item>7.70 µm/m-°C</item>
+        <item>4.28 µin/in-°F</item>
     </string-array>
     <string-array name="aluminum_6061_imperial">
-        <item>2.7 g/cm³</item>
+        <item>0.0975 lb/in³</item>
         <item>Face-centered Cubic</item>
         <item>107</item>
-        <item>310 MPa</item>
-        <item>276 MPa</item>
+        <item>45 kpsi</item>
+        <item>40 kpsi</item>
         <item>12 &#8211; 17%</item>
-        <item>68.9 GPa</item>
+        <item>10000 kpsi</item>
         <item>-</item>
         <item>0.33</item>
-        <item>26 GPa</item>
-        <item>167 W/m·K</item>
-        <item>582 &#8211; 652 °C</item>
+        <item>2770 kpsi</item>
+        <item>1160 BTU·in/hr·ft²·°F</item>
+        <item>1080 &#8211; 1205 °F</item>
         <item>-</item>
-        <item>23.6 &#8211; 25.2 µm/m-°C</item>
+        <item>13.1 µin/in-°F</item>
     </string-array>
     <string-array name="iron_standard_imperial">
-        <item>7.87 g/cm³</item>
+        <item>0.284 lb/in³</item>
         <item>Face-centered Cubic</item>
         <item>150</item>
-        <item>540 MPa</item>
-        <item>50 MPa</item>
+        <item>78.3 kpsi</item>
+        <item>7.25 kpsi</item>
         <item>-</item>
-        <item>200 GPa</item>
-        <item>166 GPa</item>
+        <item>29000 kpsi</item>
+        <item>24100 kpsi</item>
         <item>0.291</item>
-        <item>77.5 GPa</item>
-        <item>76.2 W/m·K</item>
-        <item>1535 °C</item>
-        <item>2861 °C</item>
-        <item>12.2 &#8211; 24 µm/m-°C</item>
+        <item>11200 kpsi</item>
+        <item>529 BTU·in/hr·ft²·°F</item>
+        <item>2795 °F</item>
+        <item>5182 °F</item>
+        <item>6.78 µin/in-°F</item>
+    </string-array>
+    <string-array name="steel_1005_imperial">
+        <item>0.2844 lb/in³</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>29000 kpsi</item>
+        <item>23200 kpsi</item>
+        <item>-</item>
+        <item>11600 kpsi</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>7.00 µin/in-°F</item>
     </string-array>
 
     //Properties
