@@ -1016,7 +1016,7 @@ public class SpringDesigner extends AppCompatActivity {
             input_extForce.setError("Enter a force value");
         }
 
-        double Fmax = (extForce/numberSprings) + (extLoad2/numberSprings);
+        double Fmax = (extForce/4) + (extLoad2/4);
 
         return Fmax;
     }
