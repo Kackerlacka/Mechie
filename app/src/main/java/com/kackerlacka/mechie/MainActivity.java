@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Physics Concepts
     public void springDesigner(View view) {
-        Intent intent = new Intent(this, SpringDesigner.class);
+        Intent intent = new Intent(this, ToolsHelicalSpringDesigner.class);
         startActivity(intent);
     }
 

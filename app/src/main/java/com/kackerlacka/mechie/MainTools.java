@@ -27,7 +27,7 @@ public class MainTools extends Fragment  {
         Picasso.get().load(R.drawable.dimensionlessnumbers).resize(600, 600).into(dimensionlessCalculator);
         Picasso.get().load(R.drawable.pi).resize(600, 600).into(buckinghamPiCalulcator);
         Picasso.get().load(R.drawable.bolts).resize(600, 600).into(boltSizer);
-        Picasso.get().load(R.drawable.bolts).resize(600,600).into(springDesigner);
+        Picasso.get().load(R.drawable.springs).resize(600,600).into(springDesigner);
         return view;
 
     }

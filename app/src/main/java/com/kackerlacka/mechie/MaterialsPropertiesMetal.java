@@ -160,7 +160,7 @@ public class MaterialsPropertiesMetal extends AppCompatActivity {
                             break;
                         case "Steel":
                             switch(spinner2.getSelectedItem().toString()) {
-                                case "Standard":
+                                case "AISI 1005":
                                     spinnerSelection(steel1005Imperial);
                                     break;
                             }

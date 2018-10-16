@@ -46,8 +46,8 @@ public class MainConstants extends ListFragment {
         equationsList.add(new CustomListViewClass( "Faraday Constant", "F", "9.648 x 10¹¹ C/mol", 23));
         equationsList.add(new CustomListViewClass( "Gas Constant", "R", "8.3145 J/molK", 15));
         equationsList.add(new CustomListViewClass( "Golden Ratio" , "φ", "1.61803398", 4));
-        equationsList.add(new CustomListViewClass( "Gravitational Constant [G]" , "G", "6.67 x 10⁻¹¹ Nm²/kg²", 4));
-        equationsList.add(new CustomListViewClass( "Hubble Constant", "?", "69.3 km/s/Mpc (2.25 x 10⁻¹⁸ s⁻¹)", 21));
+        equationsList.add(new CustomListViewClass( "Gravitational Constant" , "G", "6.67 x 10⁻¹¹ Nm²/kg²", 4));
+        equationsList.add(new CustomListViewClass( "Hubble Constant", "H", "69.3 km/s/Mpc (2.25 x 10⁻¹⁸ s⁻¹)", 21));
         equationsList.add(new CustomListViewClass( "Khinchin's Constant", "K", "2.6854", 24));
         equationsList.add(new CustomListViewClass( "Luminous Efficacy", "Kᶜᵈ", "683 lm/W", 20));
         equationsList.add(new CustomListViewClass( "Magnetic Constant", "μ₀", "4π x 10⁻⁷ Tm/A", 11));
@@ -59,7 +59,7 @@ public class MainConstants extends ListFragment {
         equationsList.add(new CustomListViewClass( "Planck Constant", "h", "6.626 x 10⁻³⁴ Js (4.136 x 10⁻¹⁵ eVs)", 8));
         equationsList.add(new CustomListViewClass( "Proton Mass", "mₚ", "1.672 x 10⁻²⁷ kg", 19));
         equationsList.add(new CustomListViewClass( "Rydberg Constant", "R∞", "1.0974 m⁻¹", 24));
-        equationsList.add(new CustomListViewClass( "Speed of Light in a Vacuum [c]" , "c", "299,792,458 (m/s)", 7));
+        equationsList.add(new CustomListViewClass( "Speed of Light in a Vacuum" , "c", "299,792,458 (m/s)", 7));
         equationsList.add(new CustomListViewClass( "Stefan-Boltzmann Constant", "σ", "5.670 x 10⁻⁸ W/m²K⁴", 14));
         equationsList.add(new CustomListViewClass( "Vacuum Permeability", "μ₀", "4π x 10⁻⁷ Tm/A", 13));
         equationsList.add(new CustomListViewClass( "Vacuum Permittivity", "ε₀","8.854 x 10⁻¹² C²/Nm²", 10));

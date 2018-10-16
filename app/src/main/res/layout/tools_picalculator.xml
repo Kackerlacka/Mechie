@@ -61,14 +61,14 @@
                         android:paddingEnd="10dp">
 
                         <CheckBox
-                            android:id="@+id/chk1"
+                            android:id="@+id/chk0"
                             android:layout_width="0px"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Diameter (D)"/>
 
                         <CheckBox
-                            android:id="@+id/chk2"
+                            android:id="@+id/chk1"
                             android:layout_width="0px"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -85,14 +85,14 @@
                         android:paddingEnd="10dp">
 
                         <CheckBox
-                            android:id="@+id/chk3"
+                            android:id="@+id/chk2"
                             android:layout_width="0px"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Velocity (v)"/>
 
                         <CheckBox
-                            android:id="@+id/chk4"
+                            android:id="@+id/chk3"
                             android:layout_width="0px"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -109,14 +109,14 @@
                         android:paddingEnd="10dp">
 
                         <CheckBox
-                            android:id="@+id/chk5"
+                            android:id="@+id/chk4"
                             android:layout_width="0px"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Pressure change (Δp)"/>
 
                         <CheckBox
-                            android:id="@+id/chk6"
+                            android:id="@+id/chk5"
                             android:layout_width="0px"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -134,14 +134,14 @@
                         android:paddingBottom="10dp">
 
                         <CheckBox
-                            android:id="@+id/chk7"
+                            android:id="@+id/chk6"
                             android:layout_width="0px"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Surface Roughness (η)"/>
 
                         <CheckBox
-                            android:id="@+id/chk8"
+                            android:id="@+id/chk7"
                             android:layout_width="0px"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -220,10 +220,62 @@
                         android:layout_below="@id/header_main"
                         android:layout_weight="1"
                         android:padding="8dp"
-                        android:text="Numbers" />
+                        android:text="Variables (k):" />
 
                     <TextView
-                        android:id="@+id/numbers"
+                        android:id="@+id/variables"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/header_main"
+                        android:layout_toRightOf="@id/density_text"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:padding="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/header_main"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        android:text="Dimensional Quantities (r):" />
+
+                    <TextView
+                        android:id="@+id/dimensional_quantities"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/header_main"
+                        android:layout_toRightOf="@id/density_text"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:padding="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/header_main"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        android:text="Pi Terms (Π):" />
+
+                    <TextView
+                        android:id="@+id/pi_terms"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/header_main"

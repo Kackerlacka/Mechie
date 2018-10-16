@@ -75,7 +75,7 @@
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".SpringDesigner"
+            android:name=".ToolsHelicalSpringDesigner"
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
     </application>

@@ -24,7 +24,7 @@ import java.util.List;
 
 import static java.lang.Math.PI;
 
-public class SpringDesigner extends AppCompatActivity {
+public class ToolsHelicalSpringDesigner extends AppCompatActivity {
 
     private Spinner wireMaterialSpinner;
     private Spinner noSpringsSpinner;
@@ -78,8 +78,6 @@ public class SpringDesigner extends AppCompatActivity {
                     input_springDeflection.setHint("mm");
                     input_loadings1.setHint("N");
                     input_loadings2.setHint("N");
-                    input_power1.setHint("W");
-                    input_power2.setHint("W");
                     ssa = 398;
                     ssm = 534;
                     unitSel = 1;
