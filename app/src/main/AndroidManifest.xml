@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ToolsHardnessConverter"
+            android:name=".ToolsUnitsConverter"
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
         <activity
@@ -78,6 +78,10 @@
             android:name=".ToolsHelicalSpringDesigner"
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ConverterHardness"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ToolsUnitsConverter"/>
     </application>
 
 </manifest>

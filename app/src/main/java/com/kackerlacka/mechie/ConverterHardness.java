@@ -1,8 +1,9 @@
 package com.kackerlacka.mechie;
 
-import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
@@ -16,7 +17,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ToolsHardnessConverter extends AppCompatActivity {
+public class ConverterHardness extends AppCompatActivity {
 
     private Spinner spinner1;
     List<String> data1 = new ArrayList<>();
@@ -27,7 +28,7 @@ public class ToolsHardnessConverter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tools_hardnessconverter);
+        setContentView(R.layout.tools_unitsconverter);
 
         Window window = this.getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -76,23 +77,23 @@ public class ToolsHardnessConverter extends AppCompatActivity {
         button.setOnClickListener((View v) -> {
             String input = hardnessInput.getText().toString();
             double a = Double.parseDouble(input);
-                switch (spinner1.getSelectedItemPosition()) {
-                    case 0:
-                        resetAll();
-                        break;
-                    case 1:
-                        resetAll();
-                        break;
-                    case 2:
-                        resetAll();
-                        break;
-                    case 3:
-                        resetAll();
-                        break;
-                    case 4:
-                        resetAll();
-                        break;
-                }
+            switch (spinner1.getSelectedItemPosition()) {
+                case 0:
+                    resetAll();
+                    break;
+                case 1:
+                    resetAll();
+                    break;
+                case 2:
+                    resetAll();
+                    break;
+                case 3:
+                    resetAll();
+                    break;
+                case 4:
+                    resetAll();
+                    break;
+            }
         });
     }
 

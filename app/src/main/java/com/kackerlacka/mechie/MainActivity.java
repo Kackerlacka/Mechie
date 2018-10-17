@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Hardness Converter
     public void hardnessConverter(View view) {
-        Intent intent = new Intent(this, ToolsHardnessConverter.class);
+        Intent intent = new Intent(this, ToolsUnitsConverter.class);
         startActivity(intent);
     }
 
