@@ -35,7 +35,7 @@ public class ToolsHelicalSpringDesigner extends AppCompatActivity {
     private TextView ksValue, tauStaticValue, DValue, SsyValue, SutValue, FSStaticValue;
     private TextView kbValue, tauAValue, tauMValue, SsuValue, SsaValue, SsmValue, SseValue, FSFatigueValue;
     private TextView EModulus, ShearModulusValue, NtValue, NaValue, KValue, LsValue, LfValue, springWeightValue;
-    private TextView NfValue, MfValue, EndConditionValue, BucklingCriteriaValue;
+    private TextView NfValue, MfValue, EndConditionValue, BucklingCriteriaValue, FrValue;
     List<String> wireMaterial = new ArrayList<>();
     List<String> noSprings = new ArrayList<>();
     List<String> springEnds = new ArrayList<>();
@@ -167,6 +167,7 @@ public class ToolsHelicalSpringDesigner extends AppCompatActivity {
             calculateSpringWeight();
             calculateMotorFrequency();
             calculateNaturalFrequency();
+            calculateFrequencyRatio();
 
             calculateEndCondition();
             calculateBucklingCriteria();
@@ -1294,14 +1295,26 @@ public class ToolsHelicalSpringDesigner extends AppCompatActivity {
 
         NfValue.setText(formatter.format(nf) + " Hz");
 
-        if(nf <= 15*mf) {
-            NfValue.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_light));
-        }
-        else if(nf > 15*mf) {
-            NfValue.setTextColor(ContextCompat.getColor(context, R.color.colorAccentBlue));
-        }
-
         return nf;
+    }
+
+    public double calculateFrequencyRatio() {
+        double fr;
+        double nf = calculateNaturalFrequency();
+        double mf = calculateMotorFrequency();
+
+        FrValue = findViewById(R.id.frequency_ratio);
+
+        fr = nf/mf;
+
+        if(fr < 1) {
+            FrValue.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_light));
+        }
+        else if(nf > 1) {
+            FrValue.setTextColor(ContextCompat.getColor(context, R.color.colorAccentBlue));
+        }
+        FrValue.setText(formatter.format(fr));
+        return fr;
     }
 
     public double calculateEndCondition() {

@@ -81,7 +81,8 @@
         <activity
             android:name=".ConverterHardness"
             android:launchMode="singleTop"
-            android:parentActivityName=".ToolsUnitsConverter"/>
+            android:parentActivityName=".ToolsUnitsConverter" />
+        <activity android:name=".OneFragment"></activity>
     </application>
 
 </manifest>

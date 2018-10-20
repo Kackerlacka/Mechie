@@ -1,28 +1,25 @@
 package com.kackerlacka.mechie;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ToolsUnitsConverter extends AppCompatActivity {
 
-    private Spinner spinner1;
-    List<String> data1 = new ArrayList<>();
-    private EditText hardnessInput;
-    String[] brinellHardness;
-    String[] vickersHardness;
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +31,62 @@ public class ToolsUnitsConverter extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if(getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Units Converter");
+        setTitle("Units Converter");
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        viewPager = findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+
+        tabLayout = findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new OneFragment(), "HARDNESS");
+        adapter.addFragment(new TwoFragment(), "LENGTH");
+        adapter.addFragment(new ThreeFragment(), "AREA");
+        adapter.addFragment(new ThreeFragment(), "VOLUME");
+        adapter.addFragment(new ThreeFragment(), "MASS");
+        adapter.addFragment(new ThreeFragment(), "FORCE");
+        adapter.addFragment(new ThreeFragment(), "SPEED");
+        adapter.addFragment(new ThreeFragment(), "TIME");
+        adapter.addFragment(new ThreeFragment(), "PRESSURE");
+        adapter.addFragment(new ThreeFragment(), "WORK");
+        adapter.addFragment(new ThreeFragment(), "POWER");
+
+        viewPager.setAdapter(adapter);
+    }
+
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
     }
 }
