@@ -55,7 +55,7 @@
                     android:layout_gravity="center"
                     android:background="@color/colorAccentBlue"
                     android:padding="10dp"
-                    android:text="Hardness Converter"
+                    android:text="Unit Converter"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
 

@@ -52,6 +52,10 @@ public class ConceptsMechanics extends AppCompatActivity {
                     Intent intent = new Intent(ConceptsMechanics.this, MechanicsCastiglianosTheorem.class);
                     startActivity(intent);
                     break;
+                case 3:
+                    Intent intent2 = new Intent(ConceptsMechanics.this, MechanicsMomentofInertia.class);
+                    startActivity(intent2);
+                    break;
             }
         });
 

@@ -21,26 +21,108 @@
 
         </android.support.v7.widget.Toolbar>
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/card_view"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            app:cardElevation="3dp"
-            android:padding="8dp"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="3dp"
-            app:cardBackgroundColor="@color/colorAccentBlue">
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false">
 
-            <katex.hourglass.in.mathlib.MathView
-                android:gravity="center"
-                android:id="@+id/formula1"
-                app:setClickable="true"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:setTextSize="14dp"
-                app:setTextColor="@android:color/white"/>
+                android:orientation="vertical"
+                android:padding="8dp">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Common Symbols"
+                        android:layout_weight="0.5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="I"
+                        android:layout_weight="0.5"
+                        android:textStyle="italic"
+                        android:gravity="end"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SI Unit"
+                        android:layout_weight="0.5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kg m²"
+                        android:layout_weight="0.5"
+                        android:gravity="end"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Other Units"
+                        android:layout_weight="0.5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="	lbf·ft·s²"
+                        android:layout_weight="0.5"
+                        android:gravity="end"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Extensive Property?"
+                        android:layout_weight="0.5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:layout_weight="0.5"
+                        android:gravity="end"/>
+
+                </LinearLayout>
+            </LinearLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -63,21 +145,13 @@
                     android:background="@color/colorAccent"
                     android:padding="8dp"
                     android:textSize="10pt"
-                    android:text="Overview"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="8dp"
-                    android:paddingEnd="8dp"
-                    android:paddingStart="8dp"
-                    android:text="@string/castiglianosTheorem_about_1" />
+                    android:text="Introduction"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="@string/castiglianosTheorem_about_2" />
+                    android:text="@string/momentofinertia_about_1" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -102,55 +176,28 @@
                     android:background="@color/colorAccent"
                     android:padding="8dp"
                     android:textSize="10pt"
-                    android:text="Castigliano's First Theorem"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="8dp"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:text="@string/castiglianosTheorem_about_3"
-                    android:textStyle="italic"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="@string/castiglianosTheorem_first_2" />
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            card_view:cardCornerRadius="3dp"
-            card_view:cardUseCompatPadding="true"
-            card_view:cardPreventCornerOverlap="false">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/white"
-                    android:background="@color/colorAccent"
-                    android:padding="8dp"
-                    android:textSize="10pt"
-                    android:text="Castigliano's Second Theorem"/>
-
+                    android:text="Definition"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="@string/castiglianosTheorem_second_1"
-                    android:textStyle="italic"/>
+                    android:text="@string/momentofinertia_definition_1" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:gravity="center"
+                    android:id="@+id/formula1"
+                    app:setClickable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:setTextSize="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/momentofinertia_definition_2" />
+
                 <katex.hourglass.in.mathlib.MathView
                     android:gravity="center"
                     android:id="@+id/formula2"
@@ -158,11 +205,40 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:setTextSize="12dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="@string/castiglianosTheorem_second_2" />
+                    android:text="@string/momentofinertia_definition_3" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:gravity="center"
+                    android:id="@+id/formula3"
+                    app:setClickable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:setTextSize="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/momentofinertia_definition_4" />
+
+                <katex.hourglass.in.mathlib.MathView
+                    android:gravity="center"
+                    android:id="@+id/formula4"
+                    app:setClickable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:setTextSize="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/momentofinertia_definition_5" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -187,69 +263,21 @@
                     android:background="@color/colorAccent"
                     android:padding="8dp"
                     android:textSize="10pt"
-                    android:text="Example"/>
+                    android:text="List of Moments of Inertia"/>
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="@string/castiglianosTheorem_example_1" />
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/cantilever_beam"/>
-                <katex.hourglass.in.mathlib.MathView
-                    android:gravity="center"
-                    android:id="@+id/formula3"
-                    app:setClickable="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:setTextSize="12dp" />
-                <katex.hourglass.in.mathlib.MathView
-                    android:gravity="center"
-                    android:id="@+id/formula4"
-                    app:setClickable="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:setTextSize="12dp" />
-                <katex.hourglass.in.mathlib.MathView
-                    android:gravity="center"
-                    android:id="@+id/formula5"
-                    app:setClickable="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:setTextSize="12dp" />
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="8dp"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
-                    android:text="@string/castiglianosTheorem_example_2" />
-                <katex.hourglass.in.mathlib.MathView
-                    android:gravity="center"
-                    android:id="@+id/formula6"
-                    app:setClickable="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:setTextSize="12dp" />
-                <katex.hourglass.in.mathlib.MathView
-                    android:gravity="center"
-                    android:id="@+id/formula7"
-                    app:setClickable="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:setTextSize="12dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="@string/castiglianosTheorem_example_3" />
+                    android:src="@drawable/moments_of_inertia"/>
+
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
+
     </LinearLayout>
 
 </ScrollView>

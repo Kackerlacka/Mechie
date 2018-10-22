@@ -47,7 +47,7 @@ public class ConceptsMaterials extends AppCompatActivity {
 
         mListView.setOnItemClickListener((AdapterView<?> adapterView, View view, int i, long l) -> {
             switch(i) {
-                case 0:
+                case 2:
                     Intent intent = new Intent(ConceptsMaterials.this, MaterialsGalvanicCorrosion.class);
                     startActivity(intent);
                     break;

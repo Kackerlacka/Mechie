@@ -31,16 +31,22 @@ public class MechanicsCastiglianosTheorem extends AppCompatActivity {
         MathView formula3 = findViewById(R.id.formula3);
         MathView formula4 = findViewById(R.id.formula4);
         MathView formula5 = findViewById(R.id.formula5);
+        MathView formula6 = findViewById(R.id.formula6);
+        MathView formula7 = findViewById(R.id.formula7);
 
         formula2.setTextSize(14);
         formula3.setTextSize(14);
         formula4.setTextSize(14);
         formula5.setTextSize(14);
+        formula6.setTextSize(14);
+        formula7.setTextSize(14);
 
         formula1.setDisplayText("<center>$$U = W_i$$</center>");
         formula2.setDisplayText("<center>$$\\delta = \\frac{\\partial U}{\\partial P}~~~~~~\\theta = \\frac{\\partial U}{\\partial \\bar{M}}$$</center>");
         formula3.setDisplayText("<center>$$\\delta = \\frac{\\partial U}{\\partial P}$$</center>");
         formula4.setDisplayText("<center>$$\\delta = \\frac{\\partial}{\\partial P} \\int_{0}^{L} \\frac{M^2(x)}{2EI}dx$$</center>");
         formula5.setDisplayText("<center>$$\\delta = \\frac{\\partial}{\\partial P} \\int_{0}^{L}\\frac{(Px)^2}{2EI}dx$$</center>");
+        formula6.setDisplayText("<center>$$\\delta = \\int_{0}^{L}\\frac{Px^2}{2EI}dx$$</center>");
+        formula7.setDisplayText("<center>$$\\delta = \\frac{PL^3}{3EI}$$</center>");
     }
 }

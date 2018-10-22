@@ -79,10 +79,9 @@
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".ConverterHardness"
+            android:name=".MechanicsMomentofInertia"
             android:launchMode="singleTop"
-            android:parentActivityName=".ToolsUnitsConverter" />
-        <activity android:name=".OneFragment"></activity>
+            android:parentActivityName=".ConceptsMechanics" />
     </application>
 
 </manifest>
